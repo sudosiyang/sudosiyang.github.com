@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> 
+			交互设计 -
+			
+			苏思洋的博客 </title>
+		
+		<meta name="author" content="susu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link href="/assets/style.min.css?body=3.3" rel="stylesheet" type="text/css" media="all">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="feed.xml" />
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+		<!-- fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffbcbbadeaf00526725e0f222ba832804' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	</head>
+
+	<body>
+		<div class="navbar">
+			<img id="profile" src="/blog-assets/susu.jpg" alt="susu">
+			<ul class="nav">
+				
+				
+				 
+ 
+    
+      
+      	
+		<li id="label1" class="labels"><a href="/index.html">
+			
+				最新文章
+			
+		</a></li>
+	
+      	
+      
+    
+  
+    
+      
+      	
+				
+				<li id="label2" class="active labels"><a href="/tec_css.html" class="active">交互设计</a></li>
+				
+		
+		
+		
+      
+    
+  
+    
+      
+      	
+		<li id="label3" class="labels"><a href="/view_des.html">
+			
+				视觉设计
+			
+		</a></li>
+	
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+      	
+		<li id="label4" class="labels"><a href="/qianduan.html">
+			
+				前端技术
+			
+		</a></li>
+	
+      	
+      
+    
+  
+
+
+
+			</ul>
+		</div>
+		
+		<div id="sidebar">
+			<div id="title_wrap" class="title2">
+				<h2 class="title">交互设计</h2>
+			</div>
+			
+				
+					
+					
+				
+					
+					
+				
+					
+					<ul class="posts">
+						
+						
+
+
+  
+    
+      
+      	
+      	<li><a class="cate title2" href="/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/2013/10/13/youhua"><span class="circle_icon"></span>如何通过数据指导产品优化<span class='date'>13 Oct 2013</span></a></li>
+      	
+      
+    
+  
+
+
+
+					</ul>
+					
+				
+			
+
+		</div>
+		<div id="container">
+			<button class="navbar-toggle" type="button">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+			<div id="pjax">
+				<article id="post" class="title2">
+					<header id="header">
+						<h1 id="identifier">
+							
+								如何通过数据指导产品优化
+							
+						</h1>
+					</header>
+					<div id="content">
+						<h1></h1>
+
+<p><img src="/blog-assets/2013-10-13/1.jpg" alt="网页设计"></p>
+
+<p>设计师生来就是要解决问题的。那如何才能更好、更高效地解决问题？首先要求我们能发现问题，数据分析就是一种常用的发现问题的手段。通过数据定位问题，然后用设计方案来尝试解决问题，之后再用量化的数据指标来评估问题是否解决了，解决了多少。通过迭代优化，问题就能够得到较好解决。</p>
+
+<p>本文结合自己在在登录产品的体验优化中积累的一些实战经验，重现过程中的设计点滴，有效果明显的方案，也有效果不明显的优化尝试，最后将总结一些通用的设计思路。</p>
+
+<p><strong>登录失败的原因在哪？</strong></p>
+
+<p>登录框一般是个较简单的界面，它包括：账户名和登录密码、校验码、其他账户登录入口、注册等关联操作等元素。</p>
+
+<p><img src="/blog-assets/2013-10-13/2.jpg" alt="网页设计"></p>
+
+<p>看似一个简单的界面，每天却有不少用户尝试登录却登录失败。某些流量较大的网站，每天可能有上百万登录失败次数。登录作为用户进入一个产品的第一道门，体验非常关键。因此我们把登录成功率作为衡量登录产品体验好坏的最重要的指标。</p>
+
+<p>通过数据收集和分析后，我们发现用户登录出错的原因占比如下图（图中数据做了模糊处理）：登录密码出错、账户名出错、校验码出错是影响登录成功率的top3因素。</p>
+
+<p><img src="/blog-assets/2013-10-13/3.jpg" alt="网页设计"></p>
+
+<p><strong>详细定位问题，各个击破</strong></p>
+
+<p>针对上述的top3问题，我们迭代做了优化。在此以校验码出错的优化为例，来说明优化思路。前面我们通过数据定位了大问题出在哪里，接下来我们需要详细定位问题。那校验码为什么出错？有什么解决方案？</p>
+
+<p>通过页面埋点点击数据和后台日志我们发现用户刷新图片校验码概念较高，平均每个用户会刷新2次校验码才能输入正确。所以问题可归纳为：校验码识别度低，容易输错。</p>
+
+<p>那对应有怎样的解决策略？不妨尝试下这种循序渐进的解决思路：事前、事中、事后。</p>
+
+<p>1）事前：我们把输入图片校验码作为一个事件，那“事前”的意思就是不出现图片校验码，或者降低校验码出现概率。图片校验码的作用是防止机器批量登录行为。逆向思考下：如果我们能保障系统安全的情况下，通过技术手段尽可能提前识别是人在请求登录，还是机器恶意登录。确信识别为人在登录的情况下，就不出现图片校验码（如下图），就可以大大减少正常用户登录时输入图片校验码的概念。</p>
+
+<p><img src="/blog-assets/2013-10-13/4.jpg" alt="网页设计"></p>
+
+<p>上线后，通过跟踪登录成功率数据，发现此优化效果非常明显。</p>
+
+<p>2）事中：近一步发现校验码是数字和字母随时混搭出现，如数字“0&quot;和字母“O”，数字&quot;1&quot;和字母“I” 很容易混淆。</p>
+
+<p><img src="/blog-assets/2013-10-13/5.jpg" alt="网页设计"></p>
+
+<p>解决方案：降低容易混淆的数字和字母出现的概率，如果出现了数字“0&quot;或字母“O”，默认用户输入其中一个都是正确的。条件允许的话，还可以过滤掉这些容易混淆的组合，提高用户首次输入的成功率。</p>
+
+<p>还有一个解决策略是用户输入校验码后即时反馈结果：输入正确还是错误。</p>
+
+<p>输入正确的提示如下：</p>
+
+<p><img src="/blog-assets/2013-10-13/6.jpg" alt="网页设计"></p>
+
+<p>输入错误的提示如下：</p>
+
+<p><img src="/blog-assets/2013-10-13/7.jpg" alt="网页设计"></p>
+
+<p>通过这个优化，用户可以提前知道自己出错了，而不需要登录请求后才知道出错了，导致一次登录失败。所以用户登录效率更高了（用时更短），而登录成功率也有不小的提升。</p>
+
+<p>3）事后：用户输错一次图片校验码了，再次输入如何能更容易成功？如下图中，用户通过点击图片校验码区域刷新出现另一张校验码，但相对隐晦，部分用户出错了，就不知道点击换一张校验码图片。</p>
+
+<p><img src="/blog-assets/2013-10-13/8.jpg" alt="网页设计"></p>
+
+<p>解决方案：强化刷新图片校验码的操作按钮，同时增加语音校验码。虽然语音校验码本意是为盲人用户设计的，但正常用户在图片校验码老是输错情况下，也可以使用语音校验码。</p>
+
+<p><img src="/blog-assets/2013-10-13/9.jpg" alt="网页设计"></p>
+
+<p>最后，总结下通过数据来指导产品优化的一般流程。</p>
+
+<p>第一步：确定产品体验的量化指标</p>
+
+<p>如上面案例中我们用成功率来衡量登录产品体验好坏的指标。什么指标可以用来量化某个产品的体验呢？这是目前交互设计领域讨论比较多的话题，这里先不展开阐述，只提供参考建议：一、用户体验的改变对该指标有至关重要的影响；二、该指标很好被量化；三、清楚该指标是如何计算的，项目组达成共识，这样才能更有的放矢的开展设计。</p>
+
+<p>第二步：数据分析准确定位问题</p>
+
+<p>找到影响上述量化指标的产品问题点在哪，如上述案例中登录失败有哪些情况，占比怎样。视产品不同，数据来源可以是产品的后台日志数据，用户点击行为数据或用户来电求助率，等等。再近一步分析：密码为什么出错、账户名为什么出错、图片校验码为什么出错。比如我们通过大量的用户来电客服录音就可以找到用户密码出错的真正原因：将支付密码和登录密码混淆，跟其他产品的秘密混淆；密码设置得太复杂，记不住；密码出错后，找回密码不成功，等等。</p>
+
+<p>第三步：迭代优化，用数据检验效果</p>
+
+<p>找到了问题，就针对性得设计方案。解决思路可以参考上述的“事前”、“事中”和“事后”。事先：问题是否能提前规避，降低发生的概念；事中：问题发生了，如何帮助用户快速解决；事后：如何避免再次发生。优化方案快速上线，看对应的体验指标是否改变了，改变了多少。往往不可能一步到位就把问题解决掉，需要迭代优化，不断通过数据跟踪来修正设计策略。通过效果累计，达到我们最终的设计目标。</p>
+
+<hr>
+
+<p>转自：<a href="http://ux.etao.com/posts/818">阿里妈妈UED</a></p>
+
+					</div>
+				</article>
+			</div>
+		</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/assets/index.min.js?body=2.0.0"></script>
+	</body>
+</html>
