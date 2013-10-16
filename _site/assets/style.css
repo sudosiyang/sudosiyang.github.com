@@ -53,6 +53,19 @@ hr {
 	-o-user-select: none;
 	user-select: none;
 }
+#profile {
+	margin: 55px auto 35px;
+	border-radius: 50%;
+	box-shadow: 0 0 0px 2px white,0 0 0 3px #cccccc;
+	display: block;
+}
+#profile:hover {
+	-webkit-animation: spin 0.3s linear infinite;
+	-moz-animation: spin 0.3s linear infinite;
+	-ms-animation: spin 0.3s linear infinite;
+	-o-animation: spin 0.3s linear infinite;
+	animation: spin 0.3s linear infinite;
+}
 .navbar .nav {
 	padding: 0;
 	margin: 0;
@@ -215,6 +228,20 @@ hr {
 .title4 .circle_icon {
 	background: #56a61c;
 	border-color: #56a61c;
+}
+#label5.active, #label5:hover {
+	background: #a563a5;
+}
+#title_wrap.title5 {
+	color: #a563a5;
+	border-bottom-color: #a563a5;
+}
+.title5 .circle_icon {
+	background: #a563a5;
+	border-color: #a563a5;
+}
+#post.title5 #header {
+	background: #a563a5;
 }
 #content {
 	margin: 2.5em 5% 0;
