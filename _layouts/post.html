@@ -1,0 +1,52 @@
+{% include JB/header %}
+
+	<body>
+		<div class="navbar">
+			<img id="profile" src="/blog-assets/susu.jpg" alt="susu">
+			<ul class="nav">
+				{% assign pages_list = site.pages %}
+				{% assign group = 'tag' %}
+				{% include JB/menu_list %}
+			</ul>
+		</div>
+		<div id="sidebar">
+			<div id="title_wrap" class=" title{{ index }}">
+				<h2 class="title">
+					{% for p in site.pages %}
+						{% if p.category == page.category %}
+							{{ p.category }}
+						{% endif %}
+					{% endfor %}
+				</h2>
+			</div>
+				{% for category in site.categories %}
+					{% if category[0] == page.category %}
+					<ul class="posts">
+						{% assign pages_list = category[1] %}
+						{% include JB/pages_list %}
+					</ul>
+					{% else %}
+					{% endif %}
+				{% endfor %}
+		</div>
+		<div id="container">
+			<button class="navbar-toggle" type="button">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+			<div id="pjax">
+				<article id="post" class="title{{ index }}">
+					<header id="header">
+						<h1 id="identifier">
+								{{ page.title }}
+						</h1>
+					</header>
+					<div id="content">
+						{{content}}
+					</div>
+				</article>
+			</div>
+			{% include JB/comment %}
+		</div>
+{% include JB/footer %}

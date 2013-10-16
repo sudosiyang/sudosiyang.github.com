@@ -1,0 +1,28 @@
+ {% assign a=1 %}
+ {% for node in pages_list %}
+    {% if node.title != null %}
+      {% if group == node.group %}
+      	{% if page.category == node.category %}
+				{% if page.category != "a" %}
+				<li id="label{{ a }}" class="active labels"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.category}}</a></li>
+				{% else %}
+				<li id="label{{a }}" class="active labels"><a href="{{ BASE_PATH }}{{node.url}}" class="active">最新文章</a></li>
+				{% endif %}
+		{% assign index = a  %}
+		{% assign a= a | plus:1 %}
+		{% else %}
+		<li id="label{{ a }}" class="labels"><a href="{{ BASE_PATH }}{{node.url}}">
+			{% if node.category == "a" %}
+				最新文章
+			{% else %}
+				{{ node.category }}
+			{% endif %}
+		</a></li>
+	{% assign a= a | plus:1 %}
+      	{% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% assign pages_list = nil %}
+{% assign group = nil %}
+{% assign a=nil %}
