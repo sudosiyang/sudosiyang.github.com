@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>苏思洋的博客</title>
-		<description>学习javascript，关注用户体验</description>
+		<description>推崇以用户为中心的设计理念，专注于用户体验设计，游走在视觉设计与前端开发之间</description>
 		<link>http://ssy.me</link>
 		<atom:link href="http://ssy.me/feed.xml" rel="self" type="application/rss+xml" />
 		

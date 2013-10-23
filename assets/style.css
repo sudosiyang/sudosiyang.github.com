@@ -781,3 +781,79 @@ code {
 .ds-meta, .ds-comments-info, .ds-powered-by {
 	display: none;
 }
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(359deg); } }
+
+@-o-keyframes spin {
+  from {
+    -o-transform: rotate(0deg); }
+
+  to {
+    -o-transform: rotate(359deg); } }
+
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg); }
+
+  to {
+    -ms-transform: rotate(359deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(359deg); } }
+@-webkit-keyframes rollIn {
+	0% {
+	opacity:0;
+	-webkit-transform:translateX(-100%) rotate(-120deg);
+}
+100% {
+	opacity:1;
+	-webkit-transform:translateX(0px) rotate(0deg);
+}
+}@-moz-keyframes rollIn {
+	0% {
+	opacity:0;
+	-moz-transform:translateX(-100%) rotate(-120deg);
+}
+100% {
+	opacity:1;
+	-moz-transform:translateX(0px) rotate(0deg);
+}
+}@-o-keyframes rollIn {
+	0% {
+	opacity:0;
+	-o-transform:translateX(-100%) rotate(-120deg);
+}
+100% {
+	opacity:1;
+	-o-transform:translateX(0px) rotate(0deg);
+}
+}@keyframes rollIn {
+	0% {
+	opacity:0;
+	transform:translateX(-100%) rotate(-120deg);
+}
+100% {
+	opacity:1;
+	transform:translateX(0px) rotate(0deg);
+}
+}.rollIn {
+	-webkit-animation-name:rollIn;
+	-moz-animation-name:rollIn;
+	-o-animation-name:rollIn;
+	animation-name:rollIn;
+}
