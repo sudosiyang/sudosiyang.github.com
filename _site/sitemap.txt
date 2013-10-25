@@ -1,13 +1,14 @@
 
-http://ssy.me/atom.xml
-http://ssy.me/feed.xml
+http://ssy.me/view_des.html
 http://ssy.me/index.html
 http://ssy.me/other.html
-http://ssy.me/qianduan.html
 http://ssy.me/sitemap.txt
 http://ssy.me/tec_css.html
-http://ssy.me/view_des.html
+http://ssy.me/feed.xml
+http://ssy.me/atom.xml
+http://ssy.me/qianduan.html
 
+http://ssy.me/2013/10/25/31CSS
 http://ssy.me/%E6%9D%82%E8%B0%88/2013/10/16/web_advice
 http://ssy.me/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/2013/10/13/youhua
 http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design_step
