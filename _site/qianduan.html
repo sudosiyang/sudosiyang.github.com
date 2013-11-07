@@ -150,6 +150,14 @@
     
       
       	
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/07/javascript-tip"><span class="circle_icon"></span>javascript 小技巧<span class='date'>07 Nov 2013</span></a></li>
+      	
+      
+    
+  
+    
+      
+      	
       	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/25/31CSS"><span class="circle_icon"></span>31 种 CSS 选择器用法<span class='date'>25 Oct 2013</span></a></li>
       	
       
@@ -210,429 +218,33 @@
 					<header id="header">
 						<h1 id="identifier">
 							
-								31 种 CSS 选择器用法
+								javascript 小技巧
 							
 						</h1>
 					</header>
 					<div id="content">
 						<h1></h1>
 
-<h3>1.*</h3>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="o">*</span> <span class="p">{</span>
-  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<p><strong>字符串逆序</strong></p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">reverse</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+    <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>星号选择器用于选取页面中的所有元素，可用于快速清除所有元素的 margin 与 padding，但最好只在测试的时候使用，而不要正式用在 CSS 文件中，否则会大大加重浏览器负担。此外，星号选择器也可以给父层的所有子元素设定样式，重复一遍，尽量少用这种方式：</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nf">#container</span> <span class="o">*</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
+<p><strong>去掉前后空格</strong></p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">trim</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(^\s*)|(\s*$)/g</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>兼容 IE6+</p>
-
-<p><strong>2. #X</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nf">#container</span> <span class="p">{</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">960px</span><span class="p">;</span>
-  <span class="k">margin</span><span class="o">:</span> <span class="k">auto</span><span class="p">;</span>
+<p><strong>数组复制</strong></p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">copy</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>id 选择器，最常见的选择器用法之一，不可重复使用。</p>
-
-<p>兼容 IE6+</p>
-
-<p><strong>3. .X</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.error</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<p><strong>将伪数组转化为数组</strong></p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">makeArray</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>class 选择器，也是最常见的选择器用法之一，与 id 选择器不同的是 class 选择器可同时选取多个元素，而 id 选择器只能给一个独一无二的元素设定样式。</p>
-
-<p>兼容 IE6+</p>
-
-<p><strong>4. X Y</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>
-  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>后代选择器 (descendant selector)，选取 X 元素内的所有 Y 元素，比如上面这段代码将选取 li 标签内的所有链接。</p>
-
-<p>兼容 IE6+</p>
-
-<p><strong>5. X</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span> <span class="p">{</span> 
-    <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
- <span class="p">}</span>
-<span class="nt">ul</span> <span class="p">{</span> 
-    <span class="k">margin-left</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
- <span class="p">}</span>
-</code></pre></div>
-<p>标签选择器 (type selector)，用于选取 HTML 标签 (tag)。</p>
-
-<p>兼容 IE6+</p>
-
-<p><strong>6. X:visited and X:link</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="nd">:link</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
-<span class="nt">a</span><span class="nd">:visted</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div>
-<p>:link 伪类选择器 (pseudo class selector) 用于选取所有未点击过的链接，而 :visited 则用于选取所有已访问过的链接。</p>
-
-<p>兼容 IE6+</p>
-
-<p><strong>7. X + Y</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span> <span class="o">+</span> <span class="nt">p</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>临近选择器 (adjacent selector)，选取紧邻在 X 元素后面出现的第一个元素，比如上面这段代码将选取 ul 元素后出现的第一个元素，也就是 p 元素。</p>
-
-<p>兼容性 IE6+</p>
-
-<p><strong>8. X &gt; Y</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">div</span><span class="nf">#container</span> <span class="o">&gt;</span> <span class="nt">ul</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>在第 4 条中，后代选择器 X Y 选取父层 X 内的所有 Y 元素；子选择器 X &gt; Y 则只选取直接出现在父层 X 内的 Y 元素。比如下面的 HTML 结构中，#container &gt; ul 选取直接出现在 div#container 内的 ul 元素，不包含嵌套在 li 内的 ul 元素：</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;container&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;ul&gt;</span>
-    <span class="nt">&lt;li&gt;</span> List Item
-      <span class="nt">&lt;ul&gt;</span>
-        <span class="nt">&lt;li&gt;</span> Child <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span> List Item <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span> List Item <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;li&gt;</span> List Item <span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;/ul&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
-<p>兼容 IE7+</p>
-
-<p><strong>9. X ~ Y</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span> <span class="o">~</span> <span class="nt">p</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>同样也是临近选择器，前面第 7 条 X + Y 选取紧邻在 X 后出现的第一个元素，而 X ~ Y 将选取 X 元素后出现的所有同级元素。上面这段代码将选取 ul 元素后出现的所有同级 p 元素，而不是像 ul + p 这样选取第一个出现的 p 元素。</p>
-
-<p>兼容 IE7+</p>
-
-<p><strong>10. X[title]</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">title</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>属性选择器 (attributes selector)，根据元素使用的属性进一步缩小选取范围，上面这段代码将选取所有使用了 title 属性的链接，或者 a[title=&quot;title content&quot;]{color:green} 再进一步缩小选取范围。</p>
-
-<p>兼容 IE7+</p>
-
-<p><strong>11. X[href=&quot;foo&quot;]</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s2">&quot;http://net.tutsplus.com&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="m">#1f6053</span><span class="p">;</span> <span class="c">/* nettuts green */</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>上面这段代码将选取所有跳转到 http://net.tutsplus.com 的链接，这些链接将显示为绿色，其他链接不受影响。</p>
-
-<p>只是这种方式很严格不能相差一个字符，下面将会逐一介绍更灵活的用法。</p>
-
-<p>兼容 IE7+</p>
-
-<p><strong>12. X[href*=&quot;nettuts&quot;]</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">*=</span><span class="s2">&quot;tuts&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="m">#1f6053</span><span class="p">;</span> <span class="c">/* nettuts green */</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>表示只要属性值中包含双引号内的内容就满足选取要求，这段代码将选取跳转到 nettuts.com，net.tutsplus.com，或者 tutsplus.com 等链接。</li>
-</ul>
-
-<p>兼容 IE7+</p>
-
-<p><strong>13. X[href^=&quot;http&quot;]</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s2">&quot;http&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">background</span><span class="o">:</span> <span class="sx">url(path/to/external/icon.png)</span> <span class="k">no-repeat</span><span class="p">;</span>
-  <span class="k">padding-left</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>^ 表示只要属性值以双引号内的内容开头就满足选取要求，这段代码也常用来给页面中所有外部接设定样式。</p>
-
-<p>兼容 IE7+</p>
-
-<p><strong>14. X[href$=&quot;.jpg&quot;]</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s2">&quot;.jpg&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>$ 表示只要属性值以双引号内的内容结尾就满足选取要求，这段代码将选取所有跳转到 jpg 图片的链接。</p>
-
-<p>兼容 IE7+</p>
-
-<p><strong>15. X[data-*=&quot;foo&quot;]</strong></p>
-
-<p>上面第 14 条提到了如何选取所有跳转到 jpg 图片的链接，若要选取跳转到图片的所有链接可以用下面的方法：</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s2">&quot;.jpg&quot;</span><span class="o">],</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s2">&quot;.jpeg&quot;</span><span class="o">],</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s2">&quot;.png&quot;</span><span class="o">],</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s2">&quot;.gif&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>或者，先给图片链接添加 data- 属性（注：HTML5 Custom Data Attributes）</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;path/to/image.jpg&quot;</span> <span class="na">data-filetype=</span><span class="s">&quot;image&quot;</span><span class="nt">&gt;</span> Image Link <span class="nt">&lt;/a&gt;</span>
-</code></pre></div>
-<p>然后再通过属性选择器选取：</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">data-filetype</span><span class="o">=</span><span class="s2">&quot;image&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>兼容 IE7+</p>
-
-<p><strong>16. X[foo~=&quot;bar&quot;]</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="o">[</span><span class="nt">data-info</span><span class="o">~=</span><span class="s2">&quot;external&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">data-info</span><span class="o">~=</span><span class="s2">&quot;image&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>如果属性值中有用空格分隔的一连串属性值，~ 可以选取其中一个属性值，比如：</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;path/to/image.jpg&quot;</span> <span class="na">data-info=</span><span class="s">&quot;external image&quot;</span><span class="nt">&gt;</span> Click Me, Fool <span class="nt">&lt;/a&gt;</span>
-</code></pre></div>
-<p>借助 ~ 选取包含 external 或者 image 属性值的元素：</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="c">/* Target data-info attr that contains the value &quot;external&quot; */</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">data-info</span><span class="o">~=</span><span class="s2">&quot;external&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="c">/* And which contain the value &quot;image&quot; */</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">data-info</span><span class="o">~=</span><span class="s2">&quot;image&quot;</span><span class="o">]</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>兼容 IE7+</p>
-
-<p><strong>17. X:checked</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="nt">radio</span><span class="o">]</span><span class="nd">:checked</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>:checked 伪类选择器用于选取所有标记为 checked 的元素，比如单选框 (radio button) 或复选框 (checkbox)。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>18. X:after</strong></p>
-
-<p>:before 与 :after 是两个令人兴奋的伪类选择器，几乎每天都有人发明出一些新用法，这里简单介绍一下如何用它清除浮动：</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nc">.clearfix</span><span class="nd">:after</span> <span class="p">{</span>
-  <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
-  <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
-  <span class="k">clear</span><span class="o">:</span> <span class="k">both</span><span class="p">;</span>
-  <span class="k">visibility</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nc">.clearfix</span> <span class="p">{</span>
-  <span class="o">*</span><span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
-  <span class="n">_height</span><span class="o">:</span> <span class="m">1</span><span class="o">%</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>这种方式通过 :after 在元素后面添加一块区域，然后将其隐藏，可以弥补 overflow: hidden; 的缺陷。</p>
-
-<p>根据 CSS3 选择器标准，理论上伪类选择器应该使用双冒号，但实际上浏览器也支持单冒号的形式，所以可以继续使用单冒号。</p>
-
-<p>兼容 IE8+</p>
-
-<p><strong>19. X:hover</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">div</span><span class="nd">:hover</span> <span class="p">{</span>
-  <span class="k">background</span><span class="o">:</span> <span class="m">#e3e3e3</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>最常用的伪类选择器，不多解释了，只是需要注意 IE6 不支持将 :hover 作用于除 a 链接外的其他元素。</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
- <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>另外提醒一点：border-bottom: 1px solid black; 的效果要比 text-decoration: underline; 好看一些。</p>
-
-<p>兼容 IE6+ （在 IE6 中 :hover 只能作用于链接）</p>
-
-<p><strong>20. X:not(selector)</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">div</span><span class="nd">:not</span><span class="o">(</span><span class="nf">#container</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>:not 伪类选择器有时会起到很重要的作用，假设现在要选取除 #contaienr 外的所有 div 元素，就可以用上面的代码实现。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>21. X::pseudoElement</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">p</span><span class="o">:</span><span class="nd">:first-line</span> <span class="p">{</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="o">:</span> <span class="m">1.2em</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>通过伪元素（使用双冒号 ::）可以给元素的某一部分设定样式，比如第一行、或者第一个字母。需要注意的是，这只对块级元素 (block level elements) 生效。</p>
-
-<p>提示：伪元素 (pseudo element) 使用双冒号 ::</p>
-
-<p>选取段落的第一个字母</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">p</span><span class="o">:</span><span class="nd">:first-letter</span> <span class="p">{</span>
-  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-  <span class="k">font-family</span><span class="o">:</span> <span class="k">cursive</span><span class="p">;</span>
-  <span class="k">padding-right</span><span class="o">:</span> <span class="m">2px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>这段代码将选取页面中所有 p 元素，然后再选取其中的第一个字母。</p>
-
-<p>选取段落的第一行</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">p</span><span class="o">:</span><span class="nd">:first-line</span> <span class="p">{</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="o">:</span> <span class="m">1.2em</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>与上面的例子类似，通过 ::first-line 选取页面的第一行。</p>
-
-<p>为了兼容 CSS1 与 CSS2 中的伪元素（比如 :first-line, :first-letter, :before 以及 :after），浏览器接受单冒号与双冒号两种格式，但对于 CSS3 中最新引入的伪元素，必须使用双冒号。</p>
-
-<p>兼容 IE6+</p>
-
-<p><strong>22. X:nth-child(n)</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>:nth-child(n) 用于选取 stack 中的某一个元素，只接受整数作参数（参数从 1 开始计数），如果你想选取第二个 li 元素，只需这样写 li:nth-child(2)。</p>
-
-<p>也可以设定可变的参数，比如 li:nth-child(4n) 将选取第 4, 8 , 12… 个元素（4*n, n=1, n++）。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>23. X:nth-last-child(n)</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">li</span><span class="nd">:nth-last-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>除了正序（从上往下）选择，也可以使用 :nth-last-child(n) 倒序（从下往上）选择第几个元素，其他用法与第 22 条完全一样。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>24. X:nth-of-type(n)</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>:nth-of-type(n) 的作用不是选取子元素 (child element)，而是选取同类元素 (type of element)。想象一下 HTML 文件中包含 5 个 ul 元素，现在要选取第三个，只需使用上面的代码，而不用再单独这个 ul 添加 id。</p>
-
-<p>关于 :nth-child 与 :nth-of-type 的区别，具体请查看 CSS-Tricks 网站的解释，简单来说，如果父层内只包含一种元素（比如都是 p 元素）那两种用法是等效的，如果父层包含多种元素（比如 p 元素与同级的其他元素），需要选取第几个 p 元素时应该用 :nth-of-type。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>25. X:nth-last-of-type(n)</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span><span class="nd">:nth-last-of-type</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">border</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="nb">black</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>与第 24 条用法相同，倒序选取同类元素。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>26. X:first-child</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span> <span class="nt">li</span><span class="nd">:first-child</span> <span class="p">{</span>
-  <span class="k">border-top</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>选取父层内的第一个子元素。</p>
-
-<p>兼容 IE7+</p>
-
-<p><strong>27. X:last-child</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>与第 26 条用法相同，区别在于 :last-child 选取父层元素内的最后一个子元素。</p>
-
-<p>:first-child 与 :last-child 通常用来清除边框 (border)，比如 &lt;ul&gt;&lt;/ul&gt;内每个 &lt;li&gt;&lt;/li&gt; 都使用了 border-top 与 border-bottom 边框，结果是，第一个元素的上方与最后一个元素的下方会是单边框效果。这种情况可以用 :first-child 与 :last-child 清除上下的边框，而不用给第一个元素添加 id=&quot;first&quot; 或者给最后一个元素添加 id=&quot;last&quot;。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>28. X:only-child</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">div</span> <span class="nt">p</span><span class="nd">:only-child</span> <span class="p">{</span>
-  <span class="k">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>这个伪类选择器不常用，它可以选取包含唯一指定子元素的父层。比如上面的代码中将选取下面第一个 div 元素，而不是第二个 div 中的 p 元素。</p>
-<div class="highlight"><pre><code class="html language-html" data-lang="html"><span class="nt">&lt;div&gt;&lt;p&gt;</span> My paragraph here. <span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;div&gt;</span>
-  <span class="nt">&lt;p&gt;</span> Two paragraphs total. <span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;p&gt;</span> Two paragraphs total. <span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
-<p>兼容 IE9+</p>
-
-<p><strong>29. X:only-of-type</strong></p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">li</span><span class="nd">:only-of-type</span> <span class="p">{</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>这个选择器会选取某个元素，并且这个元素在其父层内没有其他同级同类元素（不一定是唯一元素）。比如，要选取所有只包含一个 li 元素的 ul 元素该怎么做呢？如果使用 ul li 将选取所有 li 元素，应该使用 only-of-type。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>30. X:first-of-type</strong></p>
-
-<p>first-of-type 伪类可以选取某种元素的第一个同类元素。</p>
-
-<p>为了更好地理解它的用法，现在思考一下如何在下面的 HTML 结构中选取 List Item 2 ？</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="o">&lt;</span><span class="nt">div</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span> <span class="nt">My</span> <span class="nt">paragraph</span> <span class="nt">here</span><span class="o">.</span> <span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nt">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;</span> <span class="nt">List</span> <span class="nt">Item</span> <span class="nt">1</span> <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;</span> <span class="nt">List</span> <span class="nt">Item</span> <span class="nt">2</span> <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="nt">ul</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nt">ul</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;</span> <span class="nt">List</span> <span class="nt">Item</span> <span class="nt">3</span> <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nt">li</span><span class="o">&gt;</span> <span class="nt">List</span> <span class="nt">Item</span> <span class="nt">4</span> <span class="o">&lt;/</span><span class="nt">li</span><span class="o">&gt;</span>
-  <span class="o">&lt;/</span><span class="nt">ul</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
-</code></pre></div>
-<p>方法一</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span><span class="nd">:first-of-type</span> <span class="o">&gt;</span> <span class="nt">li</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>这段代码的意思是：首先选取第一个 ul 元素；然后选取其中的所有直接子元素，也就是 li；最后选取第二个子元素。</p>
-
-<p>方法二</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">p</span> <span class="o">+</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:last-child</span> <span class="p">{</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>找到 p 元素后第一个出现的 ul 元素，然后选取其中的最后一个子元素。</p>
-
-<p>方法三</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nt">ul</span><span class="nd">:first-of-type</span> <span class="nt">li</span><span class="nd">:nth-last-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
-  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>找到第一个 ul 元素，然后从上往下选取第一个子元素。</p>
-
-<p>兼容 IE9+</p>
-
-<p><strong>31. 伪类选择器叠用</strong></p>
-
-<p>有些伪类选择器或者伪元素是可以叠用的，例如：</p>
-<div class="highlight"><pre><code class="css language-css" data-lang="css"><span class="nf">#post</span> <span class="nt">p</span><span class="nd">:nth-of-type</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="nd">:first-letter</span> <span class="p">{</span>
-  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
-  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">5px</span> <span class="m">0</span> <span class="m">1em</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
-  <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>目测兼容 IE9+，听说 IE10 有个小 bug</p>
-
 					</div>
 				</article>
 			</div>
