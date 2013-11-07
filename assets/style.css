@@ -781,6 +781,22 @@ code {
 .ds-meta, .ds-comments-info, .ds-powered-by {
 	display: none;
 }
+.f_like{
+	position: absolute;
+	bottom: 40px;
+	text-align: center;
+}
+.links{
+	width: 140px;
+	margin: 0;
+	text-align: center;
+	padding: 0 10px;
+	border-top: 1px solid #323339;
+}
+.links li a{
+	color: #fff;
+	font-size: 13px;
+}
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg); }

@@ -16,4 +16,10 @@ JB :
   version : 2.0.1
   BASE_PATH : false
   ASSET_PATH : false
-  
+links :
+  - name : 'hyq'  
+    url : 'http://hyq.me'
+  - name : '特特区-音视频在线工具'
+    url : 'http://www.tetequ.com'
+  - name : '启航计算机协会'
+    url : 'http://www.dlmu.net'

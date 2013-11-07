@@ -8,6 +8,14 @@
 				{% assign group = 'tag' %}
 				{% include JB/menu_list %}
 			</ul>
+			<div class="f_like">
+			<div>友链</div>
+			<ul class="links">
+				{% for link in site.links %}
+                 <li class="link"><a href="{{link.url}}" title="{{ link.name }}">{{ link.name }}</a></li>
+                                                {% endfor %}
+			</ul>
+			</div>
 		</div>
 		{% if page.category == "a" %}
 			{% assign title = '最新文章' %}
