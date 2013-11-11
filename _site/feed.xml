@@ -7,6 +7,105 @@
 		<atom:link href="http://ssy.me/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>当下网页设计趋势</title>
+				<description>&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog-assets/2013-11-11/1.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;当下网页设计趋势&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;在过去的一年中，我们都看到了网页设计趋势在日益增长。或许有些朋友还记得我早些时候的一些文章关于网页设计，在今天这篇文章中，我只是对网页设计的全新趋势走向简单的分析下。这只是本人对当下网页设计做出的一些小总结。希望这样的归类总结能给你带来更多的思路和想法。&lt;/p&gt;
+
+&lt;h3&gt;1.响应式网页设计（Responsive Web Design）&lt;/h3&gt;
+
+&lt;p&gt;响应式设计已经变成了一个最终来使设计的布局适配各种数字媒体视窗的入口。此想法是用来支持所有的来自笔记本电脑，台式机，智能手机，平板和任何将来将要发布的设备。
+除了多终端的多样化，我们还可以看到我们的电脑屏幕，手机屏幕都在不断变大，而在对未来生活的预测、概念设计里，“屏幕”这个产物更是被运用到多种新平台上。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.tetequ.com/member/index&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/3.jpg&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;特特区&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;你应该想象这个趋势更像是一份单一的代码，完美地运行在所有环境下统一网页的设计中。响应式站点被经常想象为是向手机浏览器迎合，但那不是唯一的目的。你也可以拥有一个让浏览器窗口更大，可以让你的页面布局添加鲜艳的插图和图案的响应式站点。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.tetequ.com/member/index&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/2.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;特特区&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;2.固定的头部条目&lt;/h3&gt;
+
+&lt;p&gt;使用CSS position:fixed属性是使你的头部条目固定在网站最好的方法。当用户往下滚动你网页的时候，此方法会提供一个静止不动的导航和一个回主页的路径。这个趋势已经有一段时间，但是我们现在才看到它全部的力量。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.tetequ.com&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/4.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;特特区&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;因为他们几乎可以工作在任何网站，所以看上去很有趣。它们包括社交网络、博客甚至有设计工作室又或者是私人公司。这种设计非常的流行并且看上去和许多布局很搭配。但是从美学角度看，这个固定的条目提供了一个减小操作网站距离感的特别用户体验。&lt;/p&gt;
+
+&lt;h3&gt;3.大图片背景&lt;/h3&gt;
+
+&lt;p&gt;摄影师或者摄影爱好者肯定很享受这种设计趋势。我已看过无数的案例来讨论使用超大图片来作为背景的这种想法。这是获取用户注意力极佳的方法并且当恰如其分的完成时会看上去很棒。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://im.qq.com/macqq/index.shtml&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/6.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;QQ for mac&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;当大图赏心悦目的时候我就慢慢的喜欢上了它们，当你把这种大图做背景的想法融合进你的设计的时候，这样的设计技术，在市场上会使你的网站显得更专业。再如&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://qzone.qq.com/&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/7.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;QQ空间&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;4.无限滚动&lt;/h3&gt;
+
+&lt;p&gt;无限滚动加载至少存在许多年了,但是此技术直到今年才成为主流，我想在2013年还会继续。最简单的是chrome商店&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/category/apps?utm_source=chrome-ntp-icon&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/blog-assets/2013-11-11/8.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;chrome商店&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这是一个极好的技术，可是并不能应用在每一个布局上。但是对于能适应此方法的网站从视觉和表现上都相当惊人。&lt;/p&gt;
+
+&lt;h3&gt;5.移动导航切换&lt;/h3&gt;
+
+&lt;p&gt;当谈到响应式设计时，最难的问题之一是如何创建一个靠谱的导航。你希望能给用户对你所有重要的链接以直接的访问，而不要淹没在页面中而使其难以辨读。先保持导航隐藏当需要时再出现也是一个很好的点子。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.tetequ.com/member/index&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/9.jpg&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;特特区&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我所喜欢的导航切换是你可以以多种方式设计导航，你可以有从头部到底部的导航或者往下滑动，又或者左右推动内容。设计师有许多玩的选择但是对于UI实验需要更多的时间。&lt;/p&gt;
+
+&lt;h3&gt;6.单页面网页设计&lt;/h3&gt;
+
+&lt;p&gt;单页面设计是一个很大的话题，覆盖了许多不同网站分类。显而易见自从万维网创建单页面网站就出现了。但是最近几年这种趋势变成了一种更加自然的用户体验。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.dlmu.net&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/10.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;启航计算机协会&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;7.滚动侦测网页设计（Scrollspy）&lt;/h3&gt;
+
+&lt;p&gt;利用CSS的实现将导航栏固定在网页顶部（大多数是顶部，当然也有侧面或底部），并将版面内容按照导航顺序垂直或横向排布，使得用户点击相应导航tab时页面自动滑到相应页面，而若点击内容，导航也将随之改变。这样的网页设计页面基本不会跳转，每一个tab所指向的页面内容也基本一屏显示完整，所以在页面呈现的内容上会有所局限。为不影响布局一般也会伴随自适应。&lt;/p&gt;
+
+&lt;p&gt;　　
+滚动侦测式的网页会给设计师带来了很大挑战——要在有限空间内保证内容呈现的完整性，故设计师会在版面上下足功夫。而这类网站结构和视差设计有异曲同工之处，所以我们发现很多网站会结合两者，给观者带来不一样的视觉感受和用户体验。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.dlmu.net&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/11.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;启航计算机协会&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;8.视差滚动设计（Parallax Design）&lt;/h3&gt;
+
+&lt;p&gt;视差设计可以说是近年来网页设计中的一大突破，也备受推崇。视差滚动是让多层背景以不同速度滚动，以形成一种3D立体的运动效果，给观者带来一种独特的视觉感受。&lt;/p&gt;
+
+&lt;p&gt;除此以外，鼠标滚轮的流畅体验，让用户在观看此类网站时有一种控制感，简单来说这是有响应的交互体验。就好像童年看到走马灯，转动它你就能看到人物动起来，还能欣赏故事。视差滚动设计的趣味也在于此。所以无论是网站还是电商商品宣传页都经常采用视差设计，吸引眼球也很受用户喜爱。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://everylastdrop.co.uk/&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/12.jpg&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;every Day&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://benthebodyguard.com/index.php&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/13.jpg&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;Ben the Bodyguard&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;扁平化设计（Flat Design）&lt;/h3&gt;
+
+&lt;p&gt;扁平化设计可以说是去繁从简的设计美学。去掉所有装饰性的设计，可以说是对之前所推崇的拟物化设计的颠覆。&lt;/p&gt;
+
+&lt;p&gt;我们不能妄加评论说这是好还是不好，只能说它提供了一种新的设计思维。扁平化设计是否会成为将来的趋势我们也无法回答，尽管褒贬不一，备受争议，但是就现在来说它是当下的一种潮流。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://windows.microsoft.com/zh-cn/windows-8/meet&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/14.png&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;win8&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.triplagent.com/&quot; target='_blank'&gt;&lt;img src=&quot;/blog-assets/2013-11-11/15.jpg&quot; alt=&quot;当下网页设计趋势&quot; title=&quot;TriplAgent&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结束语&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当创建数字产品时，用户界面是最复杂的话题。尝试着使导航和内容样式获得成功的用户体验。这些设计趋势目的是给设计师指明正确的方向。虽然设计师和开发者都需要和市场接轨并跟上潮流的脚步，但是所谓的潮流是当下的，未来确是未知的。我们的确需要保证自己不被行业趋势甩到队尾，但更重要的是在浪潮中适应和学习。&lt;/p&gt;
+
+&lt;p&gt;相信以上的这些设计方法会流行相当长的一段时间，当然，你也可以发挥创造力，有机地组合它们，做出优秀的网站。&lt;/p&gt;
+</description>
+				<pubDate>Mon, 11 Nov 2013 00:00:00 +0800</pubDate>
+				<link>http://ssy.me/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/2013/11/11/qushi</link>
+				<guid isPermaLink="true">http://ssy.me/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/2013/11/11/qushi</guid>
+			</item>
+		
+			<item>
 				<title>javascript 小技巧</title>
 				<description>&lt;h1&gt;&lt;/h1&gt;
 
