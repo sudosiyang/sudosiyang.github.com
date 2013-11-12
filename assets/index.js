@@ -18,7 +18,7 @@ $(function() {
 		}else{
 			snapper.enable();
 			$("#container").css({
-				'width':auto
+				'width':'auto'
 			});
 		}
 	});
