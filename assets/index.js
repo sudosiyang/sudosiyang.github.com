@@ -10,7 +10,8 @@ $(function() {
 		if ($(this).width() > 1200) {
 			$("#container").css({
 				'left' : '0',
-				'-webkit-transform': 'translate3d(490px, 0, 0)'
+				'-webkit-transform': 'translate3d(490px, 0, 0)',
+				'width':$(window).width()-$(".navbar").width()-$("#sidebar").width()-20
 			});
 			snapper.close();
 			snapper.disable();
@@ -23,6 +24,11 @@ $(function() {
 			'left' : '500px'
 		});
 	})
+	if($(window).width() > 1200){
+		$("#container").css({
+				'width':$(window).width()-$(".navbar").width()-$("#sidebar").width()-20
+		});
+	}
 });
 /*
  * Snap.js
