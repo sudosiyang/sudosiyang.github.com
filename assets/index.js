@@ -17,6 +17,9 @@ $(function() {
 			snapper.disable();
 		}else{
 			snapper.enable();
+			$("#container").css({
+				'width':auto
+			});
 		}
 	});
 	$(".navbar-toggle").on('click', function() {
