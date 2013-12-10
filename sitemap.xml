@@ -1,0 +1,24 @@
+---
+# Remember to set production_url in your _config.yml file!
+title : Sitemap
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.ssy.me">
+	{% for page in site.pages %}
+		<url>
+				<loc>{{  site.production_url }}{{ post.url }}</loc>
+				<lastmod>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	{% endfor %}
+
+	{% for post in site.posts %}
+			<url>
+				<loc>{{  site.production_url }}{{ post.url }}</loc>
+				<lastmod>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	{% endfor %}
+<urlset>
