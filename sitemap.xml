@@ -6,7 +6,7 @@ title : Sitemap
 <urlset xmlns="http://www.ssy.me">
 	{% for page in site.pages %}
 		<url>
-				<loc>{{  site.production_url }}{{ post.url }}</loc>
+				<loc>{{  site.production_url }}{{ page.url }}</loc>
 				<lastmod>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
@@ -21,4 +21,4 @@ title : Sitemap
 				<priority>0.8</priority>
 			</url>
 	{% endfor %}
-<urlset>
+</urlset>
