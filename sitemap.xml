@@ -4,14 +4,7 @@ title : Sitemap
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.ssy.me">
-	{% for page in site.pages %}
-		<url>
-				<loc>{{  site.production_url }}{{ page.url }}</loc>
-				<lastmod>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastmod>
-				<changefreq>always</changefreq>
-				<priority>1.0</priority>
-		</url>
-	{% endfor %}
+	
 
 	{% for post in site.posts %}
 			<url>
