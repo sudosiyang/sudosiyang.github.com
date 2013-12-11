@@ -14,6 +14,5 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
   ga('send', 'pageview');
 
 </script>
-<script>console.log(document.referrer);</script>
 	</body>
 </html>
