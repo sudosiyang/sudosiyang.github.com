@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.ssy.me">
+	
+		<url>
+				<loc>http://ssy.me/atom.xml</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/feed.xml</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/index.html</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/other.html</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/qianduan.html</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/sitemap.xml</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/tec_css.html</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+		<url>
+				<loc>http://ssy.me/view_des.html</loc>
+				<lastmod>Wed, 25 Dec 2013 12:07:44 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>1.0</priority>
+		</url>
+	
+
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian</loc>
+				<lastmod>Tue, 26 Nov 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/2013/11/11/qushi</loc>
+				<lastmod>Mon, 11 Nov 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/07/javascript-tip</loc>
+				<lastmod>Thu, 07 Nov 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/25/31CSS</loc>
+				<lastmod>Fri, 25 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E6%9D%82%E8%B0%88/2013/10/16/web_advice</loc>
+				<lastmod>Wed, 16 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/2013/10/13/youhua</loc>
+				<lastmod>Sun, 13 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design_step</loc>
+				<lastmod>Sat, 05 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design</loc>
+				<lastmod>Sat, 05 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E8%A7%86%E8%A7%89%E8%AE%BE%E8%AE%A1/2013/10/04/DisabledStateTwoOrThreeThings</loc>
+				<lastmod>Fri, 04 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/qianduan</loc>
+				<lastmod>Thu, 03 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/markdown</loc>
+				<lastmod>Thu, 03 Oct 2013 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+	
+</urlset>

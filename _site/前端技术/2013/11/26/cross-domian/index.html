@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title> 
-			响应式网页设计 -
+			JavaScript 跨域访问的问题和解决过程 -
 			
 			苏思洋的博客 </title>
 		
@@ -160,7 +160,7 @@
     
       
       	
-      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
+      	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian" class="active"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
       	
       
     
@@ -192,7 +192,7 @@
     
       
       	
-      	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design" class="active"><span class="circle_icon"></span>响应式网页设计<span class='date'>05 Oct 2013</span></a></li>
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design"><span class="circle_icon"></span>响应式网页设计<span class='date'>05 Oct 2013</span></a></li>
       	
       
     
@@ -239,55 +239,68 @@
 				<article id="post" class="title3">
 					<header id="header">
 						<h1 id="identifier">
-								响应式网页设计
+								JavaScript 跨域访问的问题和解决过程
 						</h1>
 					</header>
 					<div id="content">
 						<h1></h1>
 
-<p><img src="/blog-assets/2013-10-05/001.jpg" alt="网页设计"></p>
+<p>分享一下最近用jQuery跨域请求的经历，希望能给大家一些关于这个方案的概念和资料。</p>
 
-<p>在设计中经常遇到这几个问题：</p>
+<p>1.代码很简单</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">$.ajax({
+    url: &#39;http://www.tetequ.com&#39;,
+    type: &#39;GET&#39;
+}).done(function() {
+    console.log(&quot;success&quot;);
+}).fail(function() {
+    console.log(&quot;error&quot;);
+}).always(function() {
+    console.log(&quot;complete&quot;);
+});
+</code></pre></div>
+<p>上去运行一下......
+当然不能用!什么都还没做呢，就想做跨域访问这么危险的事情,嘿嘿！</p>
 
-<ol>
-<li><p>想要网站兼容手机、平板电脑、pc，就得为不同的设备定制不同的版本。</p></li>
-<li><p>想要网站的某些页面在宽屏显示器下一行显示更多的内容，又得为宽屏定制一个版本。</p></li>
-<li><p>很多人并不是在全屏的情况下浏览我们的页面，如果让页面随着浏览器宽度改变而相应的调整会不会比较好？</p></li>
-</ol>
+<p>下面是Chrome给出的错误提示 </p>
 
-<p>有没有办法能有效解决这些问题呢？</p>
+<p><img src="/blog-assets/2013-12-25/1.png" alt="网页设计"></p>
 
-<p>响应式网页设计是Ethan Marcotte在去年5月份提出的一个概念，简而言之，就是一个网站能够兼容多个终端——而不是为每个终端做一个特定的版本。这个概念可以说是是为移动互联网而生的！</p>
+<p>2.在服务器端做点手脚(php为例)</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">header(&quot;Access-Control-Allow-Origin:*&quot;);// 可以设置为详细的地址
+</code></pre></div>
+<p>3.好了现在Chrome中的Get已经可以运行了。</p>
 
-<p>或许大家之前会注意到，有很多知名网站都推出了iPhone或针对智能手机的专门网站，比如3g.qq.com、m.taobao.com、ipad.xxx.com等等。。。甚至前端观察之前也尝试过用wordpress插件实现m.qianduan.net的移动网站。  那么问题就来了——我们要为每一个设备做一个单独的网站吗？来让网站在每个设备中得到相应的视觉风格和操作体验？  这样势必就要增加很多的工作量，而且很多还是重复的。  我们在做页面的时候，一般很强调模块化的概念，我们要求一个合格的模块要能够“可扩展、无侵染”，它要能够用在任何地方都能够正常的显示。响应式网页设计与此类似——网站在任何设备中都能够正常适配，而不用为每个设备单独做个子网站！  但是，产品经理和设计师可能还是会要求网站在各个浏览器里面表现要一模一样，甚至要像素还原——WTF！不同的浏览器本身的功能、行为和处理方式都不一样，为什么要表现完全一样？！</p>
+<p>4.还有问题。。。。忽然发现在IE8和IE9中无法运行，而在其他的浏览器中都正常（opera未测试，google说这个浏览器也有问题。不过这东西比较小众）
+使用Fiddler发现 这个动作根本没有被提交到服务器端。。。。
+这是多么痛的领悟啊。（IE 为什么每次你都这么另类！，jQuery你为什么不兼容ie8和ie9的跨域提交功能。。加点代码很麻烦么！！！）</p>
 
-<h3>响应式Web设计的优势：</h3>
+<p>最后用各种方法知道了---</p>
 
-<ul>
-<li>随着移动设备越来越多，可以提升用户体验。</li>
-<li>该设计没有页版本区分，所以SEO的策略保持一致。</li>
-<li>开发、维护、运营成本优势,页面只有一个，只是针对不同的分辨率、不同的设备环境进行了一些不同的设计，所以在开发、维护和运营上，相对多个版本，能节约成本。</li>
-<li>Google也建议优先采用响应式设计，因为无论是什么页版本都是相同的HTML、相同的内容，Google最容易处理</li>
-<li>兼容性优势：移动设备新的尺寸层出不穷，定制的版本通常只适用于某些规格的设备，如果新的设备分辨率变化较大，则往往不能兼容，而开发新的版本需要时间，这段时间内的访问就是个问题，但是响应式Web设计可以提前预防这个问题。</li>
-<li>操作灵活：响应式设计是针对页面的，可以只对必要的页面进行改动，其他页面不受影响。</li>
-</ul>
+<p>IE8以上的版本跨域提交需要使用XDomainRequest 对象。。。。关于 XDomainRequest 请在这里查看详细，<a href="http://msdn.microsoft.com/en-us/library/cc288060(VS.85).aspx">http://msdn.microsoft.com/en-us/library/cc288060(VS.85).aspx</a></p>
 
-<h3>响应式Web设计的趋势：</h3>
+<p>解决代码如下：</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">var xdr = new XDomainRequest();
+        xdr.onload = function (e) {
+            var data = $.parseJSON(xdr.responseText);
+            if (data == null || typeof (data) == &#39;undefined&#39;) {
+                data = $.parseJSON(data.firstChild.textContent);
+            }
+            //success
+        };
+        xdr.onerror = function (e) {
+            //error
+        }
 
-<p>响应式设计在2012年被提的比较多，但是响应式设计仍然在不断变化，不断创新。比如，新的设备不断出来(iPad Mini)，这让以前的设计想法土崩瓦解。而各种Web的响应式设计也获得了越来越多的注意，“让人们忘记设备尺寸”的理念将更快地驱动响应式设计，所以Web设计也将迎来更多的响应式设计元素。</p>
+        xdr.open(&quot;GET&quot;, url);
+        xdr.send();
+</code></pre></div>
+<p>5.问题算是解决了get都可以了。还有问题IE11你又出来干嘛了。。。你居然没有XDomainRequest。多么坑爹啊。还好IE11可以用标准的提交跨域。只是判别的时候有点蛋疼。</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">navigator.userAgent.toLowerCase().match(/(msie\s|trident.*rv:)([\w.]+)/)
+</code></pre></div>
+<p>这个能否判断IE11自己试着办哈。。</p>
 
-<p>免费轻量级的响应式 CSS 网格系统，让你可以快速创建适应于手机和平板电脑的网站。</p>
-
-<p><strong>以上都是只是介绍</strong>
-如果想深入学习请参考:<a href="http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries">http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries</a></p>
-
-<hr>
-
-<p>相关文章、网站：</p>
-
-<p><a href="http://beforweb.com/node/7">通过CSS3 Media Query实现响应式Web设计</a></p>
-
-<p><a href="http://www.templatemonster.com/infographics/responsive-web-design-interactive-guide.php">一个国外的响应式web设计介绍网站</a></p>
+<p><strong><em>本人水平有限，如果有所遗漏和谬误，请各位朋友指正，希望一起讨论学习和进步</em></strong></p>
 
 					</div>
 				</article>
