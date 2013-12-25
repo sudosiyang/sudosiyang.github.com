@@ -9,7 +9,7 @@ tags : 前端 设计
 
 1.代码很简单
 
-```
+```javascript
 $.ajax({
 	url: 'http://www.tetequ.com',
 	type: 'GET'
@@ -31,7 +31,7 @@ $.ajax({
 
 2.在服务器端做点手脚(php为例)
 
-```
+```php
 header("Access-Control-Allow-Origin:*");// 可以设置为详细的地址
 
 
@@ -49,7 +49,7 @@ IE8以上的版本跨域提交需要使用XDomainRequest 对象。。。。关�
 
 解决代码如下：
 
-```
+```javascript
 var xdr = new XDomainRequest();
         xdr.onload = function (e) {
             var data = $.parseJSON(xdr.responseText);
@@ -68,7 +68,7 @@ var xdr = new XDomainRequest();
 
 5.问题算是解决了get都可以了。还有问题IE11你又出来干嘛了。。。你居然没有XDomainRequest。多么坑爹啊。还好IE11可以用标准的提交跨域。只是判别的时候有点蛋疼。
 
-```
+```javascript
 navigator.userAgent.toLowerCase().match(/(msie\s|trident.*rv:)([\w.]+)/)
 ```
 这个能否判断IE11自己试着办哈。。
