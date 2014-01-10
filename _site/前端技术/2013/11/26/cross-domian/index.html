@@ -160,6 +160,14 @@
     
       
       	
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P"><span class="circle_icon"></span>IE下iframe跨域session丢失问题和解决<span class='date'>09 Jan 2014</span></a></li>
+      	
+      
+    
+  
+    
+      
+      	
       	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian" class="active"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
       	
       
@@ -248,16 +256,16 @@
 <p>分享一下最近用jQuery跨域请求的经历，希望能给大家一些关于这个方案的概念和资料。</p>
 
 <p>1.代码很简单</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">$.ajax({
-    url: &#39;http://www.tetequ.com&#39;,
-    type: &#39;GET&#39;
-}).done(function() {
-    console.log(&quot;success&quot;);
-}).fail(function() {
-    console.log(&quot;error&quot;);
-}).always(function() {
-    console.log(&quot;complete&quot;);
-});
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://www.tetequ.com&#39;</span><span class="p">,</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span>
+<span class="p">}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;complete&quot;</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <p>上去运行一下......
 当然不能用!什么都还没做呢，就想做跨域访问这么危险的事情,嘿嘿！</p>
@@ -267,7 +275,7 @@
 <p><img src="/blog-assets/2013-12-25/1.png" alt="网页设计"></p>
 
 <p>2.在服务器端做点手脚(php为例)</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">header(&quot;Access-Control-Allow-Origin:*&quot;);// 可以设置为详细的地址
+<div class="highlight"><pre><code class="php language-php" data-lang="php"><span class="x">header(&quot;Access-Control-Allow-Origin:*&quot;);// 可以设置为详细的地址</span>
 </code></pre></div>
 <p>3.好了现在Chrome中的Get已经可以运行了。</p>
 
@@ -280,23 +288,22 @@
 <p>IE8以上的版本跨域提交需要使用XDomainRequest 对象。。。。关于 XDomainRequest 请在这里查看详细，<a href="http://msdn.microsoft.com/en-us/library/cc288060(VS.85).aspx">http://msdn.microsoft.com/en-us/library/cc288060(VS.85).aspx</a></p>
 
 <p>解决代码如下：</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">var xdr = new XDomainRequest();
-        xdr.onload = function (e) {
-            var data = $.parseJSON(xdr.responseText);
-            if (data == null || typeof (data) == &#39;undefined&#39;) {
-                data = $.parseJSON(data.firstChild.textContent);
-            }
-            //success
-        };
-        xdr.onerror = function (e) {
-            //error
-        }
-
-        xdr.open(&quot;GET&quot;, url);
-        xdr.send();
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">xdr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XDomainRequest</span><span class="p">();</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">xdr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="k">typeof</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="c1">//success</span>
+        <span class="p">};</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//error</span>
+        <span class="p">}</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
 </code></pre></div>
 <p>5.问题算是解决了get都可以了。还有问题IE11你又出来干嘛了。。。你居然没有XDomainRequest。多么坑爹啊。还好IE11可以用标准的提交跨域。只是判别的时候有点蛋疼。</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">navigator.userAgent.toLowerCase().match(/(msie\s|trident.*rv:)([\w.]+)/)
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">match</span><span class="p">(</span><span class="sr">/(msie\s|trident.*rv:)([\w.]+)/</span><span class="p">)</span>
 </code></pre></div>
 <p>这个能否判断IE11自己试着办哈。。</p>
 

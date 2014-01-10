@@ -4,13 +4,97 @@
  <title>苏思洋的博客</title>
  <link href="http://ssy.me/atom.xml" rel="self"/>
  <link href="http://ssy.me"/>
- <updated>2013-12-25T12:07:44+08:00</updated>
+ <updated>2014-01-10T10:44:15+08:00</updated>
  <id>http://ssy.me</id>
  <author>
    <name>susu</name>
    <email>744276721@qq.com</email>
  </author>
 
+ 
+ <entry>
+   <title>IE下iframe跨域session丢失问题和解决</title>
+   <link href="http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P"/>
+   <updated>2014-01-09T00:00:00+08:00</updated>
+   <id>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P</id>
+   <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;今天碰到一个问题，就是在IE下，使用iFrame嵌入页面时，该页面的会话级别的cookie无法写入，导致服务端始终无法获取JSESSIONID，每次都是产生一个新的，使得Session无法使用。&lt;/p&gt;
+
+&lt;p&gt;通过网上大量的搜索发现原来IE的iframe有特殊之处, 默认情况下, IE如果发现iframe的域和父页面的域不同, 则会禁止iframe页面写入Cookie(Session在默认情况下就是通过Cookie保存一个SessionID的)。 &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog-assets/2014-1-9/1.jpg&quot; alt=&quot;网页设计&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;如果将IE设置-&amp;gt;隐私的级别调至最低, 也就是接受任何Cookie, 那么是运行正常的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog-assets/2014-1-9/2.jpg&quot; alt=&quot;网页设计&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;如果你按照上面操作并且你的问题解决了说明确定是IE这个特性导致的。
+接下来我们将解决这问题。&lt;/p&gt;
+
+&lt;p&gt;问题怎么出现的呢也许你会好奇。&lt;/p&gt;
+
+&lt;p&gt;原因是&lt;strong&gt;&lt;em&gt;P3P&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;从本质上来说，P3P 策略是由一系列多选项问题的答案组成的，因此，它并不总像一个人类可读的隐私策略那样包含许多信息细节（例如，用英语或者其他某种口语语言写成的策略是用来让人阅读的,而不是让计算机识别的）。P3P策略的标准格式使它便于自动处理。同 样 ，P3P规范也包含有用于请求和传输P3P策略的协议.P3P协议所基于的HTTP协议与 Web 浏览器用来与 Web服务器进行通信的 HTTP 协议相同。如图 1-1 所示，P3P 的用户代理使用标准的 HTTP 请求从 Web 站点上一个众所周知的地方获取 P3P 策略引用文件，并发送给发出请求的用户。这个策略引用文件指出了Web站点上各个部分所应用的P3P策略文件的位置。整个站点有可能只应用了一种策略，也可能是网站的不同部分分别应用了几种策略。这样用户代理就可以根据用户的选择来获取合适的策略，将其解析出来并采取相应的动作&lt;/p&gt;
+
+&lt;p&gt;P3P 也允许站点在其他位置放置策略引用文件。在这些情况下，站点在声明策略引用文件的位置时，必须使用一个特定的 HTTP 报头，或者在应用了 P3P 策略的html 文件内嵌入一个 link 标 记 。
+不论在何时设置cookie都可以用特定的HTTP报头来传送一个可选的 P3P 简洁策略.简洁策略是完整 P3P 策略的一个短小摘要，仅描述了与cooki e 相关的数据处理方式，并且不需要P3P 策略的完整的表达性能。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;如何使Web站点支持P3P:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;从技术角度看，使 Web站点支持 P3P 是一个很容易的过程。但是，它要求网络运营商在审视数据处理方式时比以前更加仔细，并要求他们协调域内各个主机上的策略和处理方式。以下是如何使站点支持P3P 技术的具体步骤。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;创建一个隐私策略。&lt;/li&gt;
+&lt;li&gt;分析 cookie 的使用情况以及您的站点上的第三方内容。&lt;/li&gt;
+&lt;li&gt;确定要对整个站点应用一个P3P策略还是对站点的不同部分应用不同的P3P 策略。&lt;/li&gt;
+&lt;li&gt;为站点创建一个或几个 P3P 策略。&lt;/li&gt;
+&lt;li&gt;为站点创建一个策略引用文件。&lt;/li&gt;
+&lt;li&gt;为 P3P 配置服务器。&lt;/li&gt;
+&lt;li&gt;测试站点，以确定它确实支持 P3P。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;大多数支持P3P的Web站点会在每台服务器上放置一个P3P策略引用文件，同时它还会在中央服务器上放置一个或多个P3P策略。这些站点也会将自己的服务器配置为用户在设置 cookie 时发送 P3P 的简洁策略。P3P 策略包括以下信息：&lt;/p&gt;
+
+&lt;p&gt;● 如何与拥有该站点的公司、组织或个人进行联系的信息。&lt;/p&gt;
+
+&lt;p&gt;● 用户是否可以查找该站点的数据库中保存了自己的哪些个人信息。&lt;/p&gt;
+
+&lt;p&gt;● 如何解决与站点之间有关隐私的纠纷（如客户服务台、隐私封印以及与隐私相关的法律等）。&lt;/p&gt;
+
+&lt;p&gt;● 所收集数据的种类。&lt;/p&gt;
+
+&lt;p&gt;● 所收集数据的使用方式，以及用户是否能选择接受或拒绝这些用途。&lt;/p&gt;
+
+&lt;p&gt;● 信息是否会被共享以及何时被共享，用户是否有选择的权力。&lt;/p&gt;
+
+&lt;p&gt;● 对所收集的用户信息进行定期清除的策略。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HTTP Response Header :&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;参考资源:&lt;a href=&quot;http://www.w3.org/2002/04/P3Pv1-header.html&quot;&gt;http://www.w3.org/2002/04/P3Pv1-header.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Compact Policies(简洁策略)&lt;/p&gt;
+
+&lt;p&gt;简洁策略,本质上就是P3P策略的一个摘要. 他们的作用是,使用户代理,可以快速敏捷的获取到站点的P3P策略信息,所以是对性能有益的. &lt;/p&gt;
+
+&lt;p&gt;我们常用的简洁策略的 P3P头为 -   P3P : CP=CAO PSA OUR&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;总结下浏览器支持情况：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog-assets/2014-1-9/3.png&quot; alt=&quot;网页设计&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;既然知道这么多了，我们来解决问题吧。
+以PHP为例子
+解决这些问题，归根结底只需要一条语句设置一下header，在PHP中，如下：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;php language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;x&quot;&gt;header(&amp;#39;P3P: CP=&amp;quot;CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR&amp;quot;&amp;#39;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;PS:如果是使用session的话，这条语句请使用在session_start();之前，如果是使用cookie，请在setcookie之前设置header。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当然，比较容易想到。另外的解决办法就是在URL中加入sessionid。对此就不举例了。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>JavaScript 跨域访问的问题和解决过程</title>
@@ -22,16 +106,16 @@
 &lt;p&gt;分享一下最近用jQuery跨域请求的经历，希望能给大家一些关于这个方案的概念和资料。&lt;/p&gt;
 
 &lt;p&gt;1.代码很简单&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;$.ajax({
-    url: &amp;#39;http://www.tetequ.com&amp;#39;,
-    type: &amp;#39;GET&amp;#39;
-}).done(function() {
-    console.log(&amp;quot;success&amp;quot;);
-}).fail(function() {
-    console.log(&amp;quot;error&amp;quot;);
-}).always(function() {
-    console.log(&amp;quot;complete&amp;quot;);
-});
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http://www.tetequ.com&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;success&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;always&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;complete&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;上去运行一下......
 当然不能用!什么都还没做呢，就想做跨域访问这么危险的事情,嘿嘿！&lt;/p&gt;
@@ -41,7 +125,7 @@
 &lt;p&gt;&lt;img src=&quot;/blog-assets/2013-12-25/1.png&quot; alt=&quot;网页设计&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;2.在服务器端做点手脚(php为例)&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;header(&amp;quot;Access-Control-Allow-Origin:*&amp;quot;);// 可以设置为详细的地址
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;php language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;x&quot;&gt;header(&amp;quot;Access-Control-Allow-Origin:*&amp;quot;);// 可以设置为详细的地址&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;3.好了现在Chrome中的Get已经可以运行了。&lt;/p&gt;
 
@@ -54,23 +138,22 @@
 &lt;p&gt;IE8以上的版本跨域提交需要使用XDomainRequest 对象。。。。关于 XDomainRequest 请在这里查看详细，&lt;a href=&quot;http://msdn.microsoft.com/en-us/library/cc288060(VS.85).aspx&quot;&gt;http://msdn.microsoft.com/en-us/library/cc288060(VS.85).aspx&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;解决代码如下：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;var xdr = new XDomainRequest();
-        xdr.onload = function (e) {
-            var data = $.parseJSON(xdr.responseText);
-            if (data == null || typeof (data) == &amp;#39;undefined&amp;#39;) {
-                data = $.parseJSON(data.firstChild.textContent);
-            }
-            //success
-        };
-        xdr.onerror = function (e) {
-            //error
-        }
-
-        xdr.open(&amp;quot;GET&amp;quot;, url);
-        xdr.send();
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xdr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XDomainRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;xdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parseJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;responseText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parseJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firstChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;textContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//success&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;xdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onerror&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//error&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;xdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;GET&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;xdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;5.问题算是解决了get都可以了。还有问题IE11你又出来干嘛了。。。你居然没有XDomainRequest。多么坑爹啊。还好IE11可以用标准的提交跨域。只是判别的时候有点蛋疼。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;navigator.userAgent.toLowerCase().match(/(msie\s|trident.*rv:)([\w.]+)/)
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;userAgent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toLowerCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/(msie\s|trident.*rv:)([\w.]+)/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;这个能否判断IE11自己试着办哈。。&lt;/p&gt;
 
