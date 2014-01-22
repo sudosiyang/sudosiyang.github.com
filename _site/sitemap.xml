@@ -3,56 +3,56 @@
 	
 		<url>
 				<loc>http://ssy.me/atom.xml</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/feed.xml</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/index.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/other.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/qianduan.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/sitemap.xml</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/tec_css.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/view_des.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:35:43 +0800</lastmod>
+				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>

@@ -188,28 +188,48 @@
 <p>正常版，可在nodejs中使用</p>
 
 <div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">html_encode</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+
     <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
     <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;/g</span><span class="p">,</span> <span class="s2">&quot;&amp;gt;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;/g</span><span class="p">,</span> <span class="s2">&quot;&amp;lt;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&gt;/g</span><span class="p">,</span> <span class="s2">&quot;&amp;gt;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span> <span class="s2">&quot;&amp;nbsp;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\&#39;/g</span><span class="p">,</span> <span class="s2">&quot;&amp;#39;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\&quot;/g</span><span class="p">,</span> <span class="s2">&quot;&amp;quot;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/\n/g</span><span class="p">,</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">);</span>
+
     <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">html_decode</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+
     <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
     <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;gt;/g</span><span class="p">,</span> <span class="s2">&quot;&amp;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;lt;/g</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;gt;/g</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;nbsp;/g</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;#39;/g</span><span class="p">,</span> <span class="s2">&quot;\&#39;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;quot;/g</span><span class="p">,</span> <span class="s2">&quot;\&quot;&quot;</span><span class="p">);</span>
+
     <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;br&gt;/g</span><span class="p">,</span> <span class="s2">&quot;\n&quot;</span><span class="p">);</span>
+
     <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
