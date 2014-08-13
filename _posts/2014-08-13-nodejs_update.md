@@ -9,6 +9,7 @@ tags : 前端 node
 
 node有一个模块叫n（这名字可够短的。。。），是专门用来管理node.js的版本的。
 首先安装n模块：
+
 ```
 
 npm install -g n
