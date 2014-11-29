@@ -31,3 +31,6 @@ animation-fill-mode: both;
 	color: #fff;
 	font-size: 13px;
 }
+.ds-post-likes{
+	display:none;
+}
