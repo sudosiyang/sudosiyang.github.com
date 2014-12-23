@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>自动垃圾回收 | Go 语言编程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./02.2.2.html" />
+    
+    
+    <link rel="prev" href="./02.2.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="2.2.1" data-basepath="." data-revision="1419313201588">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         简介
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="01.html">
+            
+                
+                    <a href="./01.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         前言
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="02.html">
+            
+                
+                    <a href="./02.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         初识Go语言
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="02.1.html">
+            
+                
+                    <a href="./02.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         语言简史
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="02.2.html">
+            
+                
+                    <a href="./02.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         语言特性
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="2.2.1" data-path="02.2.1.html">
+            
+                
+                    <a href="./02.2.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                         自动垃圾回收
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2.2" data-path="02.2.2.html">
+            
+                
+                    <a href="./02.2.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                         更丰富的内置类型
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2.3" data-path="02.2.3.html">
+            
+                
+                    <a href="./02.2.3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                         函数多返回值
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2.4" data-path="02.2.4.html">
+            
+                
+                    <a href="./02.2.4.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.4.</b>
+                        
+                         错误处理
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2.5" data-path="02.2.5.html">
+            
+                
+                    <a href="./02.2.5.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.5.</b>
+                        
+                         匿名函数和闭包
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2.6" data-path="02.2.6.html">
+            
+                
+                    <a href="./02.2.6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.6.</b>
+                        
+                         类型和接口
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Go 语言编程</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_7">
+                    
+                        <h1 id="">自动垃圾回收</h1>
+<p>我们可以先看下不支持垃圾回收的语言的资源管理方式，以下为一小段c语言代码:</p>
+<pre><code>void foo()
+{
+  char* p = new char[128];
+  ... // 对p指向的内存块进行赋值
+  func1(p); //使用内存指针
+  delete[] p;
+}
+</code></pre><p>各种非预期的原因，比如由于开发者的疏忽导致最后的de工e七e语句没有被调用，都会引发经典而恼人的内存泄露问题。假如该函数被调用得非常频繁，那么我们观察该进程执行时，会发现该进程所占用的内存会一直疯长，直至占用所有系统内存并导致程序崩溃，而如果泄露的是系统资源的话，那么后果还会更加严重，最终很有可能导致系统崩溃。</p>
+<p>手动管理内存的另外一个问题就是由于指针的到处传递而无法确定何时可以释放该指针所指向的内存块。假如代码中某个位置释放了内存，而另一些地方还在使用指向这块内存的指针，那么这些指针就变成了所谓的“野指针”( wild pointer)或者“悬空指针”( dangling pointer )，对这些指针进行的任何读写操作都会导致不可预料的后果。</p>
+<p>由于其杰出的效率，C和C++语言在非常长的时间内都作为服务端系统的主要开发语言，比如Apache , Nginx和MySQL等著名的服务器端软件就是用C和C++开发的。然而，内存和资源管理一直是一个让人非常抓狂的难题。服务器的崩溃十有八九就是因为不正确的内存和资源管理导致，更讨厌的是这种内存和资源管理问题即使被发现了，也很难定位到具体的错误地点，导致无数程序员通宵达旦地调试程序。</p>
+<p>这个问题在多年里被不同人用不同的方式来试图解决，并诞生了一些非常著名的内存检查工具，比如Rational Purify, Compuware BoundsChecker和英特尔的ParallelInspector等。从设计方法的角度也衍生了类似于内存引用计数之类的方法(通常被称为“智能指针”)，后续在Windows平台上标准化的COM出现的一个重要原因就是为了解决内存管理的难题。但是事实证明，这些工具和方法虽然能够在一定程度上辅助开发者，但并没法让开发者避免通宵调试这样又苦又累的工作。</p>
+<p>到目前为止，内存泄露的最佳解决方案是在语言级别引入自动垃圾回收算法(GarbageCollecrion，简称GC )。所谓垃圾回收，即所有的内存分配动作都会被在运行时记录，同时任何对该内存的使用也都会被记录，然后垃圾回收器会对所有已经分配的内存进行跟踪监测，一旦发现有些内存已经不再被任何人使用，就阶段性地回收这些没人用的内存。当然，因为需要尽量最小化垃圾回收的性能损耗，以及降低对正常程序执行过程的影响，现实中的垃圾回收算法要比这个复杂得多，比如为对象增加年龄属性等，但基本原理都是如此。</p>
+<p>自动垃圾回收在C/C++社区一直作为一柄双刃剑看待，虽然到C++0x(后命名为C++11 )正式发布时，这个呼声颇高的特性总算是被加入了，但按C++之父的说法，由于C++本身过于强大，导致在C++中支持垃圾收集变成了一个困难的工作。假如C++支持垃圾收集，以下的代码片段在运行时就会是一个严峻的考验:</p>
+<pre><code>int* p = new int;
+p += 10; //对指针进行了偏移，因此那块内存不再被引用
+//....... 这里可能会发生针对这块in七内存的垃圾收集
+p -= 10; //咦，居然又偏移到原来的位置
+*p = 10; //如果有垃圾收集，这里就无法保证可以正常运行了
+</code></pre><p>微软的C++/CLI算是用一种偏门的方式让C++程序员们有机会品尝一下垃圾刚文功能的鲜美味道。在C/C++之后出现的新语言，比如Java和C#等，基本上都已经自带自动垃圾回收功能。</p>
+<p>Go语言作为一门新生的开发语言，当然不能忽略内存管理这个问题。又因为Go语言没有C++这么“强大”的指针计算功能，因此可以很自然地包含垃圾回收功能。因为垃圾回收功能的支持，开发者无需担心所指向的对象失效的问题，因此Go语言中不需要delete关键字，也不需要free()方法来明确释放内存。例如，对于以上的这个C语言例子，如果使用Go语言实现，我们就完全不用考虑何时需要释放之前分配的内存的问题，系统会自动帮我们判断，并在合适的时候(比如CPU相对空闲的时候)进行自动垃圾收集工作。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./02.2.html" class="navigation navigation-prev " aria-label="Previous page: 语言特性"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./02.2.2.html" class="navigation navigation-next " aria-label="Next page: 更丰富的内置类型"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
