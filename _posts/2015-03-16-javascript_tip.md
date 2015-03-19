@@ -84,3 +84,5 @@ Chrome 打开 DevTools 之后，右击或者一直摁住刷新键，会出来清
  Chrome DevTools 的 Network 面板现在支持使用「-」反向搜索了。例如输入「-.js」会筛选出所有非 JS 的请求。
  
 在 Chrome 和 Safari 的开发中工具中，可以按「H」键快速隐藏元素。
+
+chrome开发工具技巧：用放大镜选中了某个DOM之后，在console中输入$0，就得到当前DOM的引用，临时调试起来就方便很多了！
