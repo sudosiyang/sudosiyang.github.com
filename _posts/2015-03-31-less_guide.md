@@ -10,7 +10,7 @@ tags : 前端 js
 
 该文档主要的设计目标是提高 Less 文档的团队一致性与可维护性。
 
-Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/ecomfe/spec/blob/master/css-style-guide.md) 保持一致。
+Less 代码的基本规范和原则与 [CSS 编码规范](../css_guide) 保持一致。
 
 
 ### 要求
