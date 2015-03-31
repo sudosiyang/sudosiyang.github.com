@@ -5,12 +5,19 @@ category : 前端技术
 tags : 前端 js
 ---
 ===
+# Less 编码规范 (1.1)
 
 ## 简介
 
 该文档主要的设计目标是提高 Less 文档的团队一致性与可维护性。
 
-Less 代码的基本规范和原则与 [CSS 编码规范](../css_guide) 保持一致。
+Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/ecomfe/spec/blob/master/css-style-guide.md) 保持一致。
+
+### 编撰
+
+erik、顾轶灵、黄后锦、李玉北、赵雷。
+
+本文档由`商业运营体系前端技术组`审校发布。
 
 ### 要求
 
