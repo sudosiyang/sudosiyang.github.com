@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  JavaScript规范
+title:  Less规范
 category : 前端技术
 tags : 前端 js
 ---
 ===
-# Less 编码规范 (1.1)
 
 ## 简介
 
@@ -16,7 +15,7 @@ Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/eco
 
 ### 要求
 
-在本文档中，使用的关键字会以中文+括号包含的关键字英文表示：必须（MUST）。关键字"MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL"被定义在rfc2119中。
+在本文档中，使用的关键字会以中文+括号包含的关键字英文表示：必须（MUST）。关键字"MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL"
 
 ***
 
@@ -34,7 +33,7 @@ Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/eco
 2. 变量声明
 3. 样式声明
 
-```less
+```css
 // good
 @import "est/all.less";
 
@@ -52,7 +51,7 @@ Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/eco
 
 `@import` 语句引用的文件*必须*（MUST）写在一对引号内，`.less` 后缀*不得*（MUST NOT）省略（与引入 CSS 文件时的路径格式一致）。引号使用 `'` 和 `"` 均可，但在同一项目内*必须*（MUST）统一。
 
-```less
+```css
 // bad
 @import 'est/all';
 @import "my/mixins.less";
@@ -76,7 +75,7 @@ Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/eco
 
 在用逗号（`,`）分隔的列表（Less 函数参数列表、以 `,` 分隔的属性值等）中，逗号后*必须*（MUST）保留一个空格，逗号前*不得*（MUST NOT）保留空格。
 
-```less
+```css
 // bad
 .box{
     @w:50px;
@@ -101,7 +100,7 @@ Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/eco
 
 `+` / `-` / `*` / `/` 四个运算符两侧*必须*（MUST）保留一个空格。`+` / `-` 两侧的操作数*必须*（MUST）有相同的单位，如果其中一个是变量，另一个数值*必须*（MUST）书写单位。
 
-```less
+```css
 // bad
 @a: 200px;
 @b: (@a+100)*2;
@@ -115,7 +114,7 @@ Less 代码的基本规范和原则与 [CSS 编码规范](https://github.com/eco
 
 Mixin 和后面的空格之间*不得*（MUST NOT）包含空格。在给 mixin 传递参数时，在参数分隔符（`,` / `;`）后*必须*（MUST）保留一个空格：
 
-```less
+```css
 // bad
 .box {
     .size(30px,20px);
@@ -135,7 +134,7 @@ Mixin 和后面的空格之间*不得*（MUST NOT）包含空格。在给 mixin 
 
 当多个选择器共享一个声明块时，每个选择器声明*必须*（MUST）独占一行。
 
-```less
+```css
 // bad
 h1, h2, h3 {
     font-weight: 700;
@@ -163,7 +162,7 @@ Class 命名不得以样式信息进行描述，如 `.float-right`、`text-red` 
 
 对于处于 `(0, 1)` 范围内的数值，小数点前的 `0` *可以*（MAY）省略，同一项目中*必须*（MUST）保持一致。
 
-```less
+```css
 // bad
 transition-duration: 0.5s, .7s;
 
@@ -175,7 +174,7 @@ transition-duration: .5s, .7s;
 
 当属性值为 0 时，*必须*（MUST）省略可省的单位（长度单位如 `px`、`em`，不包括时间、角度等如 `s`、`deg`）。
 
-```less
+```css
 // bad
 margin-top: 0px;
 
@@ -187,7 +186,7 @@ margin-top: 0;
 
 颜色定义*必须*（MUST）使用 `#rrggbb` 格式定义，并在可能时*尽量*（SHOULD）缩写为 `#rgb` 形式，且避免直接使用颜色名称与 `rgb()` 表达式。
 
-```less
+```css
 // bad
 border-color: red;
 color: rgb(254, 254, 254);
@@ -201,7 +200,7 @@ color: #fefefe;
 
 同一属性有不同私有前缀的，*尽量*（SHOULD）按前缀长度降序书写，标准形式*必须*（MUST）写在最后。且这一组属性以第一条的位置为准，*尽量*（SHOULD）按冒号的位置对齐。
 
-```less
+```css
 // good
 .box {
     -webkit-transform: rotate(30deg);
@@ -228,7 +227,7 @@ color: #fefefe;
 
 但是需注意的是，*尽量*（SHOULD）仅在必须区分上下文时才引入嵌套关系（在嵌套书写前先考虑如果不能嵌套，会如何书写选择器）。
 
-```less
+```css
 // bad
 .main .title {
   font-weight: 700;
@@ -278,7 +277,7 @@ Less 的变量值总是以同一作用域下最后一个同名变量为准，务
 
 变量命名*必须*（MUST）采用 `@foo-bar` 形式，*不得*（MUST NOT）使用 `@fooBar` 形式。
 
-```less
+```css
 // bad
 @sidebarWidth: 200px;
 @width:800px;
@@ -294,7 +293,7 @@ Less 的变量值总是以同一作用域下最后一个同名变量为准，务
 
 使用继承时，如果在声明块内书写 `:extend` 语句，*必须*（MUST）写在开头：
 
-```less
+```css
 // bad
 .sub {
     color: red;
@@ -314,7 +313,7 @@ Less 的变量值总是以同一作用域下最后一个同名变量为准，务
 
 在定义 mixin 时，如果 mixin 名称不是一个需要使用的 className，*必须*（MUST）加上括号，否则即使不被调用也会输出到 CSS 中。
 
-```less
+```css
 // bad
 .big-text {
     font-size: 2em;
@@ -336,7 +335,7 @@ h3 {
 
 如果混入的是本身不输出内容的 mixin，*必须*（MUST）在 mixin 后添加括号（即使不传参数），以区分这是否是一个 className（修改以后是否会影响 HTML）。
 
-```less
+```css
 // bad
 .box {
     .clearfix;
@@ -379,7 +378,7 @@ Mixin 的参数分隔符使用 `,` 和 `;` 均可，但在同一项目中*必须
 
 单行注释*尽量*（SHOULD）使用 `//` 方式。
 
-```less
+```css
 // Hide everything
 * {
     display: none;
