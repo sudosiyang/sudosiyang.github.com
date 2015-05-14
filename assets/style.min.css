@@ -34,3 +34,8 @@ animation-fill-mode: both;
 .ds-post-likes{
 	display:none;
 }
+blockquote{
+    border-left: 4px solid #F8632E;
+    padding-left: 20px;
+    border-radius: 3px;
+}
