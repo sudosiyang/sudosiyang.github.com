@@ -5,7 +5,7 @@ category : 视觉设计
 tags : 用户 状态 按钮
 ---
 
-===
+
 ![Alt text](/blog-assets/2013-10-04/banner.jpg)
 
 

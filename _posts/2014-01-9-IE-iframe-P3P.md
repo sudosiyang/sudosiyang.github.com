@@ -4,7 +4,7 @@ title:  IE下iframe跨域session丢失问题和解决
 category : 前端技术
 tags : 前端 P3P
 ---
-===
+
 今天碰到一个问题，就是在IE下，使用iFrame嵌入页面时，该页面的会话级别的cookie无法写入，导致服务端始终无法获取JSESSIONID，每次都是产生一个新的，使得Session无法使用。
 
 通过网上大量的搜索发现原来IE的iframe有特殊之处, 默认情况下, IE如果发现iframe的域和父页面的域不同, 则会禁止iframe页面写入Cookie(Session在默认情况下就是通过Cookie保存一个SessionID的)。 

@@ -4,7 +4,7 @@ title:  Canvas API
 category : 前端技术
 tags : 前端 HTML5
 ---
-===
+
 ## 概述
 
 Canvas API（画布）用于在网页实时生成图像，并且可以操作图像内容，基本上它是一个可以用JavaScript操作的位图（bitmap）。

@@ -4,7 +4,7 @@ title:  JavaScript 的HTML转义方法
 category : 前端技术
 tags : 前端 P3P
 ---
-===
+
 此方法用来将用户输入内容中的尖括号、引号等进行转义
 
 正常版，可在nodejs中使用

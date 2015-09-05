@@ -4,7 +4,7 @@ title: javascript 小技巧
 category : 前端技术
 tags : 前端 杂谈
 ---
-===
+
 
 
 **字符串逆序**
