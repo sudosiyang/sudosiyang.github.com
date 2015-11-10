@@ -2,7 +2,7 @@
 layout: post
 title: requestAnimationFrame 详解
 category : 前端技术
-tags : 前端 CSS
+tags : 前端 javascript
 ---
 浏览器中动画有两种实现形式：通过申明元素实现（如SVG中的元素）和脚本实现。
 
@@ -46,7 +46,7 @@ requestAnimationFrame 就是浏览器什么要开始绘制了浏览器自己知�
 
  
 
-最简单：
+####最简单：
 
 ```js
 
@@ -60,7 +60,7 @@ setInterval(draw, 1000/FPS);
 
  
 
-成熟做法：
+####成熟做法：
 
 引入requestAnimationFrame，这个方法是用来在页面重绘之前，通知浏览器调用一个指定的函数，以满足开发者操作动画的需求。
 
@@ -81,7 +81,7 @@ function draw() {
 
 接下来需要考虑如何控制帧频。
 
-简单做法：
+####简单做法：
 
 ```js
 var fps = 30;
@@ -99,7 +99,7 @@ tick();
 
  
 
-自行控制时间跨度：
+####自行控制时间跨度：
 
 ```js
 var fps = 30;
@@ -113,7 +113,9 @@ function tick() {
 　　now = Date.now();
 　　delta = now - then;
 　　if (delta > interval) {
-　　　　// 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
+　　　　// 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。
+　　　　// 例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112>100，需要7次才实际绘制一次。
+　　　　// 这个情况下，实际10帧需要112*10=1120ms>1000ms才绘制完成。
 　　　　then = now - (delta % interval);
 　　　　draw(); // ... Code for Drawing the Frame ...
 　　}
@@ -124,7 +126,7 @@ tick();
 
  
 
-针对低版本浏览器再优化：
+####针对低版本浏览器再优化：
 
 如果浏览器没有requestAnimationFrame函数，实际底层还只能用setTimeout模拟，上边做的都是无用功。那么可以再改进一下。
 
