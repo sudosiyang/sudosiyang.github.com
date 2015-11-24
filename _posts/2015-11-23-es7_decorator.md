@@ -43,7 +43,7 @@ greet('Decorator!')
 ES7 中的 decorator 同样借鉴了这个语法糖，不过依赖于 ES5 的 Object.defineProperty 方法 。
 
 ##浅出
-=====
+
 
 想必大家都该玩过LOL吧。那么我就以英雄联盟英雄为例子。
 
