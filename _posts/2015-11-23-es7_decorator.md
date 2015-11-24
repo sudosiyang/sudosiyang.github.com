@@ -159,5 +159,5 @@ console.log(`当前状态 ===> ${_德玛西亚}`);
 好啦完整的德玛西亚出来了。
 
 
->代码直接放在 http://babeljs.io/repl/ 中运行查看结果，记得勾选Experimental选项和Evaluate选项
+>代码直接放在 [http://babeljs.io/repl/]() 中运行查看结果，记得勾选Experimental选项和Evaluate选项
 
