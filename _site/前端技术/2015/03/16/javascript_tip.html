@@ -395,39 +395,42 @@
 					<div id="content">
 						<h3 id="生成随机字符串">生成随机字符串</h3>
 
-<p>利用<code>Math.random</code>和<code>toString</code>生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了<code>toString</code>方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
+<p>利用<code class="highlighter-rouge">Math.random</code>和<code class="highlighter-rouge">toString</code>生成随机字符串，来自前一阵子看到的一篇博文。这里的技巧是利用了<code class="highlighter-rouge">toString</code>方法可以接收一个基数作为参数的原理，这个基数从2到36封顶。如果不指定，默认基数是10进制。略屌！</p>
 
-<pre><code class="language-javascript">function generateRandomAlphaNum(len) {
-    var rdmString = "";
-    for (; rdmString.length &lt; len; rdmString += Math.random().toString(36).substr(2));
-    return rdmString.substr(0, len);
-}
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">generateRandomAlphaNum</span><span class="p">(</span><span class="nx">len</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">rdmString</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(;</span> <span class="nx">rdmString</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">rdmString</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">(</span><span class="mi">36</span><span class="p">).</span><span class="nx">substr</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
+    <span class="k">return</span> <span class="nx">rdmString</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">len</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="整数的操作">整数的操作</h3>
 
 <p>JavaScript中是没有整型概念的，但利用好位操作符可以轻松处理，同时获得效率上的提升。</p>
 
-<p><code>|0和~~</code>是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的parseInt,Math.round 要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
+<p><code class="highlighter-rouge">|0和~~</code>是很好的一个例子，使用这两者可以将浮点转成整型且效率方面要比同类的parseInt,Math.round 要快。在处理像素及动画位移等效果的时候会很有用。性能比较见此。</p>
 
-<pre><code class="language-javascript">var foo = (12.4 / 4.13) | 0;//结果为3
-var bar = ~~(12.4 / 4.13);//结果为3
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.4</span> <span class="o">/</span> <span class="mf">4.13</span><span class="p">)</span> <span class="o">|</span> <span class="mi">0</span><span class="p">;</span><span class="c1">//结果为3</span>
+<span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="o">~~</span><span class="p">(</span><span class="mf">12.4</span> <span class="o">/</span> <span class="mf">4.13</span><span class="p">);</span><span class="c1">//结果为3</span>
 </code></pre>
+</div>
 
-<p>顺便说句，<code>!!</code>将一个值方便快速转化为布尔值 <code>!!window===true</code> 。</p>
+<p>顺便说句，<code class="highlighter-rouge">!!</code>将一个值方便快速转化为布尔值 <code class="highlighter-rouge">!!window===true</code> 。</p>
 
 <h3 id="if语句的变形">If语句的变形</h3>
 
 <p>当你需要写一个if语句的时候，不妨尝试另一种更简便的方法，用JavaScript中的逻辑操作符来代替。</p>
 
-<pre><code class="language-javascript">var day=(new Date).getDay()===0;
-//传统if语句
-if (day) {
-	alert('Today is Sunday!');
-};
-//运用逻辑与代替if
-day&amp;&amp;alert('Today is Sunday!');
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">day</span><span class="o">=</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">).</span><span class="nx">getDay</span><span class="p">()</span><span class="o">===</span><span class="mi">0</span><span class="p">;</span>
+<span class="c1">//传统if语句</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">day</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">alert</span><span class="p">(</span><span class="s1">'Today is Sunday!'</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">//运用逻辑与代替if</span>
+<span class="nx">day</span><span class="o">&amp;&amp;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Today is Sunday!'</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <p>比如上面的代码，首先得到今天的日期，如果是星期天，则弹窗，否则什么也不做。我们知道逻辑操作存在短路的情况，对于逻辑与表达式，只有两者都真才结果才为真，如果前面的day变量被判断为假了，那么对于整个与表达式来说结果就是假，所以就不会继续去执行后面的alert了，如果前面day为真，则还要继续执行后面的代码来确定整个表达式的真假。利用这点达到了if的效果。</p>
 
@@ -435,19 +438,21 @@ day&amp;&amp;alert('Today is Sunday!');
 
 <p>下面的代码已经不言自明了，没什么好多说的。</p>
 
-<pre><code class="language-javascript">if (window.location != window.parent.location) window.parent.location = window.location;
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">!=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">location</span><span class="p">)</span> <span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
 
-console.table
+<span class="nx">console</span><span class="p">.</span><span class="nx">table</span>
 </code></pre>
+</div>
 
 <h3 id="chrome专属ie绕道的console方法">Chrome专属，IE绕道的console方法</h3>
 
 <p>可以将JavaScript关联数组以表格形式输出到浏览器console，效果很惊赞，界面很美观。</p>
 
-<pre><code class="language-javascript">//采购情况
-var data = [{'品名': '杜雷斯', '数量': 4}, {'品名': '冈本', '数量': 3}];
-console.table(data);
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//采购情况</span>
+<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">'品名'</span><span class="p">:</span> <span class="s1">'杜雷斯'</span><span class="p">,</span> <span class="s1">'数量'</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">'品名'</span><span class="p">:</span> <span class="s1">'冈本'</span><span class="p">,</span> <span class="s1">'数量'</span><span class="p">:</span> <span class="mi">3</span><span class="p">}];</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">table</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <h3 id="浏览器小技巧">浏览器小技巧</h3>
 

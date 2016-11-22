@@ -417,7 +417,7 @@
 
 <p>即使向其传递毫秒为单位的参数，它们也不能达到ms的准确性。这是因为javascript是单线程的，可能会发生阻塞</p>
 
-<p>jQuery会有一个全局设置<code>jQuery.fx.interval = 13</code>设置动画每秒运行帧数。</p>
+<p>jQuery会有一个全局设置<code class="highlighter-rouge">jQuery.fx.interval = 13</code>设置动画每秒运行帧数。</p>
 
 <p>默认是13毫秒。该属性值越小，在速度较快的浏览器中（例如，Chrome），动画执行的越流畅，但是会影响程序的性能并且占用更多的 CPU 资源</p>
 
@@ -427,7 +427,7 @@
   <p>开发着并不知道下一刻绘制动画的最佳时机是什么时候</p>
 </blockquote>
 
-<p><code>requestAnimationFrame</code> 是专门为实现高性能的帧动画而设计的一个API</p>
+<p><code class="highlighter-rouge">requestAnimationFrame</code> 是专门为实现高性能的帧动画而设计的一个API</p>
 
 <p>说简单点</p>
 
@@ -441,12 +441,13 @@ requestAnimationFrame 就是浏览器什么要开始绘制了浏览器自己知�
 
 <h4 id="最简单">最简单：</h4>
 
-<pre><code class="language-js">
-var FPS = 60;
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">FPS</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
 
-setInterval(draw, 1000/FPS);
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">draw</span><span class="p">,</span> <span class="mi">1000</span><span class="o">/</span><span class="nx">FPS</span><span class="p">);</span>
 
 </code></pre>
+</div>
 
 <p>这个简单做法，如果draw带有大量逻辑计算，导致计算时间超过帧等待时间时，将会出现丢帧。除外，如果FPS太高，超过了当时浏览器的重绘频率，将会造成计算浪费，例如浏览器实际才重绘2帧，但却计算了3帧，那么有1帧的计算就浪费了。</p>
 
@@ -456,11 +457,12 @@ setInterval(draw, 1000/FPS);
 
 <p>这个函数类似setTimeout，只调用一次。</p>
 
-<pre><code class="language-js">function draw() {
-        requestAnimationFrame(draw);
-        // ... Code for Drawing the Frame ...
-}
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">draw</span><span class="p">);</span>
+        <span class="c1">// ... Code for Drawing the Frame ... </span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>递归调用，就可以实现定时器。</p>
 
@@ -470,97 +472,101 @@ setInterval(draw, 1000/FPS);
 
 <h4 id="简单做法">简单做法：</h4>
 
-<pre><code class="language-js">var fps = 30;
-function tick() {
-　　setTimeout(function() {
-　　　　requestAnimationFrame(tick);
-　　　　draw(); // ... Code for Drawing the Frame ...
-　　}, 1000 / fps);
-}
-tick();
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fps</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">　　</span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">　　　　</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
+<span class="err">　　　　</span><span class="nx">draw</span><span class="p">();</span> <span class="c1">// ... Code for Drawing the Frame ...</span>
+<span class="err">　　</span><span class="p">},</span> <span class="mi">1000</span> <span class="o">/</span> <span class="nx">fps</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">tick</span><span class="p">();</span>
 </code></pre>
+</div>
 
 <p>这种做法，比较直观的可以发现，每一次setTimeout执行的时候，都还要再等到下一个requestAnimationFrame事件到达，累积下去会造成动画变慢。</p>
 
 <h4 id="自行控制时间跨度">自行控制时间跨度：</h4>
 
-<pre><code class="language-js">var fps = 30;
-var now;
-var then = Date.now();
-var interval = 1000/fps;
-var delta;
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fps</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">now</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">/</span><span class="nx">fps</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">delta</span><span class="p">;</span>
 
-function tick() {
-　　requestAnimationFrame(tick);
-　　now = Date.now();
-　　delta = now - then;
-　　if (delta &gt; interval) {
-　　　　// 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。
-　　　　// 例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112&gt;100，需要7次才实际绘制一次。
-　　　　// 这个情况下，实际10帧需要112*10=1120ms&gt;1000ms才绘制完成。
-　　　　then = now - (delta % interval);
-　　　　draw(); // ... Code for Drawing the Frame ...
-　　}
-}
-tick();
+<span class="kd">function</span> <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">　　</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
+<span class="err">　　</span><span class="nx">now</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="err">　　</span><span class="nx">delta</span> <span class="o">=</span> <span class="nx">now</span> <span class="o">-</span> <span class="nx">then</span><span class="p">;</span>
+<span class="err">　　</span><span class="k">if</span> <span class="p">(</span><span class="nx">delta</span> <span class="o">&gt;</span> <span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">　　　　</span><span class="c1">// 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。</span>
+<span class="err">　　　　</span><span class="c1">// 例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112&gt;100，需要7次才实际绘制一次。</span>
+<span class="err">　　　　</span><span class="c1">// 这个情况下，实际10帧需要112*10=1120ms&gt;1000ms才绘制完成。</span>
+<span class="err">　　　　</span><span class="nx">then</span> <span class="o">=</span> <span class="nx">now</span> <span class="o">-</span> <span class="p">(</span><span class="nx">delta</span> <span class="o">%</span> <span class="nx">interval</span><span class="p">);</span>
+<span class="err">　　　　</span><span class="nx">draw</span><span class="p">();</span> <span class="c1">// ... Code for Drawing the Frame ...</span>
+<span class="err">　　</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">tick</span><span class="p">();</span>
 </code></pre>
+</div>
 
 <h4 id="针对低版本浏览器再优化">针对低版本浏览器再优化：</h4>
 
 <p>如果浏览器没有requestAnimationFrame函数，实际底层还只能用setTimeout模拟，上边做的都是无用功。那么可以再改进一下。</p>
 
-<pre><code class="language-js">var fps = 30;
-var now;
-var then = Date.now();
-var interval = 1000/fps;
-var delta;
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fps</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">now</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">/</span><span class="nx">fps</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">delta</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">mozRequestAnimationFrame</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">webkitRequestAnimationFrame</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">msRequestAnimationFrame</span><span class="p">;</span>
 
-function tick() {
-　　if(window.requestAnimationFrame)
-   {
-　　    requestAnimationFrame(tick);
-　　    now = Date.now();
-　　    delta = now - then;
-　　    if (delta &gt; interval) {
-        // 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112&gt;100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms&gt;1000ms才绘制完成。
-　　　　    then = now - (delta % interval);
-　　　　    draw(); // ... Code for Drawing the Frame ...
-　　    }
-   }
-   else
-   {
-       setTimeout(tick, interval);
-　　　　draw();
-   }
-}
-tick();
+<span class="kd">function</span> <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">　　</span><span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">)</span>
+   <span class="p">{</span>
+<span class="err">　　</span>    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">tick</span><span class="p">);</span>
+<span class="err">　　</span>    <span class="nx">now</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="err">　　</span>    <span class="nx">delta</span> <span class="o">=</span> <span class="nx">now</span> <span class="o">-</span> <span class="nx">then</span><span class="p">;</span>
+<span class="err">　　</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">delta</span> <span class="o">&gt;</span> <span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 这里不能简单then=now，否则还会出现上边简单做法的细微时间差问题。例如fps=10，每帧100ms，而现在每16ms（60fps）执行一次draw。16*7=112&gt;100，需要7次才实际绘制一次。这个情况下，实际10帧需要112*10=1120ms&gt;1000ms才绘制完成。</span>
+<span class="err">　　　　</span>    <span class="nx">then</span> <span class="o">=</span> <span class="nx">now</span> <span class="o">-</span> <span class="p">(</span><span class="nx">delta</span> <span class="o">%</span> <span class="nx">interval</span><span class="p">);</span>
+<span class="err">　　　　</span>    <span class="nx">draw</span><span class="p">();</span> <span class="c1">// ... Code for Drawing the Frame ...</span>
+<span class="err">　　</span>    <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="k">else</span>
+   <span class="p">{</span>
+       <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">tick</span><span class="p">,</span> <span class="nx">interval</span><span class="p">);</span>
+<span class="err">　　　　</span><span class="nx">draw</span><span class="p">();</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">tick</span><span class="p">();</span>
 </code></pre>
+</div>
 
 <p>最后，还可以加上暂停。</p>
 
-<pre><code class="language-js">var fps = 30;
-var pause = false;
-var now;
-var then = Date.now();
-var interval = 1000/fps;
-var delta;
-window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">fps</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">pause</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">now</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">then</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">interval</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">/</span><span class="nx">fps</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">delta</span><span class="p">;</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">mozRequestAnimationFrame</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">webkitRequestAnimationFrame</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">msRequestAnimationFrame</span><span class="p">;</span>
 
-function tick() {
-     if(pause)
-          return;
- 　　if(window.requestAnimationFrame)
-     {
-　　　　...
-     }
-     else
-     {
-          ...
-     }
-}
-tick();
+<span class="kd">function</span> <span class="nx">tick</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">if</span><span class="p">(</span><span class="nx">pause</span><span class="p">)</span>
+          <span class="k">return</span><span class="p">;</span>
+ <span class="err">　　</span><span class="k">if</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">)</span>
+     <span class="p">{</span>
+<span class="err">　　　　</span><span class="p">...</span>
+     <span class="p">}</span>
+     <span class="k">else</span>
+     <span class="p">{</span>
+          <span class="p">...</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">tick</span><span class="p">();</span>
 </code></pre>
+</div>
 
 					</div>
 				</article>

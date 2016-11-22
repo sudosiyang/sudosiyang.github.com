@@ -463,10 +463,11 @@
 以PHP为例子
 解决这些问题，归根结底只需要一条语句设置一下header，在PHP中，如下：</p>
 
-<pre><code class="language-php">
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
 header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
 
 </code></pre>
+</div>
 
 <p><strong><em>PS:如果是使用session的话，这条语句请使用在session_start();之前，如果是使用cookie，请在setcookie之前设置header。</em></strong></p>
 

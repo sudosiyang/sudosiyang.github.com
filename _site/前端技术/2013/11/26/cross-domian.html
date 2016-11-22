@@ -397,19 +397,20 @@
 
 <p>1.代码很简单</p>
 
-<pre><code class="language-javascript">
-$.ajax({
-	url: 'http://www.tetequ.com',
-	type: 'GET'
-}).done(function() {
-	console.log("success");
-}).fail(function() {
-	console.log("error");
-}).always(function() {
-	console.log("complete");
-});
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+	<span class="na">url</span><span class="p">:</span> <span class="s1">'http://www.tetequ.com'</span><span class="p">,</span>
+	<span class="na">type</span><span class="p">:</span> <span class="s1">'GET'</span>
+<span class="p">}).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"success"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"error"</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">always</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"complete"</span><span class="p">);</span>
+<span class="p">});</span>
 
 </code></pre>
+</div>
 
 <p>上去运行一下……
 当然不能用!什么都还没做呢，就想做跨域访问这么危险的事情,嘿嘿！</p>
@@ -420,11 +421,12 @@ $.ajax({
 
 <p>2.在服务器端做点手脚(php为例)</p>
 
-<pre><code class="language-php">
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>
 header("Access-Control-Allow-Origin:*");// 可以设置为详细的地址
 
 
 </code></pre>
+</div>
 
 <p>3.好了现在Chrome中的Get已经可以运行了。</p>
 
@@ -438,28 +440,30 @@ header("Access-Control-Allow-Origin:*");// 可以设置为详细的地址
 
 <p>解决代码如下：</p>
 
-<pre><code class="language-javascript">
-var xdr = new XDomainRequest();
-        xdr.onload = function (e) {
-            var data = $.parseJSON(xdr.responseText);
-            if (data == null || typeof (data) == 'undefined') {
-                data = $.parseJSON(data.firstChild.textContent);
-            }
-            //success
-        };
-        xdr.onerror = function (e) {
-            //error
-        }
-        xdr.open("GET", url);
-        xdr.send();
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">xdr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XDomainRequest</span><span class="p">();</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">xdr</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="k">typeof</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="c1">//success</span>
+        <span class="p">};</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">//error</span>
+        <span class="p">}</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
+        <span class="nx">xdr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
 </code></pre>
+</div>
 
 <p>5.问题算是解决了get都可以了。还有问题IE11你又出来干嘛了。。。你居然没有XDomainRequest。多么坑爹啊。还好IE11可以用标准的提交跨域。只是判别的时候有点蛋疼。</p>
 
-<pre><code class="language-javascript">
-navigator.userAgent.toLowerCase().match(/(msie\s|trident.*rv:)([\w.]+)/)
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">().</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">(</span><span class="sr">msie</span><span class="se">\s</span><span class="sr">|trident.*rv:</span><span class="se">)([\w</span><span class="sr">.</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">/</span><span class="p">)</span>
 
 </code></pre>
+</div>
 
 <p>这个能否判断IE11自己试着办哈。。</p>
 

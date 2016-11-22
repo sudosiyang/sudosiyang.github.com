@@ -395,34 +395,38 @@
 					<div id="content">
 						<p><strong>字符串逆序</strong></p>
 
-<pre><code class="language-javascript">
-var reverse=function(str){
-    str.split("").reverse().join('');
-}
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">reverse</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+    <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">""</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s1">''</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p><strong>去掉前后空格</strong></p>
 
-<pre><code class="language-javascript">
-var trim=function(arr){
-    return arr.replace(/(^\s*)|(\s*$)/g, "");
-}
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">trim</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">(</span><span class="sr">^</span><span class="se">\s</span><span class="sr">*</span><span class="se">)</span><span class="sr">|</span><span class="se">(\s</span><span class="sr">*$</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="s2">""</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p><strong>数组复制</strong></p>
 
-<pre><code class="language-javascript">
-var copy=function(arr){
-    return arr.slice(0);
-}
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">copy</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">arr</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 <p><strong>将伪数组转化为数组</strong></p>
 
-<pre><code class="language-javascript">
-var makeArray = function(obj){
-    return Array.prototype.slice.call(obj,0);
-}
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">var</span> <span class="nx">makeArray</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">obj</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 					</div>
 				</article>

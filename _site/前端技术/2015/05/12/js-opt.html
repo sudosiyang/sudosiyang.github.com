@@ -399,29 +399,30 @@
 
 <p>防抖可以限制一个方法在一定时间内执行的次数。以下代码是个防抖示例：</p>
 
-<pre><code class="language-js">// 取自 UnderscoreJS 实用框架
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function() {
-        var context = this, args = arguments;
-        var later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate &amp;&amp; !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-  }
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// 取自 UnderscoreJS 实用框架</span>
+<span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">wait</span><span class="p">,</span> <span class="nx">immediate</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">timeout</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="k">this</span><span class="p">,</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">later</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">timeout</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">immediate</span><span class="p">)</span> <span class="nx">func</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+        <span class="p">};</span>
+        <span class="kd">var</span> <span class="nx">callNow</span> <span class="o">=</span> <span class="nx">immediate</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">timeout</span><span class="p">;</span>
+        <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timeout</span><span class="p">);</span>
+        <span class="nx">timeout</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">later</span><span class="p">,</span> <span class="nx">wait</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">callNow</span><span class="p">)</span> <span class="nx">func</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
 
-// 添加resize的回调函数，但是只允许它每300毫秒执行一次
-window.addEventListener('resize', debounce(function(event) {
+<span class="c1">// 添加resize的回调函数，但是只允许它每300毫秒执行一次</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'resize'</span><span class="p">,</span> <span class="nx">debounce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
 
-    // 这里写resize过程
+    <span class="c1">// 这里写resize过程</span>
 
-}, 300));
+<span class="p">},</span> <span class="mi">300</span><span class="p">));</span>
 </code></pre>
+</div>
 
 <p>debounce方法返回一个方法，用来包住你的回调函数，限制他的执行频率。使用这个防抖方法，就可以让你写的频繁回调的方法不会妨碍用户的浏览器！</p>
 
@@ -429,19 +430,21 @@ window.addEventListener('resize', debounce(function(event) {
 
 <p>网站设计对美观特性和可配置元素动画的大量需求，使得一些JavaScript类库，如jQuery，MooTools大量的被使用。尽管现在浏览器支持CSS的transformation和keyframe所做的动画，现在仍有很多人使用JavaScript制作动画效果，但是实际上使用CSS动画比起JavaScript驱动的动画效率更高。CSS动画同时需要更少的代码。很多的CSS动画是用GPU处理的，因此动画本身很流畅，当然你可以使用下面这个简单的CSS强制使你的硬件加速：</p>
 
-<pre><code class="language-css">.myAnimation {
-    animation: someAnimation 1s;
-    transform: translate3d(0, 0, 0); /* 强制硬件加速 */
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.myAnimation</span> <span class="p">{</span>
+    <span class="nl">animation</span><span class="p">:</span> <span class="n">someAnimation</span> <span class="m">1s</span><span class="p">;</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span> <span class="c">/* 强制硬件加速 */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>tansform:transform(0,0,0)在不会影响其他动画的同时将通话送入硬件加速。在不支持CSS动画的情况下（IE8及以下版本的浏览器），你可以引入JavaScript动画逻辑：</p>
 
-<pre><code class="language-html">&lt;!--[if 低于IE8版本]&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--[if 低于IE8版本]&gt;
 &lt;script src="http://code.jquery.com/jquery-1.9.1.min.js"&gt;&lt;/script&gt;
 &lt;script src="/js/ie-animations.js"&gt;&lt;/script&gt;
-&lt;![endif]--&gt;
+&lt;![endif]--&gt;</span>
 </code></pre>
+</div>
 
 <p>在上例中，ie-animations.JS文件必须包含你自定义的jQuery代码，用于当CSS动画在早期IE中不被支持的情况下，来替代CSS动画完成动画效果。完美的通过CSS动画来优化动画，通过JavaScript来支持全局动画效果。</p>
 
@@ -449,13 +452,14 @@ window.addEventListener('resize', debounce(function(event) {
 
 <p>直到CSS @supports被广泛支持，CSS媒体查询的使用接近于CSS中写逻辑控制。我们经常用CSS媒体查询来根据设备调整CSS属性（通常根据屏幕宽度调整CSS属性），例如根据不同的屏幕宽度来设置不同的元素宽度或者是悬浮位置。那么我们为什么不用这种方式来改变背景图片呢？</p>
 
-<pre><code class="language-css">/* 默认是为桌面应用加载图片 */
-.someElement { background-image: url(sunset.jpg); }
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* 默认是为桌面应用加载图片 */</span>
+<span class="nc">.someElement</span> <span class="p">{</span> <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(sunset.jpg)</span><span class="p">;</span> <span class="p">}</span>
 
-@media only screen and (max-width : 1024px) {
-    .someElement { background-image: url(sunset-small.jpg); }
-}
+<span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-width</span> <span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">.someElement</span> <span class="p">{</span> <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(sunset-small.jpg)</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>上面的代码片段是为手机设备或是类似的移动设备加载一个较小尺寸的图片，特别是需要一个特别小的图片时（例如图片的大小几乎不可视）。</p>
 

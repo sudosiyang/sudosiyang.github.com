@@ -393,55 +393,55 @@
 						</h1>
 					</header>
 					<div id="content">
-						<p><code>BFC</code>已经是一个耳听熟闻的词语了，网上有许多关于<code>BFC</code>的文章，介绍了如何触发<code>BFC</code>， 以及<code>BFC</code>的一些用处（如清浮动，防止margin重叠等）。虽然我知道如何利用<code>BFC</code>解决这些问题，但当别人问我<code>BFC</code>是什么，我还是不能很有底气地解释清楚。于是这两天仔细阅读了CSS2.1 spec, 和许多文章，来全面地理解BFC：</p>
+						<p><code class="highlighter-rouge">BFC</code>已经是一个耳听熟闻的词语了，网上有许多关于<code class="highlighter-rouge">BFC</code>的文章，介绍了如何触发<code class="highlighter-rouge">BFC</code>， 以及<code class="highlighter-rouge">BFC</code>的一些用处（如清浮动，防止margin重叠等）。虽然我知道如何利用<code class="highlighter-rouge">BFC</code>解决这些问题，但当别人问我<code class="highlighter-rouge">BFC</code>是什么，我还是不能很有底气地解释清楚。于是这两天仔细阅读了CSS2.1 spec, 和许多文章，来全面地理解BFC：</p>
 
 <ol>
-  <li><code> BFC</code>是个什么？</li>
-  <li>哪些元素会生成<code>BFC</code></li>
-  <li><code>BFC</code>的神奇的作用，及背后的原理</li>
+  <li><code class="highlighter-rouge"> BFC</code>是个什么？</li>
+  <li>哪些元素会生成<code class="highlighter-rouge">BFC</code></li>
+  <li><code class="highlighter-rouge">BFC</code>的神奇的作用，及背后的原理</li>
 </ol>
 
 <h2 id="一bfc是什么">一、BFC是什么？</h2>
 
-<p>在解释<code>BFC</code>是什么之前，需要先介绍<code>Box</code>, <code>Formatting context</code>的概念。</p>
+<p>在解释<code class="highlighter-rouge">BFC</code>是什么之前，需要先介绍<code class="highlighter-rouge">Box</code>, <code class="highlighter-rouge">Formatting context</code>的概念。</p>
 
 <h3 id="box-css布局的基本单位">Box: CSS布局的基本单位</h3>
 
-<p><code>Box</code>是CSS布局的对象和基本单位， 直观点来说，就是一个页面是由很多个<code>Box</code>组成的。元素的类型和display属性，决定了这个<code>Box</code>的类型。 不同类型的<code>Box</code>， 会参与不同的<code>Formatting context</code>(一个决定如何渲染文档的容器)，因此<code>Box</code>内的元素会以不同的方式渲染。让我们看看有哪些盒子：</p>
+<p><code class="highlighter-rouge">Box</code>是CSS布局的对象和基本单位， 直观点来说，就是一个页面是由很多个<code class="highlighter-rouge">Box</code>组成的。元素的类型和display属性，决定了这个<code class="highlighter-rouge">Box</code>的类型。 不同类型的<code class="highlighter-rouge">Box</code>， 会参与不同的<code class="highlighter-rouge">Formatting context</code>(一个决定如何渲染文档的容器)，因此<code class="highlighter-rouge">Box</code>内的元素会以不同的方式渲染。让我们看看有哪些盒子：</p>
 
 <ul>
   <li>
-    <p><code>block-level box</code>: display属性为block, list-item, table的元素，会生成<code>block-level box</code>。并且参与<code>block fomatting context</code>。</p>
+    <p><code class="highlighter-rouge">block-level box</code>: display属性为block, list-item, table的元素，会生成<code class="highlighter-rouge">block-level box</code>。并且参与<code class="highlighter-rouge">block fomatting context</code>。</p>
   </li>
   <li>
-    <p><code>inline-level box</code>: display属性为inline, inline-block, inline-table的元素，会生成<code>inline-level box</code>。并且参与<code>inline formatting context</code>。</p>
+    <p><code class="highlighter-rouge">inline-level box</code>: display属性为inline, inline-block, inline-table的元素，会生成<code class="highlighter-rouge">inline-level box</code>。并且参与<code class="highlighter-rouge">inline formatting context</code>。</p>
   </li>
   <li>
-    <p><code>run-in box</code>: css3中才有， 这儿先不讲了</p>
+    <p><code class="highlighter-rouge">run-in box</code>: css3中才有， 这儿先不讲了</p>
   </li>
 </ul>
 
 <h3 id="formatting-context">Formatting context</h3>
 
-<p><code>Formatting context</code>是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
+<p><code class="highlighter-rouge">Formatting context</code>是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
 
-<p>最常见的<code>Formatting context</code>有<code>Block fomatting context</code>(简称<code>BFC</code>)和<code>Inline formatting context</code>(简称<code>IFC</code>)。</p>
+<p>最常见的<code class="highlighter-rouge">Formatting context</code>有<code class="highlighter-rouge">Block fomatting context</code>(简称<code class="highlighter-rouge">BFC</code>)和<code class="highlighter-rouge">Inline formatting context</code>(简称<code class="highlighter-rouge">IFC</code>)。</p>
 
-<p>CSS2.1 中只有<code>BFC</code>和<code>IFC</code>, CSS3中还增加了<code>GFC</code>和<code>FFC</code></p>
+<p>CSS2.1 中只有<code class="highlighter-rouge">BFC</code>和<code class="highlighter-rouge">IFC</code>, CSS3中还增加了<code class="highlighter-rouge">GFC</code>和<code class="highlighter-rouge">FFC</code></p>
 
 <h3 id="bfc-定义">BFC 定义</h3>
 
-<p><code>BFC</code>(<code>Block formatting context</code>)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有<code>Block-level box</code>参与， 它规定了内部的<code>Block-level Box</code>如何布局，并且与这个区域外部毫不相干。</p>
+<p><code class="highlighter-rouge">BFC</code>(<code class="highlighter-rouge">Block formatting context</code>)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有<code class="highlighter-rouge">Block-level box</code>参与， 它规定了内部的<code class="highlighter-rouge">Block-level Box</code>如何布局，并且与这个区域外部毫不相干。</p>
 
 <h4 id="bfc布局规则">BFC布局规则：</h4>
 
 <ol>
-  <li>内部的<code>Box</code>会在垂直方向，一个接一个地放置。</li>
-  <li><code>Box</code>垂直方向的距离由margin决定。属于同一个<code>BFC</code>的两个相邻<code>Box</code>的margin会发生重叠</li>
+  <li>内部的<code class="highlighter-rouge">Box</code>会在垂直方向，一个接一个地放置。</li>
+  <li><code class="highlighter-rouge">Box</code>垂直方向的距离由margin决定。属于同一个<code class="highlighter-rouge">BFC</code>的两个相邻<code class="highlighter-rouge">Box</code>的margin会发生重叠</li>
   <li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
-  <li><code>BFC</code>的区域不会与<code>float box</code>重叠。</li>
-  <li><code>BFC</code>就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
-  <li>计算<code>BFC</code>的高度时，浮动元素也参与计算</li>
+  <li><code class="highlighter-rouge">BFC</code>的区域不会与<code class="highlighter-rouge">float box</code>重叠。</li>
+  <li><code class="highlighter-rouge">BFC</code>就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+  <li>计算<code class="highlighter-rouge">BFC</code>的高度时，浮动元素也参与计算</li>
 </ol>
 
 <h2 id="二哪些元素会生成bfc">二、哪些元素会生成BFC?</h2>
@@ -459,35 +459,36 @@
 <h3 id="1-自适应两栏布局">1. 自适应两栏布局</h3>
 <p>代码：</p>
 
-<pre><code class="language-html">&lt;style&gt;
-    body {
-        width: 300px;
-        position: relative;
-    }
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+        <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    .aside {
-        width: 100px;
-        height: 150px;
-        float: left;
-        background: #f66;
-    }
+    <span class="nc">.aside</span> <span class="p">{</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+        <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+        <span class="nl">background</span><span class="p">:</span> <span class="m">#f66</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    .main {
-        height: 200px;
-        background: #fcc;
-    }
-&lt;/style&gt;
-&lt;body&gt;
-    &lt;div class="aside"&gt;&lt;/div&gt;
-    &lt;div class="main"&gt;&lt;/div&gt;
-&lt;/body&gt;
+    <span class="nc">.main</span> <span class="p">{</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+        <span class="nl">background</span><span class="p">:</span> <span class="m">#fcc</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"aside"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
+</div>
 
 <p>页面：</p>
 
 <p><img src="http://p1.qhimg.com/d/inn/4055c62a/4dca44a927d4c1ffc30e3ae5f53a0b79.png" alt="此处输入图片的描述" /></p>
 
-<p>根据<code>BFC</code>布局规则第3条：</p>
+<p>根据<code class="highlighter-rouge">BFC</code>布局规则第3条：</p>
 
 <blockquote>
   <p>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</p>
@@ -495,19 +496,20 @@
 
 <p>因此，虽然存在浮动的元素aslide，但main的左边依然会与包含块的左边相接触。</p>
 
-<p>根据<code>BFC</code>布局规则第四条：</p>
+<p>根据<code class="highlighter-rouge">BFC</code>布局规则第四条：</p>
 
 <blockquote>
-  <p><code>BFC</code>的区域不会与<code>float box</code>重叠。</p>
+  <p><code class="highlighter-rouge">BFC</code>的区域不会与<code class="highlighter-rouge">float box</code>重叠。</p>
 </blockquote>
 
-<p>我们可以通过通过触发main生成<code>BFC</code>， 来实现自适应两栏布局。</p>
+<p>我们可以通过通过触发main生成<code class="highlighter-rouge">BFC</code>， 来实现自适应两栏布局。</p>
 
-<pre><code class="language-css">.main {
-    overflow: hidden;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.main</span> <span class="p">{</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
-<p>当触发main生成<code>BFC</code>后，这个新的<code>BFC</code>不会与浮动的aside重叠。因此会根据包含块的宽度，和aside的宽度，自动变窄。效果如下：</p>
+</div>
+<p>当触发main生成<code class="highlighter-rouge">BFC</code>后，这个新的<code class="highlighter-rouge">BFC</code>不会与浮动的aside重叠。因此会根据包含块的宽度，和aside的宽度，自动变窄。效果如下：</p>
 
 <p><img src="http://p6.qhimg.com/t01077886a9706cb26b.png" alt="此处输入图片的描述" /></p>
 
@@ -515,44 +517,46 @@
 
 <p>代码:</p>
 
-<pre><code class="language-html">&lt;style&gt;
-    .par {
-	    border: 5px solid #fcc;
-	    width: 300px;
-    }
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.par</span> <span class="p">{</span>
+	    <span class="nl">border</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="m">#fcc</span><span class="p">;</span>
+	    <span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    .child {
-	    border: 5px solid #f66;
-	    width:100px;
-	    height: 100px;
-	    float: left;
-    }
-&lt;/style&gt;
-&lt;body&gt;
-    &lt;div class="par"&gt;
-	    &lt;div class="child"&gt;&lt;/div&gt;
-	    &lt;div class="child"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
+    <span class="nc">.child</span> <span class="p">{</span>
+	    <span class="nl">border</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">solid</span> <span class="m">#f66</span><span class="p">;</span>
+	    <span class="nl">width</span><span class="p">:</span><span class="m">100px</span><span class="p">;</span>
+	    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+	    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"par"</span><span class="nt">&gt;</span>
+	    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child"</span><span class="nt">&gt;&lt;/div&gt;</span>
+	    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"child"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
+</div>
 
 <p>页面：</p>
 
 <p><img src="http://p1.qhimg.com/t016035b58195e7909a.png" alt="此处输入图片的描述" /></p>
 
-<p>根据<code>BFC</code>布局规则第六条：</p>
+<p>根据<code class="highlighter-rouge">BFC</code>布局规则第六条：</p>
 <blockquote>
-  <p>计算<code>BFC</code>的高度时，浮动元素也参与计算</p>
+  <p>计算<code class="highlighter-rouge">BFC</code>的高度时，浮动元素也参与计算</p>
 </blockquote>
 
-<p>为达到清除内部浮动，我们可以触发par生成<code>BFC</code>，那么par在计算高度时，par内部的浮动元素child也会参与计算。</p>
+<p>为达到清除内部浮动，我们可以触发par生成<code class="highlighter-rouge">BFC</code>，那么par在计算高度时，par内部的浮动元素child也会参与计算。</p>
 
 <p>代码：</p>
 
-<pre><code class="language-css">.par {
-    overflow: hidden;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.par</span> <span class="p">{</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <p>效果如下：</p>
 
@@ -562,21 +566,22 @@
 
 <p>代码：</p>
 
-<pre><code class="language-html">&lt;style&gt;
-    p {
-        color: #f55;
-        background: #fcc;
-        width: 200px;
-        line-height: 100px;
-        text-align:center;
-        margin: 100px;
-    }
-&lt;/style&gt;
-&lt;body&gt;
-    &lt;p&gt;Haha&lt;/p&gt;
-    &lt;p&gt;Hehe&lt;/p&gt;
-&lt;/body&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="m">#f55</span><span class="p">;</span>
+        <span class="nl">background</span><span class="p">:</span> <span class="m">#fcc</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+        <span class="nl">line-height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+        <span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Haha<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hehe<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
+</div>
 
 <p>页面：</p>
 
@@ -586,45 +591,46 @@
 根据BFC布局规则第二条：</p>
 
 <blockquote>
-  <p><code>Box</code>垂直方向的距离由margin决定。属于同一个<code>BFC</code>的两个相邻<code>Box</code>的margin会发生重叠</p>
+  <p><code class="highlighter-rouge">Box</code>垂直方向的距离由margin决定。属于同一个<code class="highlighter-rouge">BFC</code>的两个相邻<code class="highlighter-rouge">Box</code>的margin会发生重叠</p>
 </blockquote>
 
-<p>我们可以在p外面包裹一层容器，并触发该容器生成一个<code>BFC</code>。那么两个P便不属于同一个<code>BFC</code>，就不会发生margin重叠了。</p>
+<p>我们可以在p外面包裹一层容器，并触发该容器生成一个<code class="highlighter-rouge">BFC</code>。那么两个P便不属于同一个<code class="highlighter-rouge">BFC</code>，就不会发生margin重叠了。</p>
 
 <p>代码：</p>
 
-<pre><code class="language-html">&lt;style&gt;
-    .wrap {
-        overflow: hidden;
-    }
-    p {
-        color: #f55;
-        background: #fcc;
-        width: 200px;
-        line-height: 100px;
-        text-align:center;
-        margin: 100px;
-    }
-&lt;/style&gt;
-&lt;body&gt;
-    &lt;p&gt;Haha&lt;/p&gt;
-    &lt;div class="wrap"&gt;
-        &lt;p&gt;Hehe&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.wrap</span> <span class="p">{</span>
+        <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="m">#f55</span><span class="p">;</span>
+        <span class="nl">background</span><span class="p">:</span> <span class="m">#fcc</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+        <span class="nl">line-height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+        <span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Haha<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"wrap"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Hehe<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
+</div>
 
 <p>效果如下:</p>
 
 <p><img src="http://p3.qhimg.com/t0118d1d2badbb00521.png" alt="此处输入图片的描述" /></p>
 
 <h2 id="总结">总结</h2>
-<p>其实以上的几个例子都体现了<code>BFC</code>布局规则第五条：</p>
+<p>其实以上的几个例子都体现了<code class="highlighter-rouge">BFC</code>布局规则第五条：</p>
 <blockquote>
-  <p><code>BFC</code>就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</p>
+  <p><code class="highlighter-rouge">BFC</code>就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</p>
 </blockquote>
 
-<p>因为<code>BFC</code>内部的元素和外部的元素绝对不会互相影响，因此， 当<code>BFC</code>外部存在浮动时，它不应该影响<code>BFC</code>内部Box的布局，<code>BFC</code>会通过变窄，而不与浮动有重叠。同样的，当<code>BFC</code>内部有浮动时，为了不影响外部元素的布局，<code>BFC</code>计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</p>
+<p>因为<code class="highlighter-rouge">BFC</code>内部的元素和外部的元素绝对不会互相影响，因此， 当<code class="highlighter-rouge">BFC</code>外部存在浮动时，它不应该影响<code class="highlighter-rouge">BFC</code>内部Box的布局，<code class="highlighter-rouge">BFC</code>会通过变窄，而不与浮动有重叠。同样的，当<code class="highlighter-rouge">BFC</code>内部有浮动时，为了不影响外部元素的布局，<code class="highlighter-rouge">BFC</code>计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</p>
 
 <hr />
 <blockquote>

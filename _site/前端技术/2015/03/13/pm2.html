@@ -405,21 +405,23 @@
 
 <p><strong>安装</strong></p>
 
-<pre><code>npm install -g pm2
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g pm2
 
 </code></pre>
+</div>
 
 <p><strong>Web Interface (JSON API)</strong></p>
 
 <p>PM2以一个JSON API的形式配备了web接口。我们可以开始运行以下命令：</p>
 
-<pre><code>pm2 web
+<div class="highlighter-rouge"><pre class="highlight"><code>pm2 web
 
 </code></pre>
+</div>
 
 <p>这个web监听端口9615.这个Web接口实际上是一个监控程序。我们可以检查任何监视的处理，例如：</p>
 
-<pre><code># List processes monitored
+<div class="highlighter-rouge"><pre class="highlight"><code># List processes monitored
 pm2 list
 
 # See "tail" style log output of all logs output from watched processes
@@ -435,6 +437,7 @@ pm2 desc 0
 pm2 monit
 
 </code></pre>
+</div>
 
 <p>这是web接口：</p>
 
@@ -444,8 +447,9 @@ pm2 monit
 
 <p>运行一个应用程序与PM2相当直白:</p>
 
-<pre><code>pm2 start app.js --name "myapp" -i max
+<div class="highlighter-rouge"><pre class="highlight"><code>pm2 start app.js --name "myapp" -i max
 </code></pre>
+</div>
 <p>让我们探讨一下这个命令:</p>
 
 <ul>
@@ -456,7 +460,7 @@ pm2 monit
 
 <p>我的应用叫 myapp 我们可以使用其他命令:</p>
 
-<pre><code># Reload and restart the application
+<div class="highlighter-rouge"><pre class="highlight"><code># Reload and restart the application
 pm2 reload myapp
 
 # Stop the application
@@ -466,6 +470,7 @@ pm2 stop myapp
 pm2 delete myapp
 
 </code></pre>
+</div>
 <p>还有其他一些命令可以使用,如 gracefulReload 重新启动之前,用于关闭所有现有的连接。</p>
 
 <p>现在我们可以看到web界面和应用监控:</p>

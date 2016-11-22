@@ -403,21 +403,23 @@
 
 <p>安装很简单，通过npm一条命令即可：</p>
 
-<pre><code>npm install -g pm2-web
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g pm2-web
 
 </code></pre>
+</div>
 
 <p>安装完之后便可以启动：</p>
 
-<pre><code>pm2-web
+<div class="highlighter-rouge"><pre class="highlight"><code>pm2-web
 
 </code></pre>
+</div>
 
 <p><strong>启动配置项</strong></p>
 
 <p>有一些配置选项，通常需要指定一下–ws:host为外网可访问域名，否则打开页面时会提示Socket Error.</p>
 
-<pre><code>–www:port 9000 Web页面访问端口号
+<div class="highlighter-rouge"><pre class="highlight"><code>–www:port 9000 Web页面访问端口号
 
 –mdns:name pm2-web 支持mdns服务协议
 
@@ -428,12 +430,13 @@
 –updateFrequency 5000 数据刷新时间间隔
 
 </code></pre>
+</div>
 
 <p><strong>指定pm2服务配置</strong></p>
 
 <p>可以指定pm2服务的一些配置信息，如host, rpc 端口等，示例如下：</p>
 
-<pre><code>pm2-web
+<div class="highlighter-rouge"><pre class="highlight"><code>pm2-web
 
     --pm2.host localhost
     --pm2.rpc 6666
@@ -443,12 +446,14 @@
     --pm2.events 6667
 
 </code></pre>
+</div>
 
 <p><strong>nohup 后台执行</strong></p>
 
-<pre><code>nohup pm2-web
+<div class="highlighter-rouge"><pre class="highlight"><code>nohup pm2-web
 
 </code></pre>
+</div>
 
 <hr />
 

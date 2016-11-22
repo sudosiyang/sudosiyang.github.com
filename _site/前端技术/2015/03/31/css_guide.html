@@ -473,7 +473,7 @@
 
 <h3 id="21-文件">2.1 文件</h3>
 
-<h4 id="建议--文件使用无--的--编码">[建议] <code>CSS</code> 文件使用无 <code>BOM</code> 的 <code>UTF-8</code> 编码。</h4>
+<h4 id="建议--文件使用无--的--编码">[建议] <code class="highlighter-rouge">CSS</code> 文件使用无 <code class="highlighter-rouge">BOM</code> 的 <code class="highlighter-rouge">UTF-8</code> 编码。</h4>
 
 <p>解释：</p>
 
@@ -481,71 +481,76 @@
 
 <h3 id="22-缩进">2.2 缩进</h3>
 
-<h4 id="强制-使用--个空格做为一个缩进层级不允许使用--个空格-或--字符">[强制] 使用 <code>4</code> 个空格做为一个缩进层级，不允许使用 <code>2</code> 个空格 或 <code>tab</code> 字符。</h4>
+<h4 id="强制-使用--个空格做为一个缩进层级不允许使用--个空格-或--字符">[强制] 使用 <code class="highlighter-rouge">4</code> 个空格做为一个缩进层级，不允许使用 <code class="highlighter-rouge">2</code> 个空格 或 <code class="highlighter-rouge">tab</code> 字符。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">.selector {
-    margin: 0;
-    padding: 0;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.selector</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="23-空格">2.3 空格</h3>
 
-<h4 id="强制--与--之间必须包含空格">[强制] <code>选择器</code> 与 <code>{</code> 之间必须包含空格。</h4>
+<h4 id="强制--与--之间必须包含空格">[强制] <code class="highlighter-rouge">选择器</code> 与 <code class="highlighter-rouge"><span class="p">{</span></code> 之间必须包含空格。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">.selector {
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.selector</span> <span class="p">{</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="强制--与之后的--之间不允许包含空格--与--之间必须包含空格">[强制] <code>属性名</code> 与之后的 <code>:</code> 之间不允许包含空格， <code>:</code> 与 <code>属性值</code> 之间必须包含空格。</h4>
+<h4 id="强制--与之后的--之间不允许包含空格--与--之间必须包含空格">[强制] <code class="highlighter-rouge">属性名</code> 与之后的 <code class="highlighter-rouge">:</code> 之间不允许包含空格， <code class="highlighter-rouge">:</code> 与 <code class="highlighter-rouge">属性值</code> 之间必须包含空格。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">margin: 0;
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">margin</span><span class="o">:</span> <span class="nt">0</span><span class="o">;</span>
 </code></pre>
+</div>
 
-<h4 id="强制--书写在单行时-后必须跟一个空格">[强制] <code>列表型属性值</code> 书写在单行时，<code>,</code> 后必须跟一个空格。</h4>
+<h4 id="强制--书写在单行时-后必须跟一个空格">[强制] <code class="highlighter-rouge">列表型属性值</code> 书写在单行时，<code class="highlighter-rouge">,</code> 后必须跟一个空格。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">font-family: Arial, sans-serif;
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">font-family</span><span class="o">:</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
 </code></pre>
+</div>
 
 <h3 id="24-行长度">2.4 行长度</h3>
 
-<h4 id="强制-每行不得超过--个字符除非单行不可分割">[强制] 每行不得超过 <code>120</code> 个字符，除非单行不可分割。</h4>
+<h4 id="强制-每行不得超过--个字符除非单行不可分割">[强制] 每行不得超过 <code class="highlighter-rouge">120</code> 个字符，除非单行不可分割。</h4>
 
 <p>解释：</p>
 
 <p>常见不可分割的场景为URL超长。</p>
 
-<h4 id="建议-对于超长的样式在样式值的--处或--后换行建议按逻辑分组">[建议] 对于超长的样式，在样式值的 <code>空格</code> 处或 <code>,</code> 后换行，建议按逻辑分组。</h4>
+<h4 id="建议-对于超长的样式在样式值的--处或--后换行建议按逻辑分组">[建议] 对于超长的样式，在样式值的 <code class="highlighter-rouge">空格</code> 处或 <code class="highlighter-rouge">,</code> 后换行，建议按逻辑分组。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* 不同属性值按逻辑分组 */
-background:
-    transparent url(aVeryVeryVeryLongUrlIsPlacedHere)
-    no-repeat 0 0;
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* 不同属性值按逻辑分组 */</span>
+<span class="nt">background</span><span class="o">:</span>
+    <span class="nt">transparent</span> <span class="nt">url</span><span class="o">(</span><span class="nt">aVeryVeryVeryLongUrlIsPlacedHere</span><span class="o">)</span>
+    <span class="nt">no-repeat</span> <span class="nt">0</span> <span class="nt">0</span><span class="o">;</span>
 
-/* 可重复多次的属性，每次重复一行 */
-background-image:
-    url(aVeryVeryVeryLongUrlIsPlacedHere)
-    url(anotherVeryVeryVeryLongUrlIsPlacedHere);
+<span class="c">/* 可重复多次的属性，每次重复一行 */</span>
+<span class="nt">background-image</span><span class="o">:</span>
+    <span class="nt">url</span><span class="o">(</span><span class="nt">aVeryVeryVeryLongUrlIsPlacedHere</span><span class="o">)</span>
+    <span class="nt">url</span><span class="o">(</span><span class="nt">anotherVeryVeryVeryLongUrlIsPlacedHere</span><span class="o">);</span>
 
-/* 类似函数的属性值可以根据函数调用的缩进进行 */
-background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.04, rgb(88,94,124)),
-    color-stop(0.52, rgb(115,123,162))
-);
+<span class="c">/* 类似函数的属性值可以根据函数调用的缩进进行 */</span>
+<span class="nt">background-image</span><span class="o">:</span> <span class="nt">-webkit-gradient</span><span class="o">(</span>
+    <span class="nt">linear</span><span class="o">,</span>
+    <span class="nt">left</span> <span class="nt">bottom</span><span class="o">,</span>
+    <span class="nt">left</span> <span class="nt">top</span><span class="o">,</span>
+    <span class="nt">color-stop</span><span class="o">(</span><span class="nt">0</span><span class="nc">.04</span><span class="o">,</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">88</span><span class="o">,</span><span class="nt">94</span><span class="o">,</span><span class="nt">124</span><span class="o">)),</span>
+    <span class="nt">color-stop</span><span class="o">(</span><span class="nt">0</span><span class="nc">.52</span><span class="o">,</span> <span class="nt">rgb</span><span class="o">(</span><span class="nt">115</span><span class="o">,</span><span class="nt">123</span><span class="o">,</span><span class="nt">162</span><span class="o">))</span>
+<span class="o">);</span>
 </code></pre>
+</div>
 
 <h3 id="25-选择器">2.5 选择器</h3>
 
@@ -553,49 +558,51 @@ background-image: -webkit-gradient(
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.post,
-.page,
-.comment {
-    line-height: 1.5;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.post</span><span class="o">,</span>
+<span class="nc">.page</span><span class="o">,</span>
+<span class="nc">.comment</span> <span class="p">{</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.post, .page, .comment {
-    line-height: 1.5;
-}
+<span class="c">/* bad */</span>
+<span class="nc">.post</span><span class="o">,</span> <span class="nc">.page</span><span class="o">,</span> <span class="nc">.comment</span> <span class="p">{</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="强制--选择器的两边各保留一个空格">[强制] <code>&gt;</code>、<code>+</code>、<code>~</code> 选择器的两边各保留一个空格。</h4>
+<h4 id="强制--选择器的两边各保留一个空格">[强制] <code class="highlighter-rouge">&gt;</code>、<code class="highlighter-rouge">+</code>、<code class="highlighter-rouge">~</code> 选择器的两边各保留一个空格。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-main &gt; nav {
-    padding: 10px;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">main</span> <span class="o">&gt;</span> <span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
 
-label + input {
-    margin-left: 5px;
-}
+<span class="nt">label</span> <span class="o">+</span> <span class="nt">input</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 
-input:checked ~ button {
-    background-color: #69C;
-}
+<span class="nt">input</span><span class="nd">:checked</span> <span class="o">~</span> <span class="nt">button</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#69C</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-main&gt;nav {
-    padding: 10px;
-}
+<span class="c">/* bad */</span>
+<span class="nt">main</span><span class="o">&gt;</span><span class="nt">nav</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
 
-label+input {
-    margin-left: 5px;
-}
+<span class="nt">label</span><span class="o">+</span><span class="nt">input</span> <span class="p">{</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 
-input:checked~button {
-    background-color: #69C;
-}
+<span class="nt">input</span><span class="nd">:checked</span><span class="o">~</span><span class="nt">button</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#69C</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="强制-属性选择器中的值必须用双引号包围">[强制] 属性选择器中的值必须用双引号包围。</h4>
 
@@ -605,16 +612,17 @@ input:checked~button {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-article[character="juliet"] {
-    voice-family: "Vivien Leigh", victoria, female
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">character</span><span class="o">=</span><span class="s1">"juliet"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">voice-family</span><span class="p">:</span> <span class="s1">"Vivien Leigh"</span><span class="p">,</span> <span class="n">victoria</span><span class="p">,</span> <span class="n">female</span>
+<span class="p">}</span>
 
-/* bad */
-article[character='juliet'] {
-    voice-family: "Vivien Leigh", victoria, female
-}
+<span class="c">/* bad */</span>
+<span class="nt">article</span><span class="o">[</span><span class="nt">character</span><span class="o">=</span><span class="s2">'juliet'</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">voice-family</span><span class="p">:</span> <span class="s1">"Vivien Leigh"</span><span class="p">,</span> <span class="n">victoria</span><span class="p">,</span> <span class="n">female</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="26-属性">2.6 属性</h3>
 
@@ -622,36 +630,38 @@ article[character='juliet'] {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.selector {
-    margin: 0;
-    padding: 0;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.selector { margin: 0; padding: 0; }
+<span class="c">/* bad */</span>
+<span class="nc">.selector</span> <span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="强制-属性定义后必须以分号结尾">[强制] 属性定义后必须以分号结尾。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.selector {
-    margin: 0;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.selector {
-    margin: 0
-}
+<span class="c">/* bad */</span>
+<span class="nc">.selector</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h2 id="3-通用">3 通用</h2>
 
 <h3 id="31-选择器">3.1 选择器</h3>
 
-<h4 id="强制-如无必要不得为--选择器添加类型选择器进行限定">[强制] 如无必要，不得为 <code>id</code>、<code>class</code> 选择器添加类型选择器进行限定。</h4>
+<h4 id="强制-如无必要不得为--选择器添加类型选择器进行限定">[强制] 如无必要，不得为 <code class="highlighter-rouge">id</code>、<code class="highlighter-rouge">class</code> 选择器添加类型选择器进行限定。</h4>
 
 <p>解释：</p>
 
@@ -659,31 +669,33 @@ article[character='juliet'] {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-#error,
-.danger-message {
-    font-color: #c00;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nf">#error</span><span class="o">,</span>
+<span class="nc">.danger-message</span> <span class="p">{</span>
+    <span class="py">font-color</span><span class="p">:</span> <span class="m">#c00</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-dialog#error,
-p.danger-message {
-    font-color: #c00;
-}
+<span class="c">/* bad */</span>
+<span class="nt">dialog</span><span class="nf">#error</span><span class="o">,</span>
+<span class="nt">p</span><span class="nc">.danger-message</span> <span class="p">{</span>
+    <span class="py">font-color</span><span class="p">:</span> <span class="m">#c00</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="建议-选择器的嵌套层级应不大于-3-级位置靠后的限定条件应尽可能精确">[建议] 选择器的嵌套层级应不大于 3 级，位置靠后的限定条件应尽可能精确。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-#username input {}
-.comment .avatar {}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nf">#username</span> <span class="nt">input</span> <span class="p">{}</span>
+<span class="nc">.comment</span> <span class="nc">.avatar</span> <span class="p">{}</span>
 
-/* bad */
-.page .header .login #username input {}
-.comment div * {}
+<span class="c">/* bad */</span>
+<span class="nc">.page</span> <span class="nc">.header</span> <span class="nc">.login</span> <span class="nf">#username</span> <span class="nt">input</span> <span class="p">{}</span>
+<span class="nc">.comment</span> <span class="nt">div</span> <span class="o">*</span> <span class="p">{}</span>
 </code></pre>
+</div>
 
 <h3 id="32-属性缩写">3.2 属性缩写</h3>
 
@@ -691,20 +703,21 @@ p.danger-message {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.post {
-    font: 12px/1.5 arial, sans-serif;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.post</span> <span class="p">{</span>
+    <span class="nl">font</span><span class="p">:</span> <span class="m">12px</span><span class="p">/</span><span class="m">1.5</span> <span class="n">arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.post {
-    font-family: arial, sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-}
+<span class="c">/* bad */</span>
+<span class="nc">.post</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">12px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="建议-使用------等缩写时应注意隐含值对实际数值的影响确实需要设置多个方向的值时才使用缩写">[建议] 使用 <code>border</code> / <code>margin</code> / <code>padding</code> 等缩写时，应注意隐含值对实际数值的影响，确实需要设置多个方向的值时才使用缩写。</h4>
+<h4 id="建议-使用------等缩写时应注意隐含值对实际数值的影响确实需要设置多个方向的值时才使用缩写">[建议] 使用 <code class="highlighter-rouge">border</code> / <code class="highlighter-rouge">margin</code> / <code class="highlighter-rouge">padding</code> 等缩写时，应注意隐含值对实际数值的影响，确实需要设置多个方向的值时才使用缩写。</h4>
 
 <p>解释：</p>
 
@@ -712,31 +725,32 @@ p.danger-message {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* centering &lt;article class="page"&gt; horizontally and highlight featured ones */
-article {
-    margin: 5px;
-    border: 1px solid #999;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* centering &lt;article class="page"&gt; horizontally and highlight featured ones */</span>
+<span class="nt">article</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#999</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* good */
-.page {
-    margin-right: auto;
-    margin-left: auto;
-}
+<span class="c">/* good */</span>
+<span class="nc">.page</span> <span class="p">{</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
 
-.featured {
-    border-color: #69c;
-}
+<span class="nc">.featured</span> <span class="p">{</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="m">#69c</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.page {
-    margin: 5px auto; /* introducing redundancy */
-}
+<span class="c">/* bad */</span>
+<span class="nc">.page</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">5px</span> <span class="nb">auto</span><span class="p">;</span> <span class="c">/* introducing redundancy */</span>
+<span class="p">}</span>
 
-.featured {
-    border: 1px solid #69c; /* introducing redundancy */
-}
+<span class="nc">.featured</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#69c</span><span class="p">;</span> <span class="c">/* introducing redundancy */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="33-属性书写顺序">3.3 属性书写顺序</h3>
 
@@ -745,44 +759,45 @@ article {
 <p>解释：</p>
 
 <ul>
-  <li>Formatting Model 相关属性包括：<code>position</code> / <code>top</code> / <code>right</code> / <code>bottom</code> / <code>left</code> / <code>float</code> / <code>display</code> / <code>overflow</code> 等</li>
-  <li>Box Model 相关属性包括：<code>border</code> / <code>margin</code> / <code>padding</code> / <code>width</code> / <code>height</code> 等</li>
-  <li>Typographic 相关属性包括：<code>font</code> / <code>line-height</code> / <code>text-align</code> / <code>word-wrap</code> 等</li>
-  <li>Visual 相关属性包括：<code>background</code> / <code>color</code> / <code>transition</code> / <code>list-style</code> 等</li>
+  <li>Formatting Model 相关属性包括：<code class="highlighter-rouge">position</code> / <code class="highlighter-rouge">top</code> / <code class="highlighter-rouge">right</code> / <code class="highlighter-rouge">bottom</code> / <code class="highlighter-rouge">left</code> / <code class="highlighter-rouge">float</code> / <code class="highlighter-rouge">display</code> / <code class="highlighter-rouge">overflow</code> 等</li>
+  <li>Box Model 相关属性包括：<code class="highlighter-rouge">border</code> / <code class="highlighter-rouge">margin</code> / <code class="highlighter-rouge">padding</code> / <code class="highlighter-rouge">width</code> / <code class="highlighter-rouge">height</code> 等</li>
+  <li>Typographic 相关属性包括：<code class="highlighter-rouge">font</code> / <code class="highlighter-rouge">line-height</code> / <code class="highlighter-rouge">text-align</code> / <code class="highlighter-rouge">word-wrap</code> 等</li>
+  <li>Visual 相关属性包括：<code class="highlighter-rouge">background</code> / <code class="highlighter-rouge">color</code> / <code class="highlighter-rouge">transition</code> / <code class="highlighter-rouge">list-style</code> 等</li>
 </ul>
 
-<p>另外，如果包含 <code>content</code> 属性，应放在最前面。</p>
+<p>另外，如果包含 <code class="highlighter-rouge">content</code> 属性，应放在最前面。</p>
 
 <p>示例：</p>
 
-<pre><code class="language-css">.sidebar {
-    /* formatting model: positioning schemes / offsets / z-indexes / display / ...  */
-    position: absolute;
-    top: 50px;
-    left: 0;
-    overflow-x: hidden;
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.sidebar</span> <span class="p">{</span>
+    <span class="c">/* formatting model: positioning schemes / offsets / z-indexes / display / ...  */</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">overflow-x</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
 
-    /* box model: sizes / margins / paddings / borders / ...  */
-    width: 200px;
-    padding: 5px;
-    border: 1px solid #ddd;
+    <span class="c">/* box model: sizes / margins / paddings / borders / ...  */</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#ddd</span><span class="p">;</span>
 
-    /* typographic: font / aligns / text styles / ... */
-    font-size: 14px;
-    line-height: 20px;
+    <span class="c">/* typographic: font / aligns / text styles / ... */</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">14px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
 
-    /* visual: colors / shadows / gradients / ... */
-    background: #f5f5f5;
-    color: #333;
-    -webkit-transition: color 1s;
-       -moz-transition: color 1s;
-            transition: color 1s;
-}
+    <span class="c">/* visual: colors / shadows / gradients / ... */</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="m">#f5f5f5</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#333</span><span class="p">;</span>
+    <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">1s</span><span class="p">;</span>
+       <span class="nl">-moz-transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">1s</span><span class="p">;</span>
+            <span class="nl">transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="34-清除浮动">3.4 清除浮动</h3>
 
-<h4 id="建议-当元素需要撑起高度以包含内部的浮动元素时通过对伪类设置--或触发--的方式进行-尽量不使用增加空标签的方式">[建议] 当元素需要撑起高度以包含内部的浮动元素时，通过对伪类设置 <code>clear</code> 或触发 <code>BFC</code> 的方式进行 <code>clearfix</code>。尽量不使用增加空标签的方式。</h4>
+<h4 id="建议-当元素需要撑起高度以包含内部的浮动元素时通过对伪类设置--或触发--的方式进行-尽量不使用增加空标签的方式">[建议] 当元素需要撑起高度以包含内部的浮动元素时，通过对伪类设置 <code class="highlighter-rouge">clear</code> 或触发 <code class="highlighter-rouge">BFC</code> 的方式进行 <code class="highlighter-rouge">clearfix</code>。尽量不使用增加空标签的方式。</h4>
 
 <p>解释：</p>
 
@@ -800,33 +815,33 @@ article {
 
 <h3 id="35-important">3.5 !important</h3>
 
-<h4 id="建议-尽量不使用--声明">[建议] 尽量不使用 <code>!important</code> 声明。</h4>
+<h4 id="建议-尽量不使用--声明">[建议] 尽量不使用 <code class="highlighter-rouge">!important</code> 声明。</h4>
 
-<h4 id="建议-当需要强制指定样式且不允许任何场景覆盖时通过标签内联和--定义样式">[建议] 当需要强制指定样式且不允许任何场景覆盖时，通过标签内联和 <code>!important</code> 定义样式。</h4>
+<h4 id="建议-当需要强制指定样式且不允许任何场景覆盖时通过标签内联和--定义样式">[建议] 当需要强制指定样式且不允许任何场景覆盖时，通过标签内联和 <code class="highlighter-rouge">!important</code> 定义样式。</h4>
 
 <p>解释：</p>
 
-<p>必须注意的是，仅在设计上 <code>确实不允许任何其它场景覆盖样式</code> 时，才使用内联的 <code>!important</code> 样式。通常在第三方环境的应用中使用这种方案。下面的 z-index 章节是其中一个特殊场景的典型样例。</p>
+<p>必须注意的是，仅在设计上 <code class="highlighter-rouge">确实不允许任何其它场景覆盖样式</code> 时，才使用内联的 <code class="highlighter-rouge">!important</code> 样式。通常在第三方环境的应用中使用这种方案。下面的 z-index 章节是其中一个特殊场景的典型样例。</p>
 
 <h3 id="36-z-index">3.6 z-index</h3>
 
-<h4 id="建议-将--进行分层对文档流外绝对定位元素的视觉层级关系进行管理">[建议] 将 <code>z-index</code> 进行分层，对文档流外绝对定位元素的视觉层级关系进行管理。</h4>
+<h4 id="建议-将--进行分层对文档流外绝对定位元素的视觉层级关系进行管理">[建议] 将 <code class="highlighter-rouge">z-index</code> 进行分层，对文档流外绝对定位元素的视觉层级关系进行管理。</h4>
 
 <p>解释：</p>
 
-<p>同层的多个元素，如多个由用户输入触发的 Dialog，在该层级内使用相同的 <code>z-index</code> 或递增 <code>z-index</code>。</p>
+<p>同层的多个元素，如多个由用户输入触发的 Dialog，在该层级内使用相同的 <code class="highlighter-rouge">z-index</code> 或递增 <code class="highlighter-rouge">z-index</code>。</p>
 
-<p>建议每层包含100个 <code>z-index</code> 来容纳足够的元素，如果每层元素较多，可以调整这个数值。</p>
+<p>建议每层包含100个 <code class="highlighter-rouge">z-index</code> 来容纳足够的元素，如果每层元素较多，可以调整这个数值。</p>
 
-<h4 id="建议-在可控环境下期望显示在最上层的元素-指定为-">[建议] 在可控环境下，期望显示在最上层的元素，<code>z-index</code> 指定为 <code>999999</code>。</h4>
+<h4 id="建议-在可控环境下期望显示在最上层的元素-指定为-">[建议] 在可控环境下，期望显示在最上层的元素，<code class="highlighter-rouge">z-index</code> 指定为 <code class="highlighter-rouge">999999</code>。</h4>
 
 <p>解释：</p>
 
 <p>可控环境分成两种，一种是自身产品线环境；还有一种是可能会被其他产品线引用，但是不会被外部第三方的产品引用。</p>
 
-<p>不建议取值为 <code>2147483647</code>。以便于自身产品线被其他产品线引用时，当遇到层级覆盖冲突的情况，留出向上调整的空间。</p>
+<p>不建议取值为 <code class="highlighter-rouge">2147483647</code>。以便于自身产品线被其他产品线引用时，当遇到层级覆盖冲突的情况，留出向上调整的空间。</p>
 
-<h4 id="建议-在第三方环境下期望显示在最上层的元素通过标签内联和-将--指定为-">[建议] 在第三方环境下，期望显示在最上层的元素，通过标签内联和 <code>!important</code>，将 <code>z-index</code> 指定为 <code>2147483647</code>。</h4>
+<h4 id="建议-在第三方环境下期望显示在最上层的元素通过标签内联和-将--指定为-">[建议] 在第三方环境下，期望显示在最上层的元素，通过标签内联和 <code class="highlighter-rouge">!important</code>，将 <code class="highlighter-rouge">z-index</code> 指定为 <code class="highlighter-rouge">2147483647</code>。</h4>
 
 <p>解释：</p>
 
@@ -844,158 +859,167 @@ article {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-html[lang|="zh"] q:before {
-    font-family: "Microsoft YaHei", sans-serif;
-    content: "“";
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="s1">"zh"</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"Microsoft YaHei"</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s1">"“"</span><span class="p">;</span>
+<span class="p">}</span>
 
-html[lang|="zh"] q:after {
-    font-family: "Microsoft YaHei", sans-serif;
-    content: "”";
-}
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="s1">"zh"</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"Microsoft YaHei"</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s1">"”"</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-html[lang|=zh] q:before {
-    font-family: 'Microsoft YaHei', sans-serif;
-    content: '“';
-}
+<span class="c">/* bad */</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="nt">zh</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:before</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'Microsoft YaHei'</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'“'</span><span class="p">;</span>
+<span class="p">}</span>
 
-html[lang|=zh] q:after {
-    font-family: "Microsoft YaHei", sans-serif;
-    content: "”";
-}
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">|=</span><span class="nt">zh</span><span class="o">]</span> <span class="nt">q</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"Microsoft YaHei"</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s1">"”"</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="42-数值">4.2 数值</h3>
 
-<h4 id="强制-当数值为-0---1-之间的小数时省略整数部分的-">[强制] 当数值为 0 - 1 之间的小数时，省略整数部分的 <code>0</code>。</h4>
+<h4 id="强制-当数值为-0---1-之间的小数时省略整数部分的-">[强制] 当数值为 0 - 1 之间的小数时，省略整数部分的 <code class="highlighter-rouge">0</code>。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-panel {
-    opacity: .8
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">panel</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">.8</span>
+<span class="p">}</span>
 
-/* bad */
-panel {
-    opacity: 0.8
-}
+<span class="c">/* bad */</span>
+<span class="nt">panel</span> <span class="p">{</span>
+    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0.8</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="43-url">4.3 url()</h3>
 
-<h4 id="强制--函数中的路径不加引号">[强制] <code>url()</code> 函数中的路径不加引号。</h4>
+<h4 id="强制--函数中的路径不加引号">[强制] <code class="highlighter-rouge">url()</code> 函数中的路径不加引号。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">body {
-    background: url(bg.png);
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="sx">url(bg.png)</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="建议--函数中的绝对路径可省去协议名">[建议] <code>url()</code> 函数中的绝对路径可省去协议名。</h4>
+<h4 id="建议--函数中的绝对路径可省去协议名">[建议] <code class="highlighter-rouge">url()</code> 函数中的绝对路径可省去协议名。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">body {
-    background: url(//baidu.com/img/bg.png) no-repeat 0 0;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="sx">url(//baidu.com/img/bg.png)</span> <span class="nb">no-repeat</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="44-长度">4.4 长度</h3>
 
-<h4 id="强制-长度为--时须省略单位-也只有长度单位可省">[强制] 长度为 <code>0</code> 时须省略单位。 (也只有长度单位可省)</h4>
+<h4 id="强制-长度为--时须省略单位-也只有长度单位可省">[强制] 长度为 <code class="highlighter-rouge">0</code> 时须省略单位。 (也只有长度单位可省)</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-body {
-    padding: 0 5px;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-body {
-    padding: 0px 5px;
-}
+<span class="c">/* bad */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="45-颜色">4.5 颜色</h3>
 
-<h4 id="强制-rgb颜色值必须使用十六进制记号形式-不允许使用-">[强制] RGB颜色值必须使用十六进制记号形式 <code>#rrggbb</code>。不允许使用 <code>rgb()</code>。</h4>
+<h4 id="强制-rgb颜色值必须使用十六进制记号形式-不允许使用-">[强制] RGB颜色值必须使用十六进制记号形式 <code class="highlighter-rouge">#rrggbb</code>。不允许使用 <code class="highlighter-rouge">rgb()</code>。</h4>
 
 <p>解释：</p>
 
-<p>带有alpha的颜色信息可以使用 <code>rgba()</code>。使用 <code>rgba()</code> 时每个逗号后必须保留一个空格。</p>
+<p>带有alpha的颜色信息可以使用 <code class="highlighter-rouge">rgba()</code>。使用 <code class="highlighter-rouge">rgba()</code> 时每个逗号后必须保留一个空格。</p>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.success {
-    box-shadow: 0 0 2px rgba(0, 128, 0, .3);
-    border-color: #008000;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">128</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">.3</span><span class="p">);</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="m">#008000</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.success {
-    box-shadow: 0 0 2px rgba(0,128,0,.3);
-    border-color: rgb(0, 128, 0);
-}
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">128</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">.3</span><span class="p">);</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">128</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="强制-颜色值可以缩写时必须使用缩写形式">[强制] 颜色值可以缩写时，必须使用缩写形式。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.success {
-    background-color: #aca;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#aca</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.success {
-    background-color: #aaccaa;
-}
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#aaccaa</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="强制-颜色值不允许使用命名色值">[强制] 颜色值不允许使用命名色值。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.success {
-    color: #90ee90;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#90ee90</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.success {
-    color: lightgreen;
-}
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">lightgreen</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="建议-颜色值中的英文字符采用小写如不用小写也需要保证同一项目内保持大小写一致">[建议] 颜色值中的英文字符采用小写。如不用小写也需要保证同一项目内保持大小写一致。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.success {
-    background-color: #aca;
-    color: #90ee90;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#aca</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#90ee90</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* good */
-.success {
-    background-color: #ACA;
-    color: #90EE90;
-}
+<span class="c">/* good */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ACA</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#90EE90</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.success {
-    background-color: #ACA;
-    color: #90ee90;
-}
+<span class="c">/* bad */</span>
+<span class="nc">.success</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#ACA</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#90ee90</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="46-2d-位置">4.6 2D 位置</h3>
 
@@ -1003,26 +1027,27 @@ body {
 
 <p>解释：</p>
 
-<p>2D 位置初始值为 <code>0% 0%</code>，但在只有一个方向的值时，另一个方向的值会被解析为 center。为避免理解上的困扰，应同时给出两个方向的值。<a href="http://www.w3.org/TR/CSS21/colors.html#propdef-background-position">background-position属性值的定义</a></p>
+<p>2D 位置初始值为 <code class="highlighter-rouge">0% 0%</code>，但在只有一个方向的值时，另一个方向的值会被解析为 center。为避免理解上的困扰，应同时给出两个方向的值。<a href="http://www.w3.org/TR/CSS21/colors.html#propdef-background-position">background-position属性值的定义</a></p>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-body {
-    background-position: center top; /* 50% 0% */
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">top</span><span class="p">;</span> <span class="c">/* 50% 0% */</span>
+<span class="p">}</span>
 
-/* bad */
-body {
-    background-position: top; /* 50% 0% */
-}
+<span class="c">/* bad */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background-position</span><span class="p">:</span> <span class="nb">top</span><span class="p">;</span> <span class="c">/* 50% 0% */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h2 id="5-文本编排">5 文本编排</h2>
 
 <h3 id="51-字体族">5.1 字体族</h3>
 
-<h4 id="强制--属性中的字体族名称应使用字体的英文-其中如有空格须放置在引号中">[强制] <code>font-family</code> 属性中的字体族名称应使用字体的英文 <code>Family Name</code>，其中如有空格，须放置在引号中。</h4>
+<h4 id="强制--属性中的字体族名称应使用字体的英文-其中如有空格须放置在引号中">[强制] <code class="highlighter-rouge">font-family</code> 属性中的字体族名称应使用字体的英文 <code class="highlighter-rouge">Family Name</code>，其中如有空格，须放置在引号中。</h4>
 
 <p>解释：</p>
 
@@ -1082,12 +1107,13 @@ body {
 
 <p>示例：</p>
 
-<pre><code class="language-css">h1 {
-    font-family: "Microsoft YaHei";
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"Microsoft YaHei"</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="强制--按西文字体在前中文字体在后效果佳-质量高更能满足需求-的字体在前效果一般的字体在后的顺序编写最后必须指定一个通用字体族----">[强制] <code>font-family</code> 按「西文字体在前、中文字体在后」、「效果佳 (质量高/更能满足需求) 的字体在前、效果一般的字体在后」的顺序编写，最后必须指定一个通用字体族( <code>serif</code> / <code>sans-serif</code> )。</h4>
+<h4 id="强制--按西文字体在前中文字体在后效果佳-质量高更能满足需求-的字体在前效果一般的字体在后的顺序编写最后必须指定一个通用字体族----">[强制] <code class="highlighter-rouge">font-family</code> 按「西文字体在前、中文字体在后」、「效果佳 (质量高/更能满足需求) 的字体在前、效果一般的字体在后」的顺序编写，最后必须指定一个通用字体族( <code class="highlighter-rouge">serif</code> / <code class="highlighter-rouge">sans-serif</code> )。</h4>
 
 <p>解释：</p>
 
@@ -1095,43 +1121,45 @@ body {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* Display according to platform */
-.article {
-    font-family: Arial, sans-serif;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* Display according to platform */</span>
+<span class="nc">.article</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* Specific for most platforms */
-h1 {
-    font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei", sans-serif;
-}
+<span class="c">/* Specific for most platforms */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="s1">"Helvetica Neue"</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="s1">"Hiragino Sans GB"</span><span class="p">,</span> <span class="s1">"WenQuanYi Micro Hei"</span><span class="p">,</span> <span class="s1">"Microsoft YaHei"</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="强制--不区分大小写但在同一个项目中同样的--大小写必须统一">[强制] <code>font-family</code> 不区分大小写，但在同一个项目中，同样的 <code>Family Name</code> 大小写必须统一。</h4>
+<h4 id="强制--不区分大小写但在同一个项目中同样的--大小写必须统一">[强制] <code class="highlighter-rouge">font-family</code> 不区分大小写，但在同一个项目中，同样的 <code class="highlighter-rouge">Family Name</code> 大小写必须统一。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-body {
-    font-family: Arial, sans-serif;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 
-h1 {
-    font-family: Arial, "Microsoft YaHei", sans-serif;
-}
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="s1">"Microsoft YaHei"</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-body {
-    font-family: arial, sans-serif;
-}
+<span class="c">/* bad */</span>
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 
-h1 {
-    font-family: Arial, "Microsoft YaHei", sans-serif;
-}
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="s1">"Microsoft YaHei"</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="52-字号">5.2 字号</h3>
 
-<h4 id="强制-需要在-windows-平台显示的中文内容其字号应不小于-">[强制] 需要在 Windows 平台显示的中文内容，其字号应不小于 <code>12px</code>。</h4>
+<h4 id="强制-需要在-windows-平台显示的中文内容其字号应不小于-">[强制] 需要在 Windows 平台显示的中文内容，其字号应不小于 <code class="highlighter-rouge">12px</code>。</h4>
 
 <p>解释：</p>
 
@@ -1139,7 +1167,7 @@ h1 {
 
 <h3 id="53-字体风格">5.3 字体风格</h3>
 
-<h4 id="建议-需要在-windows-平台显示的中文内容不要使用除--外的-其他平台也应慎用">[建议] 需要在 Windows 平台显示的中文内容，不要使用除 <code>normal</code> 外的 <code>font-style</code>。其他平台也应慎用。</h4>
+<h4 id="建议-需要在-windows-平台显示的中文内容不要使用除--外的-其他平台也应慎用">[建议] 需要在 Windows 平台显示的中文内容，不要使用除 <code class="highlighter-rouge">normal</code> 外的 <code class="highlighter-rouge">font-style</code>。其他平台也应慎用。</h4>
 
 <p>解释：</p>
 
@@ -1147,7 +1175,7 @@ h1 {
 
 <h3 id="54-字重">5.4 字重</h3>
 
-<h4 id="强制--属性必须使用数值方式描述">[强制] <code>font-weight</code> 属性必须使用数值方式描述。</h4>
+<h4 id="强制--属性必须使用数值方式描述">[强制] <code class="highlighter-rouge">font-weight</code> 属性必须使用数值方式描述。</h4>
 
 <p>解释：</p>
 
@@ -1159,20 +1187,21 @@ h1 {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-h1 {
-    font-weight: 700;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-h1 {
-    font-weight: bold;
-}
+<span class="c">/* bad */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="55-行高">5.5 行高</h3>
 
-<h4 id="建议--在定义文本段落时应使用数值">[建议] <code>line-height</code> 在定义文本段落时，应使用数值。</h4>
+<h4 id="建议--在定义文本段落时应使用数值">[建议] <code class="highlighter-rouge">line-height</code> 在定义文本段落时，应使用数值。</h4>
 
 <p>解释：</p>
 
@@ -1182,27 +1211,29 @@ h1 {
 
 <p>示例：</p>
 
-<pre><code class="language-css">.container {
-    line-height: 1.5;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.5</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h2 id="6-变换与动画">6 变换与动画</h2>
 
-<h4 id="强制-使用--时应指定-">[强制] 使用 <code>transition</code> 时应指定 <code>transition-property</code>。</h4>
+<h4 id="强制-使用--时应指定-">[强制] 使用 <code class="highlighter-rouge">transition</code> 时应指定 <code class="highlighter-rouge">transition-property</code>。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.box {
-    transition: color 1s, border-color 1s;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">color</span> <span class="m">1s</span><span class="p">,</span> <span class="n">border-color</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* bad */
-.box {
-    transition: all 1s;
-}
+<span class="c">/* bad */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="建议-尽可能在浏览器能高效实现的属性上添加过渡和动画">[建议] 尽可能在浏览器能高效实现的属性上添加过渡和动画。</h4>
 
@@ -1211,81 +1242,84 @@ h1 {
 <p>见<a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/">本文</a>，在可能的情况下应选择这样四种变换：</p>
 
 <ul>
-  <li><code>transform: translate(npx, npx);</code></li>
-  <li><code>transform: scale(n);</code></li>
-  <li><code>transform: rotate(ndeg);</code></li>
-  <li><code>opacity: 0..1;</code></li>
+  <li><code class="highlighter-rouge">transform: translate(npx, npx);</code></li>
+  <li><code class="highlighter-rouge">transform: scale(n);</code></li>
+  <li><code class="highlighter-rouge">transform: rotate(ndeg);</code></li>
+  <li><code class="highlighter-rouge">opacity: 0..1;</code></li>
 </ul>
 
 <p>典型的，可以使用 translate 来代替 left 作为动画属性。</p>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* good */
-.box {
-    transition: transform 1s;
-}
-.box:hover {
-    transform: translate(20px); /* move right for 20px */
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* good */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="c">/* move right for 20px */</span>
+<span class="p">}</span>
 
-/* bad */
-.box {
-    left: 0;
-    transition: left 1s;
-}
-.box:hover {
-    left: 20px; /* move right for 20px */
-}
+<span class="c">/* bad */</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">transition</span><span class="p">:</span> <span class="nb">left</span> <span class="m">1s</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span> <span class="c">/* move right for 20px */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h2 id="7-响应式">7 响应式</h2>
 
-<h4 id="强制--不得单独编排必须与相关的规则一起定义">[强制] <code>Media Query</code> 不得单独编排，必须与相关的规则一起定义。</h4>
+<h4 id="强制--不得单独编排必须与相关的规则一起定义">[强制] <code class="highlighter-rouge">Media Query</code> 不得单独编排，必须与相关的规则一起定义。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* Good */
-/* header styles */
-@media (...) {
-    /* header styles */
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* Good */</span>
+<span class="c">/* header styles */</span>
+<span class="k">@media</span> <span class="p">(...)</span> <span class="p">{</span>
+    <span class="c">/* header styles */</span>
+<span class="p">}</span>
 
-/* main styles */
-@media (...) {
-    /* main styles */
-}
+<span class="c">/* main styles */</span>
+<span class="k">@media</span> <span class="p">(...)</span> <span class="p">{</span>
+    <span class="c">/* main styles */</span>
+<span class="p">}</span>
 
-/* footer styles */
-@media (...) {
-    /* footer styles */
-}
+<span class="c">/* footer styles */</span>
+<span class="k">@media</span> <span class="p">(...)</span> <span class="p">{</span>
+    <span class="c">/* footer styles */</span>
+<span class="p">}</span>
 
 
-/* Bad */
-/* header styles */
-/* main styles */
-/* footer styles */
+<span class="c">/* Bad */</span>
+<span class="c">/* header styles */</span>
+<span class="c">/* main styles */</span>
+<span class="c">/* footer styles */</span>
 
-@media (...) {
-    /* header styles */
-    /* main styles */
-    /* footer styles */
-}
+<span class="k">@media</span> <span class="p">(...)</span> <span class="p">{</span>
+    <span class="c">/* header styles */</span>
+    <span class="c">/* main styles */</span>
+    <span class="c">/* footer styles */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="强制--如果有多个逗号分隔的条件时应将每个条件放在单独一行中">[强制] <code>Media Query</code> 如果有多个逗号分隔的条件时，应将每个条件放在单独一行中。</h4>
+<h4 id="强制--如果有多个逗号分隔的条件时应将每个条件放在单独一行中">[强制] <code class="highlighter-rouge">Media Query</code> 如果有多个逗号分隔的条件时，应将每个条件放在单独一行中。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">@media
-(-webkit-min-device-pixel-ratio: 2), /* Webkit-based browsers */
-(min--moz-device-pixel-ratio: 2),    /* Older Firefox browsers (prior to Firefox 16) */
-(min-resolution: 2dppx),             /* The standard way */
-(min-resolution: 192dpi) {           /* dppx fallback */
-    /* Retina-specific stuff here */
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="k">@media</span>
+<span class="p">(</span><span class="n">-webkit-min-device-pixel-ratio</span><span class="p">:</span> <span class="m">2</span><span class="p">),</span> <span class="c">/* Webkit-based browsers */</span>
+<span class="p">(</span><span class="n">min--moz-device-pixel-ratio</span><span class="p">:</span> <span class="m">2</span><span class="p">),</span>    <span class="c">/* Older Firefox browsers (prior to Firefox 16) */</span>
+<span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">2dppx</span><span class="p">),</span>             <span class="c">/* The standard way */</span>
+<span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">192dpi</span><span class="p">)</span> <span class="p">{</span>           <span class="c">/* dppx fallback */</span>
+    <span class="c">/* Retina-specific stuff here */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="建议-尽可能给出在高分辨率设备-retina-下效果更佳的样式">[建议] 尽可能给出在高分辨率设备 (Retina) 下效果更佳的样式。</h4>
 
@@ -1301,22 +1335,23 @@ h1 {
 
 <p>示例：</p>
 
-<pre><code class="language-css">.box {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+       <span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+            <span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="82-hack">8.2 Hack</h3>
 
-<h4 id="建议-需要添加--时应尽可能考虑是否可以采用其他方式解决">[建议] 需要添加 <code>hack</code> 时应尽可能考虑是否可以采用其他方式解决。</h4>
+<h4 id="建议-需要添加--时应尽可能考虑是否可以采用其他方式解决">[建议] 需要添加 <code class="highlighter-rouge">hack</code> 时应尽可能考虑是否可以采用其他方式解决。</h4>
 
 <p>解释：</p>
 
 <p>如果能通过合理的 HTML 结构或使用其他的 CSS 定义达到理想的样式，则不应该使用 hack 手段解决问题。通常 hack 会导致维护成本的增加。</p>
 
-<h4 id="建议-尽量使用--处理兼容性而非-">[建议] 尽量使用 <code>选择器 hack</code> 处理兼容性，而非 <code>属性 hack</code>。</h4>
+<h4 id="建议-尽量使用--处理兼容性而非-">[建议] 尽量使用 <code class="highlighter-rouge">选择器 hack</code> 处理兼容性，而非 <code class="highlighter-rouge">属性 hack</code>。</h4>
 
 <p>解释：</p>
 
@@ -1324,38 +1359,40 @@ h1 {
 
 <p>示例：</p>
 
-<pre><code class="language-css">/* IE 7 */
-*:first-child + html #header {
-    margin-top: 3px;
-    padding: 5px;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="c">/* IE 7 */</span>
+<span class="o">*</span><span class="nd">:first-child</span> <span class="o">+</span> <span class="nt">html</span> <span class="nf">#header</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
 
-/* IE 6 */
-* html #header {
-    margin-top: 5px;
-    padding: 4px;
-}
+<span class="c">/* IE 6 */</span>
+<span class="o">*</span> <span class="nt">html</span> <span class="nf">#header</span> <span class="p">{</span>
+    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
-<h4 id="建议-尽量使用简单的-">[建议] 尽量使用简单的 <code>属性 hack</code>。</h4>
+<h4 id="建议-尽量使用简单的-">[建议] 尽量使用简单的 <code class="highlighter-rouge">属性 hack</code>。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-css">.box {
-    _display: inline; /* fix double margin */
-    float: left;
-    margin-left: 20px;
-}
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+    <span class="py">_display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span> <span class="c">/* fix double margin */</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
 
-.container {
-    overflow: hidden;
-    *zoom: 1; /* triggering hasLayout */
-}
+<span class="nc">.container</span> <span class="p">{</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+    <span class="err">*</span><span class="py">zoom</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span> <span class="c">/* triggering hasLayout */</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h3 id="83-expression">8.3 Expression</h3>
 
-<h4 id="强制-禁止使用-">[强制] 禁止使用 <code>Expression</code>。</h4>
+<h4 id="强制-禁止使用-">[强制] 禁止使用 <code class="highlighter-rouge">Expression</code>。</h4>
 
 
 					</div>

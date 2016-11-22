@@ -1,7 +1,7 @@
 permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 title : 苏思洋的博客
 tagline: 推崇以用户为中心的设计理念，专注于用户体验设计，游走在视觉设计与前端开发之间

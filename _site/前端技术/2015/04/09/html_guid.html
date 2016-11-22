@@ -401,17 +401,18 @@
 
 <h3 id="21-缩进与换行">2.1 缩进与换行</h3>
 
-<h4 id="强制-使用--个空格做为一个缩进层级不允许使用--个空格-或--字符">[强制] 使用 <code>4</code> 个空格做为一个缩进层级，不允许使用 <code>2</code> 个空格 或 <code>tab</code> 字符。</h4>
+<h4 id="强制-使用--个空格做为一个缩进层级不允许使用--个空格-或--字符">[强制] 使用 <code class="highlighter-rouge">4</code> 个空格做为一个缩进层级，不允许使用 <code class="highlighter-rouge">2</code> 个空格 或 <code class="highlighter-rouge">tab</code> 字符。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;ul&gt;
-    &lt;li&gt;first&lt;/li&gt;
-    &lt;li&gt;second&lt;/li&gt;
-&lt;/ul&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>first<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>second<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-每行不得超过--个字符">[建议] 每行不得超过 <code>120</code> 个字符。</h4>
+<h4 id="建议-每行不得超过--个字符">[建议] 每行不得超过 <code class="highlighter-rouge">120</code> 个字符。</h4>
 
 <p>解释：</p>
 
@@ -419,48 +420,50 @@
 
 <h3 id="22-命名">2.2 命名</h3>
 
-<h4 id="强制--必须单词全字母小写单词间以--分隔">[强制] <code>class</code> 必须单词全字母小写，单词间以 <code>-</code> 分隔。</h4>
+<h4 id="强制--必须单词全字母小写单词间以--分隔">[强制] <code class="highlighter-rouge">class</code> 必须单词全字母小写，单词间以 <code class="highlighter-rouge">-</code> 分隔。</h4>
 
-<h4 id="强制--必须代表相应模块或部件的内容或功能不得以样式信息进行命名">[强制] <code>class</code> 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。</h4>
+<h4 id="强制--必须代表相应模块或部件的内容或功能不得以样式信息进行命名">[强制] <code class="highlighter-rouge">class</code> 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;div class="sidebar"&gt;&lt;/div&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;div class="left"&gt;&lt;/div&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;&lt;/div&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="强制-元素--必须保证页面唯一">[强制] 元素 <code>id</code> 必须保证页面唯一。</h4>
+<h4 id="强制-元素--必须保证页面唯一">[强制] 元素 <code class="highlighter-rouge">id</code> 必须保证页面唯一。</h4>
 
 <p>解释：</p>
 
 <p>同一个页面中，不同的元素包含相同的 id，不符合 id 的属性含义。并且使用 document.getElementById 时可能导致难以追查的问题。</p>
 
-<h4 id="建议--建议单词全字母小写单词间以--分隔同项目必须保持风格一致">[建议] <code>id</code> 建议单词全字母小写，单词间以 <code>-</code> 分隔。同项目必须保持风格一致。</h4>
+<h4 id="建议--建议单词全字母小写单词间以--分隔同项目必须保持风格一致">[建议] <code class="highlighter-rouge">id</code> 建议单词全字母小写，单词间以 <code class="highlighter-rouge">-</code> 分隔。同项目必须保持风格一致。</h4>
 
-<h4 id="建议--命名在避免冲突并描述清楚的前提下尽可能短">[建议] <code>id</code>、<code>class</code> 命名，在避免冲突并描述清楚的前提下尽可能短。</h4>
+<h4 id="建议--命名在避免冲突并描述清楚的前提下尽可能短">[建议] <code class="highlighter-rouge">id</code>、<code class="highlighter-rouge">class</code> 命名，在避免冲突并描述清楚的前提下尽可能短。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;div id="nav"&gt;&lt;/div&gt;
-&lt;!-- bad --&gt;
-&lt;div id="navigation"&gt;&lt;/div&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"nav"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"navigation"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-&lt;!-- good --&gt;
-&lt;p class="comment"&gt;&lt;/p&gt;
-&lt;!-- bad --&gt;
-&lt;p class="com"&gt;&lt;/p&gt;
+<span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"comment"</span><span class="nt">&gt;&lt;/p&gt;</span>
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"com"</span><span class="nt">&gt;&lt;/p&gt;</span>
 
-&lt;!-- good --&gt;
-&lt;span class="author"&gt;&lt;/span&gt;
-&lt;!-- bad --&gt;
-&lt;span class="red"&gt;&lt;/span&gt;
+<span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"author"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"red"</span><span class="nt">&gt;&lt;/span&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="强制-禁止为了-创建无样式信息的-">[强制] 禁止为了 <code>hook 脚本</code>，创建无样式信息的 <code>class</code>。</h4>
+<h4 id="强制-禁止为了-创建无样式信息的-">[强制] 禁止为了 <code class="highlighter-rouge">hook 脚本</code>，创建无样式信息的 <code class="highlighter-rouge">class</code>。</h4>
 
 <p>解释：</p>
 
@@ -468,7 +471,7 @@
 
 <p>使用 id、属性选择作为 hook 是更好的方式。</p>
 
-<h4 id="强制-同一页面应避免使用相同的--与-">[强制] 同一页面，应避免使用相同的 <code>name</code> 与 <code>id</code>。</h4>
+<h4 id="强制-同一页面应避免使用相同的--与-">[强制] 同一页面，应避免使用相同的 <code class="highlighter-rouge">name</code> 与 <code class="highlighter-rouge">id</code>。</h4>
 
 <p>解释：</p>
 
@@ -478,15 +481,16 @@
 
 <p>示例：</p>
 
-<pre><code class="language-html">
-&lt;input name="foo"&gt;
-&lt;div id="foo"&gt;&lt;/div&gt;
-&lt;script&gt;
-// IE6 将显示 INPUT
-alert(document.getElementById('foo').tagName);
-&lt;/script&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"foo"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"foo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="c1">// IE6 将显示 INPUT</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">).</span><span class="nx">tagName</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
 
 </code></pre>
+</div>
 
 <h3 id="23-标签">2.3 标签</h3>
 
@@ -494,12 +498,13 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;p&gt;Hello StyleGuide!&lt;/p&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;p&gt;</span>Hello StyleGuide!<span class="nt">&lt;/p&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;P&gt;Hello StyleGuide!&lt;/P&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;P&gt;</span>Hello StyleGuide!<span class="nt">&lt;/P&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="强制-对于无需自闭合的标签不允许自闭合">[强制] 对于无需自闭合的标签，不允许自闭合。</h4>
 
@@ -509,14 +514,15 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;input type="text" name="title"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"title"</span><span class="nt">&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;input type="text" name="title" /&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="nt">/&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="强制-对--中规定允许省略的闭合标签不允许省略闭合标签">[强制] 对 <code>HTML5</code> 中规定允许省略的闭合标签，不允许省略闭合标签。</h4>
+<h4 id="强制-对--中规定允许省略的闭合标签不允许省略闭合标签">[强制] 对 <code class="highlighter-rouge">HTML5</code> 中规定允许省略的闭合标签，不允许省略闭合标签。</h4>
 
 <p>解释：</p>
 
@@ -524,18 +530,19 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;ul&gt;
-    &lt;li&gt;first&lt;/li&gt;
-    &lt;li&gt;second&lt;/li&gt;
-&lt;/ul&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>first<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>second<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;ul&gt;
-    &lt;li&gt;first
-    &lt;li&gt;second
-&lt;/ul&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>first
+    <span class="nt">&lt;li&gt;</span>second
+<span class="nt">&lt;/ul&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="强制-标签使用必须符合标签嵌套规则">[强制] 标签使用必须符合标签嵌套规则。</h4>
 
@@ -543,9 +550,9 @@ alert(document.getElementById('foo').tagName);
 
 <p>比如 div 不得置于 p 中，tbody 必须置于 table 中。</p>
 
-<p>详细的标签嵌套规则参见<a href="http://www.cs.tut.fi/~jkorpela/html5.dtd">HTML DTD</a>中的 <code>Elements</code> 定义部分。</p>
+<p>详细的标签嵌套规则参见<a href="http://www.cs.tut.fi/~jkorpela/html5.dtd">HTML DTD</a>中的 <code class="highlighter-rouge">Elements</code> 定义部分。</p>
 
-<h4 id="建议--标签的使用应该遵循标签的语义">[建议] <code>HTML</code> 标签的使用应该遵循标签的语义。</h4>
+<h4 id="建议--标签的使用应该遵循标签的语义">[建议] <code class="highlighter-rouge">HTML</code> 标签的使用应该遵循标签的语义。</h4>
 
 <p>解释：</p>
 
@@ -569,14 +576,15 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;p&gt;Esprima serves as an important &lt;strong&gt;building block&lt;/strong&gt; for some JavaScript language tools.&lt;/p&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;p&gt;</span>Esprima serves as an important <span class="nt">&lt;strong&gt;</span>building block<span class="nt">&lt;/strong&gt;</span> for some JavaScript language tools.<span class="nt">&lt;/p&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;div&gt;Esprima serves as an important &lt;span class="strong"&gt;building block&lt;/span&gt; for some JavaScript language tools.&lt;/div&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;div&gt;</span>Esprima serves as an important <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"strong"</span><span class="nt">&gt;</span>building block<span class="nt">&lt;/span&gt;</span> for some JavaScript language tools.<span class="nt">&lt;/div&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-在--可以实现相同需求的情况下不得使用表格进行布局">[建议] 在 <code>CSS</code> 可以实现相同需求的情况下不得使用表格进行布局。</h4>
+<h4 id="建议-在--可以实现相同需求的情况下不得使用表格进行布局">[建议] 在 <code class="highlighter-rouge">CSS</code> 可以实现相同需求的情况下不得使用表格进行布局。</h4>
 
 <p>解释：</p>
 
@@ -586,14 +594,15 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;img class="avatar" src="image.png"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"avatar"</span> <span class="na">src=</span><span class="s">"image.png"</span><span class="nt">&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;span class="avatar"&gt;
-    &lt;img src="image.png"&gt;
-&lt;/span&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"avatar"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image.png"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/span&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="24-属性">2.4 属性</h3>
 
@@ -601,12 +610,13 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;table cellspacing="0"&gt;...&lt;/table&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">cellspacing=</span><span class="s">"0"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;table cellSpacing="0"&gt;...&lt;/table&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">cellSpacing=</span><span class="s">"0"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/table&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="强制-属性值必须用双引号包围">[强制] 属性值必须用双引号包围。</h4>
 
@@ -616,23 +626,25 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;script src="esl.js"&gt;&lt;/script&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"esl.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;script src='esl.js'&gt;&lt;/script&gt;
-&lt;script src=esl.js&gt;&lt;/script&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">'esl.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">esl.js</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="建议-布尔类型的属性建议不添加属性值">[建议] 布尔类型的属性，建议不添加属性值。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;input type="text" disabled&gt;
-&lt;input type="checkbox" value="1" checked&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">disabled</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-自定义属性建议以--为前缀推荐使用-">[建议] 自定义属性建议以 <code>xxx-</code> 为前缀，推荐使用 <code>data-</code>。</h4>
+<h4 id="建议-自定义属性建议以--为前缀推荐使用-">[建议] 自定义属性建议以 <code class="highlighter-rouge">xxx-</code> 为前缀，推荐使用 <code class="highlighter-rouge">data-</code>。</h4>
 
 <p>解释：</p>
 
@@ -640,28 +652,31 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;ol data-ui-type="Select"&gt;&lt;/ol&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;ol</span> <span class="na">data-ui-type=</span><span class="s">"Select"</span><span class="nt">&gt;&lt;/ol&gt;</span>
 </code></pre>
+</div>
 
 <h2 id="3-通用">3 通用</h2>
 
 <h3 id="31-doctype">3.1 DOCTYPE</h3>
 
-<h4 id="强制-使用--的--来启用标准模式建议使用大写的-">[强制] 使用 <code>HTML5</code> 的 <code>doctype</code> 来启用标准模式，建议使用大写的 <code>DOCTYPE</code>。</h4>
+<h4 id="强制-使用--的--来启用标准模式建议使用大写的-">[强制] 使用 <code class="highlighter-rouge">HTML5</code> 的 <code class="highlighter-rouge">doctype</code> 来启用标准模式，建议使用大写的 <code class="highlighter-rouge">DOCTYPE</code>。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="建议-启用-ie-edge-模式">[建议] 启用 IE Edge 模式。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=Edge"</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-在--标签上设置正确的-lang-属性">[建议] 在 <code>html</code> 标签上设置正确的 lang 属性。</h4>
+<h4 id="建议-在--标签上设置正确的-lang-属性">[建议] 在 <code class="highlighter-rouge">html</code> 标签上设置正确的 lang 属性。</h4>
 
 <p>解释：</p>
 
@@ -669,12 +684,13 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;html lang="zh-CN"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"zh-CN"</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="32-编码">3.2 编码</h3>
 
-<h4 id="强制-页面必须使用精简形式明确指定字符编码指定字符编码的--必须是--的第一个直接子元素">[强制] 页面必须使用精简形式，明确指定字符编码。指定字符编码的 <code>meta</code> 必须是 <code>head</code> 的第一个直接子元素。</h4>
+<h4 id="强制-页面必须使用精简形式明确指定字符编码指定字符编码的--必须是--的第一个直接子元素">[强制] 页面必须使用精简形式，明确指定字符编码。指定字符编码的 <code class="highlighter-rouge">meta</code> 必须是 <code class="highlighter-rouge">head</code> 的第一个直接子元素。</h4>
 
 <p>解释：</p>
 
@@ -682,18 +698,19 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset="UTF-8"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
         ......
-    &lt;/head&gt;
-    &lt;body&gt;
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
         ......
-    &lt;/body&gt;
-&lt;/html&gt;
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议--文件使用无--的--编码">[建议] <code>HTML</code> 文件使用无 <code>BOM</code> 的 <code>UTF-8</code> 编码。</h4>
+<h4 id="建议--文件使用无--的--编码">[建议] <code class="highlighter-rouge">HTML</code> 文件使用无 <code class="highlighter-rouge">BOM</code> 的 <code class="highlighter-rouge">UTF-8</code> 编码。</h4>
 
 <p>解释：</p>
 
@@ -701,32 +718,33 @@ alert(document.getElementById('foo').tagName);
 
 <h3 id="33-css和javascript引入">3.3 CSS和JavaScript引入</h3>
 
-<h4 id="强制-引入--时必须指明-">[强制] 引入 <code>CSS</code> 时必须指明 <code>rel="stylesheet"</code>。</h4>
+<h4 id="强制-引入--时必须指明-">[强制] 引入 <code class="highlighter-rouge">CSS</code> 时必须指明 <code class="highlighter-rouge">rel="stylesheet"</code>。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;link rel="stylesheet" src="page.css"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">src=</span><span class="s">"page.css"</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-引入--和--时无须指明--属性">[建议] 引入 <code>CSS</code> 和 <code>JavaScript</code> 时无须指明 <code>type</code> 属性。</h4>
+<h4 id="建议-引入--和--时无须指明--属性">[建议] 引入 <code class="highlighter-rouge">CSS</code> 和 <code class="highlighter-rouge">JavaScript</code> 时无须指明 <code class="highlighter-rouge">type</code> 属性。</h4>
 
 <p>解释：</p>
 
-<p><code>text/css</code> 和 <code>text/javascript</code> 是 type 的默认值。</p>
+<p><code class="highlighter-rouge">text/css</code> 和 <code class="highlighter-rouge">text/javascript</code> 是 type 的默认值。</p>
 
-<h4 id="建议-展现定义放置于外部--中行为定义放置于外部--中">[建议] 展现定义放置于外部 <code>CSS</code> 中，行为定义放置于外部 <code>JavaScript</code> 中。</h4>
+<h4 id="建议-展现定义放置于外部--中行为定义放置于外部--中">[建议] 展现定义放置于外部 <code class="highlighter-rouge">CSS</code> 中，行为定义放置于外部 <code class="highlighter-rouge">JavaScript</code> 中。</h4>
 
 <p>解释：</p>
 
 <p>结构-样式-行为的代码分离，对于提高代码的可阅读性和维护性都有好处。</p>
 
-<h4 id="建议-在--中引入页面需要的所有--资源">[建议] 在 <code>head</code> 中引入页面需要的所有 <code>CSS</code> 资源。</h4>
+<h4 id="建议-在--中引入页面需要的所有--资源">[建议] 在 <code class="highlighter-rouge">head</code> 中引入页面需要的所有 <code class="highlighter-rouge">CSS</code> 资源。</h4>
 
 <p>解释：</p>
 
 <p>在页面渲染的过程中，新的CSS可能导致元素的样式重新计算和绘制，页面闪烁。</p>
 
-<h4 id="建议--应当放在页面末尾或采用异步加载">[建议] <code>JavaScript</code> 应当放在页面末尾，或采用异步加载。</h4>
+<h4 id="建议--应当放在页面末尾或采用异步加载">[建议] <code class="highlighter-rouge">JavaScript</code> 应当放在页面末尾，或采用异步加载。</h4>
 
 <p>解释：</p>
 
@@ -734,30 +752,32 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;body&gt;
-    &lt;!-- a lot of elements --&gt;
-    &lt;script src="init-behavior.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- a lot of elements --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"init-behavior.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-移动环境或只针对现代浏览器设计的-web-应用如果引用外部资源的--协议部分与页面相同建议省略协议前缀">[建议] 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 <code>URL</code> 协议部分与页面相同，建议省略协议前缀。</h4>
+<h4 id="建议-移动环境或只针对现代浏览器设计的-web-应用如果引用外部资源的--协议部分与页面相同建议省略协议前缀">[建议] 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 <code class="highlighter-rouge">URL</code> 协议部分与页面相同，建议省略协议前缀。</h4>
 
 <p>解释：</p>
 
-<p>使用 <code>protocol-relative URL</code> 引入 CSS，在 <code>IE7/8</code> 下，会发两次请求。是否使用 <code>protocol-relative URL</code> 应充分考虑页面针对的环境。</p>
+<p>使用 <code class="highlighter-rouge">protocol-relative URL</code> 引入 CSS，在 <code class="highlighter-rouge">IE7/8</code> 下，会发两次请求。是否使用 <code class="highlighter-rouge">protocol-relative URL</code> 应充分考虑页面针对的环境。</p>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;script src="//s1.bdstatic.com/cache/static/jquery-1.10.2.min_f2fb5194.js"&gt;&lt;/script&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//s1.bdstatic.com/cache/static/jquery-1.10.2.min_f2fb5194.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
+</div>
 
 <h2 id="4-head">4 head</h2>
 
 <h3 id="41-title">4.1 title</h3>
 
-<h4 id="强制-页面必须包含--标签声明标题">[强制] 页面必须包含 <code>title</code> 标签声明标题。</h4>
+<h4 id="强制-页面必须包含--标签声明标题">[强制] 页面必须包含 <code class="highlighter-rouge">title</code> 标签声明标题。</h4>
 
-<h4 id="强制--必须作为--的直接子元素并紧随--声明之后">[强制] <code>title</code> 必须作为 <code>head</code> 的直接子元素，并紧随 <code>charset</code> 声明之后。</h4>
+<h4 id="强制--必须作为--的直接子元素并紧随--声明之后">[强制] <code class="highlighter-rouge">title</code> 必须作为 <code class="highlighter-rouge">head</code> 的直接子元素，并紧随 <code class="highlighter-rouge">charset</code> 声明之后。</h4>
 
 <p>解释：</p>
 
@@ -765,15 +785,16 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;页面标题&lt;/title&gt;
-&lt;/head&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>页面标题<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="42-favicon">4.2 favicon</h3>
 
-<h4 id="强制-保证--可访问">[强制] 保证 <code>favicon</code> 可访问。</h4>
+<h4 id="强制-保证--可访问">[强制] 保证 <code class="highlighter-rouge">favicon</code> 可访问。</h4>
 
 <p>解释：</p>
 
@@ -786,12 +807,13 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;link rel="shortcut icon" href="path/to/favicon.ico"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"shortcut icon"</span> <span class="na">href=</span><span class="s">"path/to/favicon.ico"</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="43-viewport">4.3 viewport</h3>
 
-<h4 id="建议-若页面欲对移动设备友好需指定页面的-">[建议] 若页面欲对移动设备友好，需指定页面的 <code>viewport</code>。</h4>
+<h4 id="建议-若页面欲对移动设备友好需指定页面的-">[建议] 若页面欲对移动设备友好，需指定页面的 <code class="highlighter-rouge">viewport</code>。</h4>
 
 <p>解释：</p>
 
@@ -803,27 +825,27 @@ alert(document.getElementById('foo').tagName);
 
 <h2 id="5-图片">5 图片</h2>
 
-<h4 id="强制-禁止--的--取值为空延迟加载的图片也要增加默认的-">[强制] 禁止 <code>img</code> 的 <code>src</code> 取值为空。延迟加载的图片也要增加默认的 <code>src</code>。</h4>
+<h4 id="强制-禁止--的--取值为空延迟加载的图片也要增加默认的-">[强制] 禁止 <code class="highlighter-rouge">img</code> 的 <code class="highlighter-rouge">src</code> 取值为空。延迟加载的图片也要增加默认的 <code class="highlighter-rouge">src</code>。</h4>
 
 <p>解释：</p>
 
 <p>src 取值为空，会导致部分浏览器重新加载一次当前页面，参考：<a href="https://developer.yahoo.com/performance/rules.html#emptysrc">https://developer.yahoo.com/performance/rules.html#emptysrc</a></p>
 
-<h4 id="建议-避免为--添加不必要的--属性">[建议] 避免为 <code>img</code> 添加不必要的 <code>title</code> 属性。</h4>
+<h4 id="建议-避免为--添加不必要的--属性">[建议] 避免为 <code class="highlighter-rouge">img</code> 添加不必要的 <code class="highlighter-rouge">title</code> 属性。</h4>
 
 <p>解释：</p>
 
 <p>多余的 title 影响看图体验，并且增加了页面尺寸。</p>
 
-<h4 id="建议-为重要图片添加--属性">[建议] 为重要图片添加 <code>alt</code> 属性。</h4>
+<h4 id="建议-为重要图片添加--属性">[建议] 为重要图片添加 <code class="highlighter-rouge">alt</code> 属性。</h4>
 
 <p>解释：</p>
 
 <p>可以提高图片加载失败时的用户体验。</p>
 
-<h4 id="建议-添加--和--属性以避免页面抖动">[建议] 添加 <code>width</code> 和 <code>height</code> 属性，以避免页面抖动。</h4>
+<h4 id="建议-添加--和--属性以避免页面抖动">[建议] 添加 <code class="highlighter-rouge">width</code> 和 <code class="highlighter-rouge">height</code> 属性，以避免页面抖动。</h4>
 
-<h4 id="建议-有下载需求的图片采用--标签实现无下载需求的图片采用--背景图实现">[建议] 有下载需求的图片采用 <code>img</code> 标签实现，无下载需求的图片采用 <code>CSS</code> 背景图实现。</h4>
+<h4 id="建议-有下载需求的图片采用--标签实现无下载需求的图片采用--背景图实现">[建议] 有下载需求的图片采用 <code class="highlighter-rouge">img</code> 标签实现，无下载需求的图片采用 <code class="highlighter-rouge">CSS</code> 背景图实现。</h4>
 
 <p>解释：</p>
 
@@ -836,7 +858,7 @@ alert(document.getElementById('foo').tagName);
 
 <h3 id="61-控件标题">6.1 控件标题</h3>
 
-<h4 id="强制-有文本标题的控件必须使用--标签将其与其标题相关联">[强制] 有文本标题的控件必须使用 <code>label</code> 标签将其与其标题相关联。</h4>
+<h4 id="强制-有文本标题的控件必须使用--标签将其与其标题相关联">[强制] 有文本标题的控件必须使用 <code class="highlighter-rouge">label</code> 标签将其与其标题相关联。</h4>
 
 <p>解释：</p>
 
@@ -851,14 +873,15 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;label&gt;&lt;input type="checkbox" name="confirm" value="on"&gt; 我已确认上述条款&lt;/label&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;label&gt;&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"confirm"</span> <span class="na">value=</span><span class="s">"on"</span><span class="nt">&gt;</span> 我已确认上述条款<span class="nt">&lt;/label&gt;</span>
 
-&lt;label for="username"&gt;用户名：&lt;/label&gt; &lt;input type="textbox" name="username" id="username"&gt;
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;</span>用户名：<span class="nt">&lt;/label&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"textbox"</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">id=</span><span class="s">"username"</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
 <h3 id="62-按钮">6.2 按钮</h3>
 
-<h4 id="强制-使用--元素时必须指明--属性值">[强制] 使用 <code>button</code> 元素时必须指明 <code>type</code> 属性值。</h4>
+<h4 id="强制-使用--元素时必须指明--属性值">[强制] 使用 <code class="highlighter-rouge">button</code> 元素时必须指明 <code class="highlighter-rouge">type</code> 属性值。</h4>
 
 <p>解释：</p>
 
@@ -866,11 +889,12 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;button type="submit"&gt;提交&lt;/button&gt;
-&lt;button type="button"&gt;取消&lt;/button&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>提交<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>取消<span class="nt">&lt;/button&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-尽量不要使用按钮类元素的--属性">[建议] 尽量不要使用按钮类元素的 <code>name</code> 属性。</h4>
+<h4 id="建议-尽量不要使用按钮类元素的--属性">[建议] 尽量不要使用按钮类元素的 <code class="highlighter-rouge">name</code> 属性。</h4>
 
 <p>解释：</p>
 
@@ -878,42 +902,43 @@ alert(document.getElementById('foo').tagName);
 
 <h3 id="63-可访问性-a11y">6.3 可访问性 (A11Y)</h3>
 
-<h4 id="建议-负责主要功能的按钮在--中的顺序应靠前">[建议] 负责主要功能的按钮在 <code>DOM</code> 中的顺序应靠前。</h4>
+<h4 id="建议-负责主要功能的按钮在--中的顺序应靠前">[建议] 负责主要功能的按钮在 <code class="highlighter-rouge">DOM</code> 中的顺序应靠前。</h4>
 
 <p>解释：</p>
 
-<p>负责主要功能的按钮应相对靠前，以提高可访问性。如果在 CSS 中指定了 <code>float: right</code> 则可能导致视觉上主按钮在前，而 DOM 中主按钮靠后的情况。</p>
+<p>负责主要功能的按钮应相对靠前，以提高可访问性。如果在 CSS 中指定了 <code class="highlighter-rouge">float: right</code> 则可能导致视觉上主按钮在前，而 DOM 中主按钮靠后的情况。</p>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;style&gt;
-.buttons .button-group {
-    float: right;
-}
-&lt;/style&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nc">.buttons</span> <span class="nc">.button-group</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
 
-&lt;div class="buttons"&gt;
-    &lt;div class="button-group"&gt;
-        &lt;button type="submit"&gt;提交&lt;/button&gt;
-        &lt;button type="button"&gt;取消&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+<span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s1">"buttons"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s1">"button-group"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">button</span> <span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">&gt;</span><span class="err">提交</span><span class="o">&lt;/</span><span class="nt">button</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">button</span> <span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">&gt;</span><span class="err">取消</span><span class="o">&lt;/</span><span class="nt">button</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;style&gt;
-.buttons button {
-    float: right;
-}
-&lt;/style&gt;
+<span class="o">&lt;!</span><span class="nt">--</span> <span class="nt">bad</span> <span class="nt">--</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+<span class="nc">.buttons</span> <span class="nt">button</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
 
-&lt;div class="buttons"&gt;
-    &lt;button type="button"&gt;取消&lt;/button&gt;
-    &lt;button type="submit"&gt;提交&lt;/button&gt;
-&lt;/div&gt;
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"buttons"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>取消<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>提交<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-当使用--进行表单提交时如果条件允许应使原生提交功能正常工作">[建议] 当使用 <code>JavaScript</code> 进行表单提交时，如果条件允许，应使原生提交功能正常工作。</h4>
+<h4 id="建议-当使用--进行表单提交时如果条件允许应使原生提交功能正常工作">[建议] 当使用 <code class="highlighter-rouge">JavaScript</code> 进行表单提交时，如果条件允许，应使原生提交功能正常工作。</h4>
 
 <p>解释：</p>
 
@@ -921,13 +946,14 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;form action="/login" method="post"&gt;
-    &lt;p&gt;&lt;input name="username" type="text" placeholder="用户名"&gt;&lt;/p&gt;
-    &lt;p&gt;&lt;input name="password" type="password" placeholder="密码"&gt;&lt;/p&gt;
-&lt;/form&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/login"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"用户名"</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">placeholder=</span><span class="s">"密码"</span><span class="nt">&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 </code></pre>
+</div>
 
-<h4 id="建议-在针对移动设备开发的页面时根据内容类型指定输入框的--属性">[建议] 在针对移动设备开发的页面时，根据内容类型指定输入框的 <code>type</code> 属性。</h4>
+<h4 id="建议-在针对移动设备开发的页面时根据内容类型指定输入框的--属性">[建议] 在针对移动设备开发的页面时，根据内容类型指定输入框的 <code class="highlighter-rouge">type</code> 属性。</h4>
 
 <p>解释：</p>
 
@@ -935,12 +961,13 @@ alert(document.getElementById('foo').tagName);
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;input type="date"&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span><span class="nt">&gt;</span>
 </code></pre>
+</div>
 
 <h2 id="7-多媒体">7 多媒体</h2>
 
-<h4 id="建议-当在现代浏览器中使用--以及--标签来播放音频视频时应当注意格式">[建议] 当在现代浏览器中使用 <code>audio</code> 以及 <code>video</code> 标签来播放音频、视频时，应当注意格式。</h4>
+<h4 id="建议-当在现代浏览器中使用--以及--标签来播放音频视频时应当注意格式">[建议] 当在现代浏览器中使用 <code class="highlighter-rouge">audio</code> 以及 <code class="highlighter-rouge">video</code> 标签来播放音频、视频时，应当注意格式。</h4>
 
 <p>解释：</p>
 
@@ -960,106 +987,111 @@ alert(document.getElementById('foo').tagName);
   <li>Ogg</li>
 </ul>
 
-<h4 id="建议-在支持--的浏览器中优先使用--和--标签来定义音视频元素">[建议] 在支持 <code>HTML5</code> 的浏览器中优先使用 <code>audio</code> 和 <code>video</code> 标签来定义音视频元素。</h4>
+<h4 id="建议-在支持--的浏览器中优先使用--和--标签来定义音视频元素">[建议] 在支持 <code class="highlighter-rouge">HTML5</code> 的浏览器中优先使用 <code class="highlighter-rouge">audio</code> 和 <code class="highlighter-rouge">video</code> 标签来定义音视频元素。</h4>
 
 <h4 id="建议-使用退化到插件的方式来对多浏览器进行支持">[建议] 使用退化到插件的方式来对多浏览器进行支持。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;audio controls&gt;
-    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
-    &lt;source src="audio.ogg" type="audio/ogg"&gt;
-    &lt;object width="100" height="50" data="audio.mp3"&gt;
-        &lt;embed width="100" height="50" src="audio.swf"&gt;
-    &lt;/object&gt;
-&lt;/audio&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;audio</span> <span class="na">controls</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"audio.mp3"</span> <span class="na">type=</span><span class="s">"audio/mpeg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"audio.ogg"</span> <span class="na">type=</span><span class="s">"audio/ogg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;object</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">data=</span><span class="s">"audio.mp3"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;embed</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">src=</span><span class="s">"audio.swf"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/audio&gt;</span>
 
-&lt;video width="100" height="50" controls&gt;
-    &lt;source src="video.mp4" type="video/mp4"&gt;
-    &lt;source src="video.ogg" type="video/ogg"&gt;
-    &lt;object width="100" height="50" data="video.mp4"&gt;
-        &lt;embed width="100" height="50" src="video.swf"&gt;
-    &lt;/object&gt;
-&lt;/video&gt;
+<span class="nt">&lt;video</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">controls</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"video.mp4"</span> <span class="na">type=</span><span class="s">"video/mp4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"video.ogg"</span> <span class="na">type=</span><span class="s">"video/ogg"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;object</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">data=</span><span class="s">"video.mp4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;embed</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">src=</span><span class="s">"video.swf"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/object&gt;</span>
+<span class="nt">&lt;/video&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="建议-只在必要的时候开启音视频的自动播放">[建议] 只在必要的时候开启音视频的自动播放。</h4>
 
-<h4 id="建议-在--标签内部提供指示浏览器不支持该标签的说明">[建议] 在 <code>object</code> 标签内部提供指示浏览器不支持该标签的说明。</h4>
+<h4 id="建议-在--标签内部提供指示浏览器不支持该标签的说明">[建议] 在 <code class="highlighter-rouge">object</code> 标签内部提供指示浏览器不支持该标签的说明。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;object width="100" height="50" data="something.swf"&gt;DO NOT SUPPORT THIS TAG&lt;/object&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;object</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"50"</span> <span class="na">data=</span><span class="s">"something.swf"</span><span class="nt">&gt;</span>DO NOT SUPPORT THIS TAG<span class="nt">&lt;/object&gt;</span>
 </code></pre>
+</div>
 
 <h2 id="8-模板中的-html">8 模板中的 HTML</h2>
 
-<h4 id="建议-模板代码的缩进优先保证--代码的缩进规则">[建议] 模板代码的缩进优先保证 <code>HTML</code> 代码的缩进规则。</h4>
+<h4 id="建议-模板代码的缩进优先保证--代码的缩进规则">[建议] 模板代码的缩进优先保证 <code class="highlighter-rouge">HTML</code> 代码的缩进规则。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
 {if $display == true}
-&lt;div&gt;
-    &lt;ul&gt;
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
     {foreach $item_list as $item}
-        &lt;li&gt;{$item.name}&lt;li&gt;
+        <span class="nt">&lt;li&gt;</span>{$item.name}<span class="nt">&lt;li&gt;</span>
     {/foreach}
-    &lt;/ul&gt;
-&lt;/div&gt;
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 {/if}
 
-&lt;!-- bad --&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
 {if $display == true}
-    &lt;div&gt;
-        &lt;ul&gt;
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
     {foreach $item_list as $item}
-        &lt;li&gt;{$item.name}&lt;li&gt;
+        <span class="nt">&lt;li&gt;</span>{$item.name}<span class="nt">&lt;li&gt;</span>
     {/foreach}
-        &lt;/ul&gt;
-    &lt;/div&gt;
+        <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
 {/if}
 </code></pre>
+</div>
 
-<h4 id="建议-模板代码应以保证--单个标签语法的正确性为基本原则">[建议] 模板代码应以保证 <code>HTML</code> 单个标签语法的正确性为基本原则。</h4>
+<h4 id="建议-模板代码应以保证--单个标签语法的正确性为基本原则">[建议] 模板代码应以保证 <code class="highlighter-rouge">HTML</code> 单个标签语法的正确性为基本原则。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;li class="{if $item.type_id == $current_type}focus{/if}"&gt;{ $item.type_name }&lt;/li&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"{if $item.type_id == $current_type}focus{/if}"</span><span class="nt">&gt;</span>{ $item.type_name }<span class="nt">&lt;/li&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;li {if $item.type_id == $current_type} class="focus"{/if}&gt;{ $item.type_name }&lt;/li&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;li</span> <span class="err">{</span><span class="na">if</span> <span class="err">$</span><span class="na">item</span><span class="err">.</span><span class="na">type_id =</span><span class="s">=</span> <span class="err">$</span><span class="na">current_type</span><span class="err">}</span> <span class="na">class=</span><span class="s">"focus"</span><span class="err">{/</span><span class="na">if</span><span class="err">}</span><span class="nt">&gt;</span>{ $item.type_name }<span class="nt">&lt;/li&gt;</span>
 </code></pre>
+</div>
 
 <h4 id="建议-在循环处理模板数据构造表格时若要求每行输出固定的个数建议先将数据分组之后再循环输出">[建议] 在循环处理模板数据构造表格时，若要求每行输出固定的个数，建议先将数据分组，之后再循环输出。</h4>
 
 <p>示例：</p>
 
-<pre><code class="language-html">&lt;!-- good --&gt;
-&lt;table&gt;
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- good --&gt;</span>
+<span class="nt">&lt;table&gt;</span>
     {foreach $item_list as $item_group}
-    &lt;tr&gt;
+    <span class="nt">&lt;tr&gt;</span>
         {foreach $item_group as $item}
-        &lt;td&gt;{ $item.name }&lt;/td&gt;
+        <span class="nt">&lt;td&gt;</span>{ $item.name }<span class="nt">&lt;/td&gt;</span>
         {/foreach}
-    &lt;tr&gt;
+    <span class="nt">&lt;tr&gt;</span>
     {/foreach}
-&lt;/table&gt;
+<span class="nt">&lt;/table&gt;</span>
 
-&lt;!-- bad --&gt;
-&lt;table&gt;
-&lt;tr&gt;
+<span class="c">&lt;!-- bad --&gt;</span>
+<span class="nt">&lt;table&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
     {foreach $item_list as $item}
-    &lt;td&gt;{ $item.name }&lt;/td&gt;
+    <span class="nt">&lt;td&gt;</span>{ $item.name }<span class="nt">&lt;/td&gt;</span>
         {if $item@iteration is div by 5}
-    &lt;/tr&gt;
-    &lt;tr&gt;
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
         {/if}
     {/foreach}
-&lt;/tr&gt;
-&lt;/table&gt;
+<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
 </code></pre>
+</div>
 
 
 					</div>

@@ -401,27 +401,29 @@
 
 <p>ES7 的 decorator 概念是从 Python 借来的，在 Python 里，decorator 实际上是一个 wrapper，它作用于一个目标函数，对这个目标函数做一些额外的操作，然后返回一个新的函数：</p>
 
-<pre><code class="language-python">def my_decorator(fn):
-  def inner(name):
-    print 'Hello ' + fn(name)
-  return inner
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">'Hello '</span> <span class="o">+</span> <span class="n">fn</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">inner</span>
 
-@my_decorator
-def greet(name):
-  return name
+<span class="nd">@my_decorator</span>
+<span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">name</span>
 
-greet('Decorator!')
+<span class="n">greet</span><span class="p">(</span><span class="s">'Decorator!'</span><span class="p">)</span>
 </code></pre>
+</div>
 
-<p>这种 @decorator 的写法其实是一种语法糖，从 <code>my_decorator</code>的定义就可以看出，它接收一个函数（ fn ）为参数，定义一个新的内部函数（ innner ），这个内部函数会定义一些行为，最后 <code>my_decorator</code> 返回这个内部函数（ inner ）。</p>
+<p>这种 @decorator 的写法其实是一种语法糖，从 <code class="highlighter-rouge">my_decorator</code>的定义就可以看出，它接收一个函数（ fn ）为参数，定义一个新的内部函数（ innner ），这个内部函数会定义一些行为，最后 <code class="highlighter-rouge">my_decorator</code> 返回这个内部函数（ inner ）。</p>
 
-<p>上面的 <code>@my_decorator</code>等于：</p>
+<p>上面的 <code class="highlighter-rouge">@my_decorator</code>等于：</p>
 
-<pre><code class="language-js">greet = my_decorator(greet)
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">greet</span> <span class="o">=</span> <span class="nx">my_decorator</span><span class="p">(</span><span class="nx">greet</span><span class="p">)</span>
 
-greet('Decorator!')
+<span class="nx">greet</span><span class="p">(</span><span class="s1">'Decorator!'</span><span class="p">)</span>
 
 </code></pre>
+</div>
 
 <h2 id="hello-decorator">Hello Decorator!</h2>
 
@@ -437,35 +439,37 @@ greet('Decorator!')
   <li>英雄</li>
 </ul>
 
-<pre><code class="language-js">class Hero{
-  constructor(def = 30,atk = 70,hp = 630){
-    this.init({def,atk,hp});
-  }
-  init({def,atk,hp}){
-    this.hp=hp;
-    this.attcak=atk;
-    this.defence=def;
-  }
-}
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">Hero</span><span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="nx">def</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span><span class="nx">atk</span> <span class="o">=</span> <span class="mi">70</span><span class="p">,</span><span class="nx">hp</span> <span class="o">=</span> <span class="mi">630</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span><span class="nx">def</span><span class="p">,</span><span class="nx">atk</span><span class="p">,</span><span class="nx">hp</span><span class="p">});</span>
+  <span class="p">}</span>
+  <span class="nx">init</span><span class="p">({</span><span class="nx">def</span><span class="p">,</span><span class="nx">atk</span><span class="p">,</span><span class="nx">hp</span><span class="p">}){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">hp</span><span class="o">=</span><span class="nx">hp</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">attcak</span><span class="o">=</span><span class="nx">atk</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">defence</span><span class="o">=</span><span class="nx">def</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <ul>
   <li>德玛西亚 ps：这只是个小德玛，简单的继承了英雄属性而已，没特色啊，防御和血量哪去了。。</li>
 </ul>
 
-<pre><code class="language-js">class 德玛西亚 extends Hero{
-  init(args){
-    super.init(args);
-  }
-  toString(){
-    return `防御力:${this.defence},攻击力:${this.attcak},血量:${this.hp}`;
-  }
-}
-var _德玛西亚 = new 德玛西亚();
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="err">德玛西亚</span> <span class="kr">extends</span> <span class="nx">Hero</span><span class="p">{</span>
+  <span class="nx">init</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
+    <span class="kr">super</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">toString</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="err">`防御力:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">defence</span><span class="p">},</span><span class="err">攻击力:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">attcak</span><span class="p">},</span><span class="err">血量:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">hp</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">_</span><span class="err">德玛西亚</span> <span class="o">=</span> <span class="k">new</span> <span class="err">德玛西亚</span><span class="p">();</span>
 
-console.log(`当前状态 ===&gt; ${_德玛西亚}`);
-// 当前状态 ===&gt; 防御力:30,攻击力:70,血量:630
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`当前状态</span> <span class="o">===&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="err">德玛西亚</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+<span class="c1">// 当前状态 ===&gt; 防御力:30,攻击力:70,血量:630</span>
 </code></pre>
+</div>
 
 <p>##第二步</p>
 
@@ -473,39 +477,40 @@ console.log(`当前状态 ===&gt; ${_德玛西亚}`);
   <li>初始化德玛属性</li>
 </ul>
 
-<pre><code class="language-js">function 德玛西亚初始(target, key, descriptor) {
-  const method = descriptor.value;
-  let moreHP = 150;
-  let ret;
-  descriptor.value = ({def,atk,hp})=&gt;{
-    hp+=moreHP;
-    ret = target::method({def,atk,hp});
-    return ret;
-  }
-  return descriptor;
-}
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="err">德玛西亚初始</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="nx">descriptor</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">method</span> <span class="o">=</span> <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">moreHP</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">ret</span><span class="p">;</span>
+  <span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="p">({</span><span class="nx">def</span><span class="p">,</span><span class="nx">atk</span><span class="p">,</span><span class="nx">hp</span><span class="p">})</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">hp</span><span class="o">+=</span><span class="nx">moreHP</span><span class="p">;</span>
+    <span class="nx">ret</span> <span class="o">=</span> <span class="na">target</span><span class="p">::</span><span class="nx">method</span><span class="p">({</span><span class="nx">def</span><span class="p">,</span><span class="nx">atk</span><span class="p">,</span><span class="nx">hp</span><span class="p">});</span>
+    <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">descriptor</span><span class="p">;</span>
+<span class="p">}</span>
 
-class 德玛西亚 extends Hero{
-  @德玛西亚初始;
-  init(args){
-    super.init(args);
-  }
-  toString(){
-    return `防御力:${this.defence},攻击力:${this.attcak},血量:${this.hp}`;
-  }
-}
-var _德玛西亚 = new 德玛西亚();
+<span class="kr">class</span> <span class="err">德玛西亚</span> <span class="kr">extends</span> <span class="nx">Hero</span><span class="p">{</span>
+  <span class="err">@德玛西亚初始</span><span class="p">;</span>
+  <span class="nx">init</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
+    <span class="kr">super</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">toString</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="err">`防御力</span><span class="p">:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">defence</span><span class="p">},</span><span class="err">攻击力</span><span class="p">:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">attcak</span><span class="p">},</span><span class="err">血量</span><span class="p">:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">hp</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">_</span><span class="err">德玛西亚</span> <span class="o">=</span> <span class="k">new</span> <span class="err">德玛西亚</span><span class="p">();</span>
 
-console.log(`当前状态 ===&gt; ${_德玛西亚}`);
-// 当前状态 ===&gt; 防御力:30,攻击力:70,血量:780
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`当前状态</span> <span class="o">===&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="err">德玛西亚</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+<span class="c1">// 当前状态 ===&gt; 防御力:30,攻击力:70,血量:780</span>
 </code></pre>
+</div>
 <p>血量变多了。还好吧，那下一步给他个被动技能吧！</p>
 
 <p>####这里可能会有两个疑问：</p>
 
 <ol>
-  <li><code>德玛西亚初始</code>方法的参数为啥是这三个？可以更换么？</li>
-  <li><code>德玛西亚初始</code>方法为什么返回的是descriptor</li>
+  <li><code class="highlighter-rouge">德玛西亚初始</code>方法的参数为啥是这三个？可以更换么？</li>
+  <li><code class="highlighter-rouge">德玛西亚初始</code>方法为什么返回的是descriptor</li>
 </ol>
 
 <p>####这里给出的解答作为参考：</p>
@@ -526,35 +531,36 @@ console.log(`当前状态 ===&gt; ${_德玛西亚}`);
   <li>初始化德玛西亚的被动技能</li>
 </ul>
 
-<pre><code class="language-js">
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
 
-function 德玛被动() {
-  return function(target){
-    let extra = '(技能加成:盖伦在7秒内不受到任何伤害之后，每秒回复最大生命值的0.5% )';
-    let method = target.prototype.toString;
-    target.prototype.toString = (...args)=&gt;{
-      return target.prototype::method(args) + extra;
-    }
-    return target;
-  }
-}
+<span class="kd">function</span> <span class="err">德玛被动</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">extra</span> <span class="o">=</span> <span class="s1">'(技能加成:盖伦在7秒内不受到任何伤害之后，每秒回复最大生命值的0.5% )'</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">method</span> <span class="o">=</span> <span class="nx">target</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span><span class="p">;</span>
+    <span class="nx">target</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+      <span class="k">return</span> <span class="nx">target</span><span class="p">.</span><span class="na">prototype</span><span class="p">::</span><span class="nx">method</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="o">+</span> <span class="nx">extra</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">target</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-@德玛被动()
-class 德玛西亚 extends Hero{
-  @德玛西亚初始;
-  init(args){
-    super.init(args);
-  }
-  toString(){
-    return `防御力:${this.defence},攻击力:${this.attcak},血量:${this.hp}`;
-  }
-}
-var _德玛西亚 = new 德玛西亚();
+<span class="err">@德玛被动</span><span class="p">()</span>
+<span class="kr">class</span> <span class="err">德玛西亚</span> <span class="kr">extends</span> <span class="nx">Hero</span><span class="p">{</span>
+  <span class="err">@德玛西亚初始</span><span class="p">;</span>
+  <span class="nx">init</span><span class="p">(</span><span class="nx">args</span><span class="p">){</span>
+    <span class="kr">super</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">toString</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="err">`防御力</span><span class="p">:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">defence</span><span class="p">},</span><span class="err">攻击力</span><span class="p">:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">attcak</span><span class="p">},</span><span class="err">血量</span><span class="p">:</span><span class="nx">$</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">hp</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">_</span><span class="err">德玛西亚</span> <span class="o">=</span> <span class="k">new</span> <span class="err">德玛西亚</span><span class="p">();</span>
 
-console.log(`当前状态 ===&gt; ${_德玛西亚}`);
-// 当前状态 ===&gt; 防御力:30,攻击力:70,血量:780(技能加成:盖伦在7秒内不受到任何伤害之后，每秒回复最大生命值的0.5% )
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`当前状态</span> <span class="o">===&gt;</span> <span class="nx">$</span><span class="p">{</span><span class="nx">_</span><span class="err">德玛西亚</span><span class="p">}</span><span class="err">`</span><span class="p">);</span>
+<span class="c1">// 当前状态 ===&gt; 防御力:30,攻击力:70,血量:780(技能加成:盖伦在7秒内不受到任何伤害之后，每秒回复最大生命值的0.5% )</span>
 
 </code></pre>
+</div>
 
 <p>好啦完整的德玛西亚出来了。</p>
 

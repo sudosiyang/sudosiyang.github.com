@@ -397,80 +397,82 @@
 
 <p>正常版，可在nodejs中使用</p>
 
-<pre><code class="language-javascript">
-function html_encode(str) {
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">html_encode</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
 
-    var s = "";
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
 
-    if (str.length == 0) return "";
+    <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s2">""</span><span class="p">;</span>
 
-    s = str.replace(/&amp;/g, "&amp;gt;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;/g</span><span class="p">,</span> <span class="s2">"&amp;gt;"</span><span class="p">);</span>
 
-    s = s.replace(/&lt;/g, "&amp;lt;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;/g</span><span class="p">,</span> <span class="s2">"&amp;lt;"</span><span class="p">);</span>
 
-    s = s.replace(/&gt;/g, "&amp;gt;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&gt;/g</span><span class="p">,</span> <span class="s2">"&amp;gt;"</span><span class="p">);</span>
 
-    s = s.replace(/ /g, "&amp;nbsp;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span> <span class="s2">"&amp;nbsp;"</span><span class="p">);</span>
 
-    s = s.replace(/\'/g, "&amp;#39;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\'</span><span class="sr">/g</span><span class="p">,</span> <span class="s2">"&amp;#39;"</span><span class="p">);</span>
 
-    s = s.replace(/\"/g, "&amp;quot;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\"</span><span class="sr">/g</span><span class="p">,</span> <span class="s2">"&amp;quot;"</span><span class="p">);</span>
 
-    s = s.replace(/\n/g, "&lt;br&gt;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\n</span><span class="sr">/g</span><span class="p">,</span> <span class="s2">"&lt;br&gt;"</span><span class="p">);</span>
 
-    return s;
-}
+    <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="p">}</span>
 
-function html_decode(str) {
+<span class="kd">function</span> <span class="nx">html_decode</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
 
-    var s = "";
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
 
-    if (str.length == 0) return "";
+    <span class="k">if</span> <span class="p">(</span><span class="nx">str</span><span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s2">""</span><span class="p">;</span>
 
-    s = str.replace(/&amp;gt;/g, "&amp;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">str</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;gt;/g</span><span class="p">,</span> <span class="s2">"&amp;"</span><span class="p">);</span>
 
-    s = s.replace(/&amp;lt;/g, "&lt;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;lt;/g</span><span class="p">,</span> <span class="s2">"&lt;"</span><span class="p">);</span>
 
-    s = s.replace(/&amp;gt;/g, "&gt;");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;gt;/g</span><span class="p">,</span> <span class="s2">"&gt;"</span><span class="p">);</span>
 
-    s = s.replace(/&amp;nbsp;/g, " ");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;nbsp;/g</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span>
 
-    s = s.replace(/&amp;#39;/g, "\'");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;#39;/g</span><span class="p">,</span> <span class="s2">"\'"</span><span class="p">);</span>
 
-    s = s.replace(/&amp;quot;/g, "\"");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;quot;/g</span><span class="p">,</span> <span class="s2">"\""</span><span class="p">);</span>
 
-    s = s.replace(/&lt;br&gt;/g, "\n");
+    <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&lt;br&gt;/g</span><span class="p">,</span> <span class="s2">"\n"</span><span class="p">);</span>
 
-    return s;
-}
+    <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="p">}</span>
 
 </code></pre>
+</div>
 
 <p>巧妙版：</p>
 
-<pre><code class="language-javascript">
-function htmlEncode(str) {
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">htmlEncode</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
 
-    var div = document.createElement("div");
+    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
-    div.appendChild(document.createTextNode(str));
+    <span class="nx">div</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="nx">str</span><span class="p">));</span>
 
-    return div.innerHTML;
+    <span class="k">return</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">;</span>
 
-}
+<span class="p">}</span>
 
-function htmlDecode(str) {
+<span class="kd">function</span> <span class="nx">htmlDecode</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
 
-    var div = document.createElement("div");
+    <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
 
-    div.innerHTML = str;
+    <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">str</span><span class="p">;</span>
 
-    return div.innerHTML;
+    <span class="k">return</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">;</span>
 
-}
+<span class="p">}</span>
 
 
 </code></pre>
+</div>
 
 					</div>
 				</article>
