@@ -873,3 +873,6 @@ code {
 	-o-animation-name:rollIn;
 	animation-name:rollIn;
 }
+.ds-post-likes{
+	display:none;
+}

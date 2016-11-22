@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			31 种 CSS 选择器用法 -
+
+			苏思洋的博客 </title>
+
+		<meta name="author" content="susu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link href="/assets/style.min.css?body=3.3.1" rel="stylesheet" type="text/css" media="all">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="feed.xml" />
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+		<!-- fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+	</head>
+
+	<body>
+		<div class="navbar">
+			<img id="profile" src="/blog-assets/susu.jpg" alt="susu" class="rollIn animated">
+			<ul class="nav">
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label1" class="labels"><a href="/">
+
+				最新文章
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label2" class="labels"><a href="/other">
+
+				杂谈
+
+		</a></li>
+
+
+
+
+
+
+
+
+
+				<li id="label3" class="active labels"><a href="/qianduan" class="active">前端技术</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label4" class="labels"><a href="/tec_css">
+
+				交互设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label5" class="labels"><a href="/view_des">
+
+				视觉设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+			</ul>
+			<div class="f_like">
+			<div>友链</div>
+			<ul class="links">
+
+                 <li class="link"><a href="http://hyq.me" title="hyq">hyq</a></li>
+
+                 <li class="link"><a href="http://catalystdp.github.io/" title="catalystdp">catalystdp</a></li>
+
+			</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="title_wrap" class=" title3">
+				<h2 class="title">
+
+
+
+
+
+
+
+
+
+
+							前端技术
+
+
+
+
+
+
+
+
+				</h2>
+			</div>
+
+
+					<ul class="posts">
+
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/12/01/web_build"><span class="circle_icon"></span>前端工程化技能树整理<span class='date'>01 Dec 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/30/es6_Design-pattern"><span class="circle_icon"></span>ES6 实现几种 设计模式<span class='date'>30 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/23/es7_decorator"><span class="circle_icon"></span>ES7 Decorator 装饰者模式 浅出<span class='date'>23 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/10/requestAnimationFrame"><span class="circle_icon"></span>requestAnimationFrame 详解<span class='date'>10 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/14/css_BFC"><span class="circle_icon"></span>BFC 神奇背后的原理<span class='date'>14 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/12/js-opt"><span class="circle_icon"></span>前端性能优化实践<span class='date'>12 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/29/learn-web"><span class="circle_icon"></span>2015年值得关注的几个WEB技术<span class='date'>29 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/10/HTTP_API"><span class="circle_icon"></span>HTTP API 设计指南<span class='date'>10 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/09/html_guid"><span class="circle_icon"></span>HTML编码规范<span class='date'>09 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/less_guide"><span class="circle_icon"></span>Less规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/javascript_guide"><span class="circle_icon"></span>JavaScript规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/css_guide"><span class="circle_icon"></span>CSS规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/16/javascript_tip"><span class="circle_icon"></span>前端小技巧总结<span class='date'>16 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2"><span class="circle_icon"></span>用pm2管理node进程<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2-web"><span class="circle_icon"></span>pm2-web监控node.js应用服务状态<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/08/13/nodejs_update"><span class="circle_icon"></span>node.js升级<span class='date'>13 Aug 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/04/11/Canvas_API"><span class="circle_icon"></span>Canvas API<span class='date'>11 Apr 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/21/html-zhuanyi"><span class="circle_icon"></span>JavaScript 的HTML转义方法<span class='date'>21 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P"><span class="circle_icon"></span>IE下iframe跨域session丢失问题和解决<span class='date'>09 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/07/javascript-tip"><span class="circle_icon"></span>javascript 小技巧<span class='date'>07 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/25/31CSS" class="active"><span class="circle_icon"></span>31 种 CSS 选择器用法<span class='date'>25 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design_step"><span class="circle_icon"></span>复杂产品的响应式设计【流程篇】<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design"><span class="circle_icon"></span>响应式网页设计<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/qianduan"><span class="circle_icon"></span>前端的困局与突围(from 玉伯)<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/markdown"><span class="circle_icon"></span>如何使用markdown<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+					</ul>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<div id="container">
+			<button class="navbar-toggle" type="button">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+			<div id="pjax">
+				<article id="post" class="title3">
+					<header id="header">
+						<h1 id="identifier">
+								31 种 CSS 选择器用法
+						</h1>
+					</header>
+					<div id="content">
+						<h3 id="1">1.*</h3>
+
+<pre><code class="language-css">* {
+  margin: 0;
+  padding: 0;
+}
+</code></pre>
+<p>星号选择器用于选取页面中的所有元素，可用于快速清除所有元素的 margin 与 padding，但最好只在测试的时候使用，而不要正式用在 CSS 文件中，否则会大大加重浏览器负担。此外，星号选择器也可以给父层的所有子元素设定样式，重复一遍，尽量少用这种方式：</p>
+
+<pre><code class="language-css">#container * {
+  border: 1px solid black;
+}
+</code></pre>
+<p>兼容 IE6+</p>
+
+<p><strong>2. #X</strong></p>
+
+<pre><code class="language-css">#container {
+  width: 960px;
+  margin: auto;
+}
+</code></pre>
+<p>id 选择器，最常见的选择器用法之一，不可重复使用。</p>
+
+<p>兼容 IE6+</p>
+
+<p><strong>3. .X</strong></p>
+
+<pre><code class="language-css">.error {
+  color: red;
+}
+</code></pre>
+<p>class 选择器，也是最常见的选择器用法之一，与 id 选择器不同的是 class 选择器可同时选取多个元素，而 id 选择器只能给一个独一无二的元素设定样式。</p>
+
+<p>兼容 IE6+</p>
+
+<p><strong>4. X Y</strong></p>
+
+<pre><code class="language-css">li a {
+  text-decoration: none;
+}
+</code></pre>
+<p>后代选择器 (descendant selector)，选取 X 元素内的所有 Y 元素，比如上面这段代码将选取 li 标签内的所有链接。</p>
+
+<p>兼容 IE6+</p>
+
+<p><strong>5. X</strong></p>
+
+<pre><code class="language-css">a {
+    color: red;
+ }
+ul {
+    margin-left: 0;
+ }
+</code></pre>
+<p>标签选择器 (type selector)，用于选取 HTML 标签 (tag)。</p>
+
+<p>兼容 IE6+</p>
+
+<p><strong>6. X:visited and X:link</strong></p>
+
+<pre><code class="language-css">a:link { color: red; }
+a:visted { color: purple; }
+</code></pre>
+<p>:link 伪类选择器 (pseudo class selector) 用于选取所有未点击过的链接，而 :visited 则用于选取所有已访问过的链接。</p>
+
+<p>兼容 IE6+</p>
+
+<p><strong>7. X + Y</strong></p>
+
+<pre><code class="language-css">ul + p {
+  color: red;
+}
+</code></pre>
+<p>临近选择器 (adjacent selector)，选取紧邻在 X 元素后面出现的第一个元素，比如上面这段代码将选取 ul 元素后出现的第一个元素，也就是 p 元素。</p>
+
+<p>兼容性 IE6+</p>
+
+<p><strong>8. X &gt; Y</strong></p>
+
+<pre><code class="language-css">div#container &gt; ul {
+  border: 1px solid black;
+}
+</code></pre>
+<p>在第 4 条中，后代选择器 X Y 选取父层 X 内的所有 Y 元素；子选择器 X &gt; Y 则只选取直接出现在父层 X 内的 Y 元素。比如下面的 HTML 结构中，#container &gt; ul 选取直接出现在 div#container 内的 ul 元素，不包含嵌套在 li 内的 ul 元素：</p>
+
+<pre><code class="language-html">&lt;div id="container"&gt;
+  &lt;ul&gt;
+    &lt;li&gt; List Item
+      &lt;ul&gt;
+        &lt;li&gt; Child &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt; List Item &lt;/li&gt;
+    &lt;li&gt; List Item &lt;/li&gt;
+    &lt;li&gt; List Item &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<p>兼容 IE7+</p>
+
+<p><strong>9. X ~ Y</strong></p>
+
+<pre><code class="language-css">ul ~ p {
+  color: red;
+}
+</code></pre>
+<p>同样也是临近选择器，前面第 7 条 X + Y 选取紧邻在 X 后出现的第一个元素，而 X ~ Y 将选取 X 元素后出现的所有同级元素。上面这段代码将选取 ul 元素后出现的所有同级 p 元素，而不是像 ul + p 这样选取第一个出现的 p 元素。</p>
+
+<p>兼容 IE7+</p>
+
+<p><strong>10. X[title]</strong></p>
+
+<pre><code class="language-css">a[title] {
+  color: green;
+}
+</code></pre>
+<p>属性选择器 (attributes selector)，根据元素使用的属性进一步缩小选取范围，上面这段代码将选取所有使用了 title 属性的链接，或者 a[title=”title content”]{color:green} 再进一步缩小选取范围。</p>
+
+<p>兼容 IE7+</p>
+
+<p><strong>11. X[href=”foo”]</strong></p>
+
+<pre><code class="language-css">a[href="http://net.tutsplus.com"] {
+  color: #1f6053; /* nettuts green */
+}
+</code></pre>
+<p>上面这段代码将选取所有跳转到 http://net.tutsplus.com 的链接，这些链接将显示为绿色，其他链接不受影响。</p>
+
+<p>只是这种方式很严格不能相差一个字符，下面将会逐一介绍更灵活的用法。</p>
+
+<p>兼容 IE7+</p>
+
+<p><strong>12. X[href*=”nettuts”]</strong></p>
+
+<pre><code class="language-css">a[href*="tuts"] {
+  color: #1f6053; /* nettuts green */
+}
+</code></pre>
+<ul>
+  <li>表示只要属性值中包含双引号内的内容就满足选取要求，这段代码将选取跳转到 nettuts.com，net.tutsplus.com，或者 tutsplus.com 等链接。</li>
+</ul>
+
+<p>兼容 IE7+</p>
+
+<p><strong>13. X[href^=”http”]</strong></p>
+
+<pre><code class="language-css">a[href^="http"] {
+  background: url(path/to/external/icon.png) no-repeat;
+  padding-left: 10px;
+}
+</code></pre>
+<p>^ 表示只要属性值以双引号内的内容开头就满足选取要求，这段代码也常用来给页面中所有外部接设定样式。</p>
+
+<p>兼容 IE7+</p>
+
+<p><strong>14. X[href$=”.jpg”]</strong></p>
+
+<pre><code class="language-css">a[href$=".jpg"] {
+  color: red;
+}
+</code></pre>
+<p>$ 表示只要属性值以双引号内的内容结尾就满足选取要求，这段代码将选取所有跳转到 jpg 图片的链接。</p>
+
+<p>兼容 IE7+</p>
+
+<p><strong>15. X[data-*=”foo”]</strong></p>
+
+<p>上面第 14 条提到了如何选取所有跳转到 jpg 图片的链接，若要选取跳转到图片的所有链接可以用下面的方法：</p>
+
+<pre><code class="language-css">a[href$=".jpg"],
+a[href$=".jpeg"],
+a[href$=".png"],
+a[href$=".gif"] {
+  color: red;
+}
+</code></pre>
+<p>或者，先给图片链接添加 data- 属性（注：HTML5 Custom Data Attributes）</p>
+
+<pre><code class="language-html">&lt;a href="path/to/image.jpg" data-filetype="image"&gt; Image Link &lt;/a&gt;
+</code></pre>
+<p>然后再通过属性选择器选取：</p>
+
+<pre><code class="language-css">a[data-filetype="image"] {
+  color: red;
+}
+</code></pre>
+<p>兼容 IE7+</p>
+
+<p><strong>16. X[foo~=”bar”]</strong></p>
+
+<pre><code class="language-css">a[data-info~="external"] {
+  color: red;
+}
+a[data-info~="image"] {
+  border: 1px solid black;
+}
+</code></pre>
+<p>如果属性值中有用空格分隔的一连串属性值，~ 可以选取其中一个属性值，比如：</p>
+
+<pre><code class="language-html">&lt;a href="path/to/image.jpg" data-info="external image"&gt; Click Me, Fool &lt;/a&gt;
+</code></pre>
+<p>借助 ~ 选取包含 external 或者 image 属性值的元素：</p>
+
+<pre><code class="language-css">/* Target data-info attr that contains the value "external" */
+a[data-info~="external"] {
+  color: red;
+}
+/* And which contain the value "image" */
+a[data-info~="image"] {
+  border: 1px solid black;
+}
+</code></pre>
+<p>兼容 IE7+</p>
+
+<p><strong>17. X:checked</strong></p>
+
+<pre><code class="language-css">input[type=radio]:checked {
+  border: 1px solid black;
+}
+</code></pre>
+<p>:checked 伪类选择器用于选取所有标记为 checked 的元素，比如单选框 (radio button) 或复选框 (checkbox)。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>18. X:after</strong></p>
+
+<p>:before 与 :after 是两个令人兴奋的伪类选择器，几乎每天都有人发明出一些新用法，这里简单介绍一下如何用它清除浮动：</p>
+
+<pre><code class="language-css">.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.clearfix {
+  *display: inline-block;
+  _height: 1%;
+}
+</code></pre>
+<p>这种方式通过 :after 在元素后面添加一块区域，然后将其隐藏，可以弥补 overflow: hidden; 的缺陷。</p>
+
+<p>根据 CSS3 选择器标准，理论上伪类选择器应该使用双冒号，但实际上浏览器也支持单冒号的形式，所以可以继续使用单冒号。</p>
+
+<p>兼容 IE8+</p>
+
+<p><strong>19. X:hover</strong></p>
+
+<pre><code class="language-css">div:hover {
+  background: #e3e3e3;
+}
+</code></pre>
+<p>最常用的伪类选择器，不多解释了，只是需要注意 IE6 不支持将 :hover 作用于除 a 链接外的其他元素。</p>
+
+<pre><code class="language-css">a:hover {
+ border-bottom: 1px solid black;
+}
+</code></pre>
+<p>另外提醒一点：border-bottom: 1px solid black; 的效果要比 text-decoration: underline; 好看一些。</p>
+
+<p>兼容 IE6+ （在 IE6 中 :hover 只能作用于链接）</p>
+
+<p><strong>20. X:not(selector)</strong></p>
+
+<pre><code class="language-css">div:not(#container) {
+  color: blue;
+}
+</code></pre>
+<p>:not 伪类选择器有时会起到很重要的作用，假设现在要选取除 #contaienr 外的所有 div 元素，就可以用上面的代码实现。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>21. X::pseudoElement</strong></p>
+
+<pre><code class="language-css">p::first-line {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+</code></pre>
+<p>通过伪元素（使用双冒号 ::）可以给元素的某一部分设定样式，比如第一行、或者第一个字母。需要注意的是，这只对块级元素 (block level elements) 生效。</p>
+
+<p>提示：伪元素 (pseudo element) 使用双冒号 ::</p>
+
+<p>选取段落的第一个字母</p>
+
+<pre><code class="language-css">p::first-letter {
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: cursive;
+  padding-right: 2px;
+}
+</code></pre>
+<p>这段代码将选取页面中所有 p 元素，然后再选取其中的第一个字母。</p>
+
+<p>选取段落的第一行</p>
+
+<pre><code class="language-css">p::first-line {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+</code></pre>
+<p>与上面的例子类似，通过 ::first-line 选取页面的第一行。</p>
+
+<p>为了兼容 CSS1 与 CSS2 中的伪元素（比如 :first-line, :first-letter, :before 以及 :after），浏览器接受单冒号与双冒号两种格式，但对于 CSS3 中最新引入的伪元素，必须使用双冒号。</p>
+
+<p>兼容 IE6+</p>
+
+<p><strong>22. X:nth-child(n)</strong></p>
+
+<pre><code class="language-css">li:nth-child(3) {
+  color: red;
+}
+</code></pre>
+<p>:nth-child(n) 用于选取 stack 中的某一个元素，只接受整数作参数（参数从 1 开始计数），如果你想选取第二个 li 元素，只需这样写 li:nth-child(2)。</p>
+
+<p>也可以设定可变的参数，比如 li:nth-child(4n) 将选取第 4, 8 , 12… 个元素（4*n, n=1, n++）。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>23. X:nth-last-child(n)</strong></p>
+
+<pre><code class="language-css">li:nth-last-child(2) {
+  color: red;
+}
+</code></pre>
+<p>除了正序（从上往下）选择，也可以使用 :nth-last-child(n) 倒序（从下往上）选择第几个元素，其他用法与第 22 条完全一样。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>24. X:nth-of-type(n)</strong></p>
+
+<pre><code class="language-css">ul:nth-of-type(3) {
+  border: 1px solid black;
+}
+</code></pre>
+<p>:nth-of-type(n) 的作用不是选取子元素 (child element)，而是选取同类元素 (type of element)。想象一下 HTML 文件中包含 5 个 ul 元素，现在要选取第三个，只需使用上面的代码，而不用再单独这个 ul 添加 id。</p>
+
+<p>关于 :nth-child 与 :nth-of-type 的区别，具体请查看 CSS-Tricks 网站的解释，简单来说，如果父层内只包含一种元素（比如都是 p 元素）那两种用法是等效的，如果父层包含多种元素（比如 p 元素与同级的其他元素），需要选取第几个 p 元素时应该用 :nth-of-type。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>25. X:nth-last-of-type(n)</strong></p>
+
+<pre><code class="language-css">ul:nth-last-of-type(3) {
+  border: 1px solid black;
+}
+</code></pre>
+<p>与第 24 条用法相同，倒序选取同类元素。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>26. X:first-child</strong></p>
+
+<pre><code class="language-css">ul li:first-child {
+  border-top: none;
+}
+</code></pre>
+<p>选取父层内的第一个子元素。</p>
+
+<p>兼容 IE7+</p>
+
+<p><strong>27. X:last-child</strong></p>
+
+<pre><code class="language-css">ul &gt; li:last-child {
+  color: green;
+}
+</code></pre>
+<p>与第 26 条用法相同，区别在于 :last-child 选取父层元素内的最后一个子元素。</p>
+
+<p>:first-child 与 :last-child 通常用来清除边框 (border)，比如 &lt;ul&gt;&lt;/ul&gt;内每个 &lt;li&gt;&lt;/li&gt; 都使用了 border-top 与 border-bottom 边框，结果是，第一个元素的上方与最后一个元素的下方会是单边框效果。这种情况可以用 :first-child 与 :last-child 清除上下的边框，而不用给第一个元素添加 id=”first” 或者给最后一个元素添加 id=”last”。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>28. X:only-child</strong></p>
+
+<pre><code class="language-css">div p:only-child {
+  color: red;
+}
+</code></pre>
+<p>这个伪类选择器不常用，它可以选取包含唯一指定子元素的父层。比如上面的代码中将选取下面第一个 div 元素，而不是第二个 div 中的 p 元素。</p>
+
+<pre><code class="language-html">&lt;div&gt;&lt;p&gt; My paragraph here. &lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt; Two paragraphs total. &lt;/p&gt;
+  &lt;p&gt; Two paragraphs total. &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>兼容 IE9+</p>
+
+<p><strong>29. X:only-of-type</strong></p>
+
+<pre><code class="language-css">li:only-of-type {
+  font-weight: bold;
+}
+</code></pre>
+<p>这个选择器会选取某个元素，并且这个元素在其父层内没有其他同级同类元素（不一定是唯一元素）。比如，要选取所有只包含一个 li 元素的 ul 元素该怎么做呢？如果使用 ul li 将选取所有 li 元素，应该使用 only-of-type。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>30. X:first-of-type</strong></p>
+
+<p>first-of-type 伪类可以选取某种元素的第一个同类元素。</p>
+
+<p>为了更好地理解它的用法，现在思考一下如何在下面的 HTML 结构中选取 List Item 2 ？</p>
+
+<pre><code class="language-css">&lt;div&gt;
+  &lt;p&gt; My paragraph here. &lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt; List Item 1 &lt;/li&gt;
+    &lt;li&gt; List Item 2 &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul&gt;
+    &lt;li&gt; List Item 3 &lt;/li&gt;
+    &lt;li&gt; List Item 4 &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<p>方法一</p>
+
+<pre><code class="language-css">ul:first-of-type &gt; li:nth-child(2) {
+  font-weight: bold;
+}
+</code></pre>
+<p>这段代码的意思是：首先选取第一个 ul 元素；然后选取其中的所有直接子元素，也就是 li；最后选取第二个子元素。</p>
+
+<p>方法二</p>
+
+<pre><code class="language-css">p + ul li:last-child {
+  font-weight: bold;
+}
+</code></pre>
+<p>找到 p 元素后第一个出现的 ul 元素，然后选取其中的最后一个子元素。</p>
+
+<p>方法三</p>
+
+<pre><code class="language-css">ul:first-of-type li:nth-last-child(1) {
+  font-weight: bold;
+}
+</code></pre>
+<p>找到第一个 ul 元素，然后从上往下选取第一个子元素。</p>
+
+<p>兼容 IE9+</p>
+
+<p><strong>31. 伪类选择器叠用</strong></p>
+
+<p>有些伪类选择器或者伪元素是可以叠用的，例如：</p>
+
+<pre><code class="language-css">#post p:nth-of-type(2):first-letter {
+  float: left;
+  margin: 0 5px 0 1em;
+  width: 1em;
+  height: 1em;
+  font-size: 2em;
+}
+</code></pre>
+<p>目测兼容 IE9+，听说 IE10 有个小 bug</p>
+
+					</div>
+				</article>
+			</div>
+			<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread">
+
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_hi"></a>
+<span class="bds_more">更多</span>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6840238" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+	</div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"susiyang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+		</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+<script src="/assets/index.min.js?body=4.0.0"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffbcbbadeaf00526725e0f222ba832804' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	</body>
+</html>

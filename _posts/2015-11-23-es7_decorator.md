@@ -6,11 +6,11 @@ tags : 前端 javascript
 ---
 
 
-##ES6 已经来了，ES7 还会远么？
+## ES6 已经来了，ES7 还会远么？
 
 ES6 标准正式发布，众多新特性成为标准固然另人激动，然而更值得憧憬的还是未来。所以，让我们来看看 ES7（更正式的说法是 ES2016）有哪些激动人心的变化。最为人津津乐道的可能就是 async/await 了，不过我个人出对 decorator 模式有点感兴趣，本文尝试对此做一个介绍。
 
-###decorator 是什么
+### decorator 是什么
 
 ES7 的 decorator 概念是从 Python 借来的，在 Python 里，decorator 实际上是一个 wrapper，它作用于一个目标函数，对这个目标函数做一些额外的操作，然后返回一个新的函数：
 
@@ -42,7 +42,7 @@ greet('Decorator!')
 
 ES7 中的 decorator 同样借鉴了这个语法糖，不过依赖于 ES5 的 Object.defineProperty 方法 。
 
-##浅出
+## 浅出
 
 
 想必大家都该玩过LOL吧。那么我就以英雄联盟英雄为例子。

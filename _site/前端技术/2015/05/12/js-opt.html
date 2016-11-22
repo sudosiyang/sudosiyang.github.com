@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			前端性能优化实践 -
+
+			苏思洋的博客 </title>
+
+		<meta name="author" content="susu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link href="/assets/style.min.css?body=3.3.1" rel="stylesheet" type="text/css" media="all">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="feed.xml" />
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+		<!-- fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+	</head>
+
+	<body>
+		<div class="navbar">
+			<img id="profile" src="/blog-assets/susu.jpg" alt="susu" class="rollIn animated">
+			<ul class="nav">
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label1" class="labels"><a href="/">
+
+				最新文章
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label2" class="labels"><a href="/other">
+
+				杂谈
+
+		</a></li>
+
+
+
+
+
+
+
+
+
+				<li id="label3" class="active labels"><a href="/qianduan" class="active">前端技术</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label4" class="labels"><a href="/tec_css">
+
+				交互设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label5" class="labels"><a href="/view_des">
+
+				视觉设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+			</ul>
+			<div class="f_like">
+			<div>友链</div>
+			<ul class="links">
+
+                 <li class="link"><a href="http://hyq.me" title="hyq">hyq</a></li>
+
+                 <li class="link"><a href="http://catalystdp.github.io/" title="catalystdp">catalystdp</a></li>
+
+			</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="title_wrap" class=" title3">
+				<h2 class="title">
+
+
+
+
+
+
+
+
+
+
+							前端技术
+
+
+
+
+
+
+
+
+				</h2>
+			</div>
+
+
+					<ul class="posts">
+
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/12/01/web_build"><span class="circle_icon"></span>前端工程化技能树整理<span class='date'>01 Dec 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/30/es6_Design-pattern"><span class="circle_icon"></span>ES6 实现几种 设计模式<span class='date'>30 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/23/es7_decorator"><span class="circle_icon"></span>ES7 Decorator 装饰者模式 浅出<span class='date'>23 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/10/requestAnimationFrame"><span class="circle_icon"></span>requestAnimationFrame 详解<span class='date'>10 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/14/css_BFC"><span class="circle_icon"></span>BFC 神奇背后的原理<span class='date'>14 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/12/js-opt" class="active"><span class="circle_icon"></span>前端性能优化实践<span class='date'>12 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/29/learn-web"><span class="circle_icon"></span>2015年值得关注的几个WEB技术<span class='date'>29 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/10/HTTP_API"><span class="circle_icon"></span>HTTP API 设计指南<span class='date'>10 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/09/html_guid"><span class="circle_icon"></span>HTML编码规范<span class='date'>09 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/less_guide"><span class="circle_icon"></span>Less规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/javascript_guide"><span class="circle_icon"></span>JavaScript规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/css_guide"><span class="circle_icon"></span>CSS规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/16/javascript_tip"><span class="circle_icon"></span>前端小技巧总结<span class='date'>16 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2"><span class="circle_icon"></span>用pm2管理node进程<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2-web"><span class="circle_icon"></span>pm2-web监控node.js应用服务状态<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/08/13/nodejs_update"><span class="circle_icon"></span>node.js升级<span class='date'>13 Aug 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/04/11/Canvas_API"><span class="circle_icon"></span>Canvas API<span class='date'>11 Apr 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/21/html-zhuanyi"><span class="circle_icon"></span>JavaScript 的HTML转义方法<span class='date'>21 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P"><span class="circle_icon"></span>IE下iframe跨域session丢失问题和解决<span class='date'>09 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/07/javascript-tip"><span class="circle_icon"></span>javascript 小技巧<span class='date'>07 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/25/31CSS"><span class="circle_icon"></span>31 种 CSS 选择器用法<span class='date'>25 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design_step"><span class="circle_icon"></span>复杂产品的响应式设计【流程篇】<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design"><span class="circle_icon"></span>响应式网页设计<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/qianduan"><span class="circle_icon"></span>前端的困局与突围(from 玉伯)<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/markdown"><span class="circle_icon"></span>如何使用markdown<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+					</ul>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<div id="container">
+			<button class="navbar-toggle" type="button">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+			<div id="pjax">
+				<article id="post" class="title3">
+					<header id="header">
+						<h1 id="identifier">
+								前端性能优化实践
+						</h1>
+					</header>
+					<div id="content">
+						<p>##高频执行事件/方法的防抖</p>
+
+<p>通常，开发人员会在有用户交互参与的地方添加事件，而往往这种事件会被频繁触发。想象一下窗口的resize事件或者是一个元素的onmouseover事件 - 他们触发时，执行的非常迅速，并且触发很多次。如果你的回调过重，你可能使浏览器死掉。这就是为什么我们要引入防抖。</p>
+
+<p>防抖可以限制一个方法在一定时间内执行的次数。以下代码是个防抖示例：</p>
+
+<pre><code class="language-js">// 取自 UnderscoreJS 实用框架
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate &amp;&amp; !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+  }
+
+// 添加resize的回调函数，但是只允许它每300毫秒执行一次
+window.addEventListener('resize', debounce(function(event) {
+
+    // 这里写resize过程
+
+}, 300));
+</code></pre>
+
+<p>debounce方法返回一个方法，用来包住你的回调函数，限制他的执行频率。使用这个防抖方法，就可以让你写的频繁回调的方法不会妨碍用户的浏览器！</p>
+
+<p>##尽可能使用CSS动画</p>
+
+<p>网站设计对美观特性和可配置元素动画的大量需求，使得一些JavaScript类库，如jQuery，MooTools大量的被使用。尽管现在浏览器支持CSS的transformation和keyframe所做的动画，现在仍有很多人使用JavaScript制作动画效果，但是实际上使用CSS动画比起JavaScript驱动的动画效率更高。CSS动画同时需要更少的代码。很多的CSS动画是用GPU处理的，因此动画本身很流畅，当然你可以使用下面这个简单的CSS强制使你的硬件加速：</p>
+
+<pre><code class="language-css">.myAnimation {
+    animation: someAnimation 1s;
+    transform: translate3d(0, 0, 0); /* 强制硬件加速 */
+}
+</code></pre>
+
+<p>tansform:transform(0,0,0)在不会影响其他动画的同时将通话送入硬件加速。在不支持CSS动画的情况下（IE8及以下版本的浏览器），你可以引入JavaScript动画逻辑：</p>
+
+<pre><code class="language-html">&lt;!--[if 低于IE8版本]&gt;
+&lt;script src="http://code.jquery.com/jquery-1.9.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="/js/ie-animations.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+
+<p>在上例中，ie-animations.JS文件必须包含你自定义的jQuery代码，用于当CSS动画在早期IE中不被支持的情况下，来替代CSS动画完成动画效果。完美的通过CSS动画来优化动画，通过JavaScript来支持全局动画效果。</p>
+
+<p>##使用媒体查询加载指定大小的背景图片</p>
+
+<p>直到CSS @supports被广泛支持，CSS媒体查询的使用接近于CSS中写逻辑控制。我们经常用CSS媒体查询来根据设备调整CSS属性（通常根据屏幕宽度调整CSS属性），例如根据不同的屏幕宽度来设置不同的元素宽度或者是悬浮位置。那么我们为什么不用这种方式来改变背景图片呢？</p>
+
+<pre><code class="language-css">/* 默认是为桌面应用加载图片 */
+.someElement { background-image: url(sunset.jpg); }
+
+@media only screen and (max-width : 1024px) {
+    .someElement { background-image: url(sunset-small.jpg); }
+}
+</code></pre>
+
+<p>上面的代码片段是为手机设备或是类似的移动设备加载一个较小尺寸的图片，特别是需要一个特别小的图片时（例如图片的大小几乎不可视）。</p>
+
+<p>##控制DOM大小</p>
+
+<p>DOM很慢是众所周知的，使得网站变慢的罪魁祸首是大量的DOM。想象一下，假如你有一个有着上千节点的DOM，在想象一下，使用querySelectorAll或者getElementByTagName，或者是其他以DOM为中心的搜索方式来搜索一个节点，即使是使用内置方法，这也将是一个非常费力的过程。你要知道，多余的DOM节点会使其他的实用程序也变慢的。</p>
+
+<p>我见过的一种情况，DOM的大小悄然增加，是在一个AJAX网站，它将所有的页面都存在了DOM中，当一个新的页面通过AJAX被加载时，旧的页面就会被存入隐藏的DOM节点。对于DOM的速度，将有灾难性的降低，特别是当一个页面是动态加载的。所以你需要一种更好的方法。</p>
+
+<p>在这种情况下，当页面是通过AJAX加载的，并且以前的页面是存储在客户端的，最好的方法就是将内容通过String HTML存储（将内容从DOM中移除），然后使用事件委托来避免特定元素事件。这么做的同时，当在客户端缓存内容的时候，可以避免大量的DOM生成。</p>
+
+<p>通常控制DOM大小的技巧包括：</p>
+
+<ul>
+  <li>使用:before和:after伪元素</li>
+  <li>延迟加载和呈现内容</li>
+  <li>使用事件委托，更简便的将节点转换成字符串存储</li>
+  <li>简单一句话：尽量使你的DOM越小越好。</li>
+</ul>
+
+					</div>
+				</article>
+			</div>
+			<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread">
+
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_hi"></a>
+<span class="bds_more">更多</span>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6840238" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+	</div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"susiyang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+		</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+<script src="/assets/index.min.js?body=4.0.0"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffbcbbadeaf00526725e0f222ba832804' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	</body>
+</html>

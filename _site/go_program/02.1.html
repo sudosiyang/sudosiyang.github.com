@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>语言简史 | Go 语言编程</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+
+
+
+    <link rel="next" href="./02.2.html" />
+
+
+    <link rel="prev" href="./02.html" />
+
+
+
+    </head>
+    <body>
+
+
+<link rel="stylesheet" href="gitbook/style.css">
+
+
+
+    <div class="book"  data-level="2.1" data-basepath="." data-revision="1419313201588">
+
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+
+
+
+
+
+
+
+
+
+
+        <li class="chapter " data-level="0" data-path="index.html">
+
+
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+
+                         简介
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="1" data-path="01.html">
+
+
+                    <a href="./01.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>1.</b>
+
+                         前言
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2" data-path="02.html">
+
+
+                    <a href="./02.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.</b>
+
+                         初识Go语言
+                    </a>
+
+
+
+            <ul class="articles">
+
+
+
+        <li class="chapter active" data-level="2.1" data-path="02.1.html">
+
+
+                    <a href="./02.1.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.1.</b>
+
+                         语言简史
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2.2" data-path="02.2.html">
+
+
+                    <a href="./02.2.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.</b>
+
+                         语言特性
+                    </a>
+
+
+
+            <ul class="articles">
+
+
+
+        <li class="chapter " data-level="2.2.1" data-path="02.2.1.html">
+
+
+                    <a href="./02.2.1.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.1.</b>
+
+                         自动垃圾回收
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2.2.2" data-path="02.2.2.html">
+
+
+                    <a href="./02.2.2.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.2.</b>
+
+                         更丰富的内置类型
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2.2.3" data-path="02.2.3.html">
+
+
+                    <a href="./02.2.3.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.3.</b>
+
+                         函数多返回值
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2.2.4" data-path="02.2.4.html">
+
+
+                    <a href="./02.2.4.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.4.</b>
+
+                         错误处理
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2.2.5" data-path="02.2.5.html">
+
+
+                    <a href="./02.2.5.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.5.</b>
+
+                         匿名函数和闭包
+                    </a>
+
+
+
+        </li>
+
+
+        <li class="chapter " data-level="2.2.6" data-path="02.2.6.html">
+
+
+                    <a href="./02.2.6.html">
+                        <i class="fa fa-check"></i>
+
+                            <b>2.2.6.</b>
+
+                         类型和接口
+                    </a>
+
+
+
+        </li>
+
+
+            </ul>
+
+        </li>
+
+
+            </ul>
+
+        </li>
+
+
+
+
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+
+
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+
+
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Go 语言编程</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+
+
+                    <section class="normal" id="section-gitbook_12">
+
+                        <h1 id="">语言简史</h1>
+<p>提起Go语言的出身，我们就必须将我们饱含敬意的眼光投向持续推出惊世骇俗成果的贝尔实验室。贝尔实验室已经走出了多位诺贝尔奖获得者，一些对于现在科技至关重要的研究成果，比如晶体管、通信技术、数码相机的感光元件CCD和光电池等都源自贝尔实验室。该实验室在科技界的地位可想而之，是一个毫无争议的科研圣地。</p>
+<p>这里我们重点介绍一下贝尔实验室中一个叫计算科学研究中心的部门对于操作系统和编程语言的贡献。回溯至1969年(估计大部分读者那时候都还没出世)，肯·汤普逊(Ken Thompson)和丹尼斯·里奇(Dennis Ritchie)在贝尔实验室的计算科学研究中心里开发出了Unix这个大名鼎鼎的操作系统，还因为开发Unix而衍生出了一门同样赫赫有名的编程语言一一C语言。对于很大一部分人而言，Unix就是操作系统的鼻祖，C语言也是计算机课程中最广泛使用的编程语言。Unix和C语言在过去的几十年以来已经造就了无数的成功商业故事，比如曾在90年代如日中天的太阳微系统(Sun Microsystems )，现在正如日中天的苹果的Mac OS X操作系统其实也可以认为是Unix的一个变种(FreeBSD )。</p>
+<p>虽然已经取得了如此巨大的成就，贝尔实验室的这几个人并没有因此而沉浸在光环中止步不前，他们从20世纪80年代又开始了一个名为Plan 9的操作系统研究项目，目的就是解决Unix中的一些问题，发展出一个Unix的后续替代系统。在之后的几十年中，该研究项目又演变出了另一个
+叫Inferno的项目分支，以及一个名为Limbo的编程语言。</p>
+<p>Limbo是用于开发运行在小型计算机上的分布式应用的编程语言，它支持模块化编程，编译期和运行时的强类型检查，进程内基于具有类型的通信通道，原子性垃圾收集和简单的抽象数据类型。它被设计为:即便是在没有硬件内存保护的小型设备上，也能安全运行。</p>
+<p>Limbo语言被认为是Go语言的前身，不仅仅因为是同一批人设计的语言，而是Go语言确实从Limbo语言中继承了众多优秀的特性。</p>
+<p>贝尔实验室后来经历了多次的动荡，包括肯·汤普逊在内的Plan 9项目原班人马加入了Google。在Google，他们创造了Go语言。早在2007年9月，Go语言还是这帮大牛的20%自由时间的实验项目。幸运的是，到了2008年5月，Google发现了Go语言的巨大潜力，从而开始全力支持这个项目，让这批人可以全身心投入Go语言的设计和开发工作中。Go语言的第一个版本在2009年11月正式对外发布，并在此后的两年内决速迭代，发展迅猛。第一个正式版本的Go语言于2012年3月28日正式发布，让Go语言迎来了第一个引人瞩目的里程碑。</p>
+<p>基于Google对开源的一贯拥抱态度，Go语言也自然而然地选择了开源方式发布，并使用BSD授权协议。任何人可以查看Go语言的所有源代码，并可以为Go语言发展而奉献自己的力量。</p>
+<p>Google作为Go语言的主推者，并没有简简单单地把语言推给开源社区了事，它不仅组建了一个独立的小组全职开发Go语言，还在自家的服务中逐步增加对Go语言的支持，比如对于Google有战略意义的云计算平台GAE ( Google AppEngine)很早就开始支持Go语言了。按目前的发展态势，在Google内部，Go语言有逐渐取代Java和Python主流地位的趋势。在Google的更多产品中，我们将看到Go语言的踪影，比如Google最核心的搜索和广告业务。</p>
+<p>在本书的序中，我们已经清晰诊释了为什么在语言泛滥的时代Google还要设计和推出一门新的编程语言。按照已经发布的Go语言的特性，我们有足够的理由相信Google推出此门新编程语言绝不仅仅是简单的跑马圈地运动，而是为了解决切实的问题。</p>
+<p>下面我们再来看看Go语言的主要作者</p>
+<ul>
+<li>肯·汤普逊(Ken Thompson,  <a href="http://en.wikipedia.org/wild/Ken_Thompson" target="_blank">http://en.wikipedia.org/wild/Ken_Thompson</a> ):设计了B语言和C语言，创建了Unix和Plan 9操作系统，1983年图灵奖得主，Go语言的共同作者。</li>
+<li>罗布·派克(Rob Pike, <a href="http://en.wikipedia.org/wild/Rob_Pike" target="_blank">http://en.wikipedia.org/wild/Rob_Pike</a> ):Unix小组的成员，参与Plan 9和Inferno操作系统，参与Limbo和Go语言的研发，《Unix编程环境》作者之一。</li>
+<li>罗伯特·格里泽默(Robert Griesemer):曾协助制作Java的HotSpot编译器和Chrome浏览器的JavaScript引擎V8</li>
+<li>拉斯·考克斯(Russ Cox):参与Plan 9操作系统的开发，Google Code Search项目负责人。</li>
+<li>伊安·泰勒(( Ian Lance Taylor ): GCC社区的活跃人物，gold连接器和GCC过程间优化LTO的主要设计者，Zembu公司的创始人。</li>
+<li>布拉德·菲茨帕特里克(Brad Fitzpatrick,  <a href="http://en.wikipedia.org/wild/Brad_Fitzpatrick" target="_blank">http://en.wikipedia.org/wild/Brad_Fitzpatrick</a> ):</li>
+</ul>
+<p>虽然我们这里只列出了一部分，大家已经可以看出这个语言开发团队空前强大，这让我们在为Go语言的优秀特性而兴奋之外，还非常看好这门语言的发展前景。</p>
+
+
+                    </section>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <a href="./02.html" class="navigation navigation-prev " aria-label="Previous page: 初识Go语言"><i class="fa fa-angle-left"></i></a>
+
+
+        <a href="./02.2.html" class="navigation navigation-next " aria-label="Next page: 语言特性"><i class="fa fa-angle-right"></i></a>
+
+    </div>
+</div>
+
+
+<script src="gitbook/app.js"></script>
+
+
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+
+    </body>
+
+</html>

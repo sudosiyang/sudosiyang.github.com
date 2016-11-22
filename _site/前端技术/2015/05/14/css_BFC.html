@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			BFC 神奇背后的原理 -
+
+			苏思洋的博客 </title>
+
+		<meta name="author" content="susu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link href="/assets/style.min.css?body=3.3.1" rel="stylesheet" type="text/css" media="all">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="feed.xml" />
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+		<!-- fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+	</head>
+
+	<body>
+		<div class="navbar">
+			<img id="profile" src="/blog-assets/susu.jpg" alt="susu" class="rollIn animated">
+			<ul class="nav">
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label1" class="labels"><a href="/">
+
+				最新文章
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label2" class="labels"><a href="/other">
+
+				杂谈
+
+		</a></li>
+
+
+
+
+
+
+
+
+
+				<li id="label3" class="active labels"><a href="/qianduan" class="active">前端技术</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label4" class="labels"><a href="/tec_css">
+
+				交互设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label5" class="labels"><a href="/view_des">
+
+				视觉设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+			</ul>
+			<div class="f_like">
+			<div>友链</div>
+			<ul class="links">
+
+                 <li class="link"><a href="http://hyq.me" title="hyq">hyq</a></li>
+
+                 <li class="link"><a href="http://catalystdp.github.io/" title="catalystdp">catalystdp</a></li>
+
+			</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="title_wrap" class=" title3">
+				<h2 class="title">
+
+
+
+
+
+
+
+
+
+
+							前端技术
+
+
+
+
+
+
+
+
+				</h2>
+			</div>
+
+
+					<ul class="posts">
+
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/12/01/web_build"><span class="circle_icon"></span>前端工程化技能树整理<span class='date'>01 Dec 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/30/es6_Design-pattern"><span class="circle_icon"></span>ES6 实现几种 设计模式<span class='date'>30 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/23/es7_decorator"><span class="circle_icon"></span>ES7 Decorator 装饰者模式 浅出<span class='date'>23 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/10/requestAnimationFrame"><span class="circle_icon"></span>requestAnimationFrame 详解<span class='date'>10 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/14/css_BFC" class="active"><span class="circle_icon"></span>BFC 神奇背后的原理<span class='date'>14 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/12/js-opt"><span class="circle_icon"></span>前端性能优化实践<span class='date'>12 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/29/learn-web"><span class="circle_icon"></span>2015年值得关注的几个WEB技术<span class='date'>29 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/10/HTTP_API"><span class="circle_icon"></span>HTTP API 设计指南<span class='date'>10 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/09/html_guid"><span class="circle_icon"></span>HTML编码规范<span class='date'>09 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/less_guide"><span class="circle_icon"></span>Less规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/javascript_guide"><span class="circle_icon"></span>JavaScript规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/css_guide"><span class="circle_icon"></span>CSS规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/16/javascript_tip"><span class="circle_icon"></span>前端小技巧总结<span class='date'>16 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2"><span class="circle_icon"></span>用pm2管理node进程<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2-web"><span class="circle_icon"></span>pm2-web监控node.js应用服务状态<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/08/13/nodejs_update"><span class="circle_icon"></span>node.js升级<span class='date'>13 Aug 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/04/11/Canvas_API"><span class="circle_icon"></span>Canvas API<span class='date'>11 Apr 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/21/html-zhuanyi"><span class="circle_icon"></span>JavaScript 的HTML转义方法<span class='date'>21 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P"><span class="circle_icon"></span>IE下iframe跨域session丢失问题和解决<span class='date'>09 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/07/javascript-tip"><span class="circle_icon"></span>javascript 小技巧<span class='date'>07 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/25/31CSS"><span class="circle_icon"></span>31 种 CSS 选择器用法<span class='date'>25 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design_step"><span class="circle_icon"></span>复杂产品的响应式设计【流程篇】<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design"><span class="circle_icon"></span>响应式网页设计<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/qianduan"><span class="circle_icon"></span>前端的困局与突围(from 玉伯)<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/markdown"><span class="circle_icon"></span>如何使用markdown<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+					</ul>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<div id="container">
+			<button class="navbar-toggle" type="button">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+			<div id="pjax">
+				<article id="post" class="title3">
+					<header id="header">
+						<h1 id="identifier">
+								BFC 神奇背后的原理
+						</h1>
+					</header>
+					<div id="content">
+						<p><code>BFC</code>已经是一个耳听熟闻的词语了，网上有许多关于<code>BFC</code>的文章，介绍了如何触发<code>BFC</code>， 以及<code>BFC</code>的一些用处（如清浮动，防止margin重叠等）。虽然我知道如何利用<code>BFC</code>解决这些问题，但当别人问我<code>BFC</code>是什么，我还是不能很有底气地解释清楚。于是这两天仔细阅读了CSS2.1 spec, 和许多文章，来全面地理解BFC：</p>
+
+<ol>
+  <li><code> BFC</code>是个什么？</li>
+  <li>哪些元素会生成<code>BFC</code></li>
+  <li><code>BFC</code>的神奇的作用，及背后的原理</li>
+</ol>
+
+<h2 id="一bfc是什么">一、BFC是什么？</h2>
+
+<p>在解释<code>BFC</code>是什么之前，需要先介绍<code>Box</code>, <code>Formatting context</code>的概念。</p>
+
+<h3 id="box-css布局的基本单位">Box: CSS布局的基本单位</h3>
+
+<p><code>Box</code>是CSS布局的对象和基本单位， 直观点来说，就是一个页面是由很多个<code>Box</code>组成的。元素的类型和display属性，决定了这个<code>Box</code>的类型。 不同类型的<code>Box</code>， 会参与不同的<code>Formatting context</code>(一个决定如何渲染文档的容器)，因此<code>Box</code>内的元素会以不同的方式渲染。让我们看看有哪些盒子：</p>
+
+<ul>
+  <li>
+    <p><code>block-level box</code>: display属性为block, list-item, table的元素，会生成<code>block-level box</code>。并且参与<code>block fomatting context</code>。</p>
+  </li>
+  <li>
+    <p><code>inline-level box</code>: display属性为inline, inline-block, inline-table的元素，会生成<code>inline-level box</code>。并且参与<code>inline formatting context</code>。</p>
+  </li>
+  <li>
+    <p><code>run-in box</code>: css3中才有， 这儿先不讲了</p>
+  </li>
+</ul>
+
+<h3 id="formatting-context">Formatting context</h3>
+
+<p><code>Formatting context</code>是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
+
+<p>最常见的<code>Formatting context</code>有<code>Block fomatting context</code>(简称<code>BFC</code>)和<code>Inline formatting context</code>(简称<code>IFC</code>)。</p>
+
+<p>CSS2.1 中只有<code>BFC</code>和<code>IFC</code>, CSS3中还增加了<code>GFC</code>和<code>FFC</code></p>
+
+<h3 id="bfc-定义">BFC 定义</h3>
+
+<p><code>BFC</code>(<code>Block formatting context</code>)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有<code>Block-level box</code>参与， 它规定了内部的<code>Block-level Box</code>如何布局，并且与这个区域外部毫不相干。</p>
+
+<h4 id="bfc布局规则">BFC布局规则：</h4>
+
+<ol>
+  <li>内部的<code>Box</code>会在垂直方向，一个接一个地放置。</li>
+  <li><code>Box</code>垂直方向的距离由margin决定。属于同一个<code>BFC</code>的两个相邻<code>Box</code>的margin会发生重叠</li>
+  <li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+  <li><code>BFC</code>的区域不会与<code>float box</code>重叠。</li>
+  <li><code>BFC</code>就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+  <li>计算<code>BFC</code>的高度时，浮动元素也参与计算</li>
+</ol>
+
+<h2 id="二哪些元素会生成bfc">二、哪些元素会生成BFC?</h2>
+
+<ol>
+  <li>根元素</li>
+  <li>float属性不为none</li>
+  <li>position为absolute或fixed</li>
+  <li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+  <li>overflow不为visible</li>
+</ol>
+
+<h2 id="三bfc的作用及原理">三、BFC的作用及原理</h2>
+
+<h3 id="1-自适应两栏布局">1. 自适应两栏布局</h3>
+<p>代码：</p>
+
+<pre><code class="language-html">&lt;style&gt;
+    body {
+        width: 300px;
+        position: relative;
+    }
+
+    .aside {
+        width: 100px;
+        height: 150px;
+        float: left;
+        background: #f66;
+    }
+
+    .main {
+        height: 200px;
+        background: #fcc;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class="aside"&gt;&lt;/div&gt;
+    &lt;div class="main"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>页面：</p>
+
+<p><img src="http://p1.qhimg.com/d/inn/4055c62a/4dca44a927d4c1ffc30e3ae5f53a0b79.png" alt="此处输入图片的描述" /></p>
+
+<p>根据<code>BFC</code>布局规则第3条：</p>
+
+<blockquote>
+  <p>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</p>
+</blockquote>
+
+<p>因此，虽然存在浮动的元素aslide，但main的左边依然会与包含块的左边相接触。</p>
+
+<p>根据<code>BFC</code>布局规则第四条：</p>
+
+<blockquote>
+  <p><code>BFC</code>的区域不会与<code>float box</code>重叠。</p>
+</blockquote>
+
+<p>我们可以通过通过触发main生成<code>BFC</code>， 来实现自适应两栏布局。</p>
+
+<pre><code class="language-css">.main {
+    overflow: hidden;
+}
+</code></pre>
+<p>当触发main生成<code>BFC</code>后，这个新的<code>BFC</code>不会与浮动的aside重叠。因此会根据包含块的宽度，和aside的宽度，自动变窄。效果如下：</p>
+
+<p><img src="http://p6.qhimg.com/t01077886a9706cb26b.png" alt="此处输入图片的描述" /></p>
+
+<h3 id="2-清除内部浮动">2. 清除内部浮动</h3>
+
+<p>代码:</p>
+
+<pre><code class="language-html">&lt;style&gt;
+    .par {
+	    border: 5px solid #fcc;
+	    width: 300px;
+    }
+
+    .child {
+	    border: 5px solid #f66;
+	    width:100px;
+	    height: 100px;
+	    float: left;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;div class="par"&gt;
+	    &lt;div class="child"&gt;&lt;/div&gt;
+	    &lt;div class="child"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>页面：</p>
+
+<p><img src="http://p1.qhimg.com/t016035b58195e7909a.png" alt="此处输入图片的描述" /></p>
+
+<p>根据<code>BFC</code>布局规则第六条：</p>
+<blockquote>
+  <p>计算<code>BFC</code>的高度时，浮动元素也参与计算</p>
+</blockquote>
+
+<p>为达到清除内部浮动，我们可以触发par生成<code>BFC</code>，那么par在计算高度时，par内部的浮动元素child也会参与计算。</p>
+
+<p>代码：</p>
+
+<pre><code class="language-css">.par {
+    overflow: hidden;
+}
+</code></pre>
+
+<p>效果如下：</p>
+
+<p><img src="http://p2.qhimg.com/t016bbbe5236ef1ffd5.png" alt="此处输入图片的描述" />
+￼</p>
+<h3 id="3-防止垂直margin重叠">3. 防止垂直margin重叠</h3>
+
+<p>代码：</p>
+
+<pre><code class="language-html">&lt;style&gt;
+    p {
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;p&gt;Haha&lt;/p&gt;
+    &lt;p&gt;Hehe&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>页面：</p>
+
+<p><img src="http://p5.qhimg.com/t01b47b8b7d153c07cc.png" alt="此处输入图片的描述" /></p>
+
+<p>两个p之间的距离为100px，发送了margin重叠。<br />
+根据BFC布局规则第二条：</p>
+
+<blockquote>
+  <p><code>Box</code>垂直方向的距离由margin决定。属于同一个<code>BFC</code>的两个相邻<code>Box</code>的margin会发生重叠</p>
+</blockquote>
+
+<p>我们可以在p外面包裹一层容器，并触发该容器生成一个<code>BFC</code>。那么两个P便不属于同一个<code>BFC</code>，就不会发生margin重叠了。</p>
+
+<p>代码：</p>
+
+<pre><code class="language-html">&lt;style&gt;
+    .wrap {
+        overflow: hidden;
+    }
+    p {
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+    &lt;p&gt;Haha&lt;/p&gt;
+    &lt;div class="wrap"&gt;
+        &lt;p&gt;Hehe&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>效果如下:</p>
+
+<p><img src="http://p3.qhimg.com/t0118d1d2badbb00521.png" alt="此处输入图片的描述" /></p>
+
+<h2 id="总结">总结</h2>
+<p>其实以上的几个例子都体现了<code>BFC</code>布局规则第五条：</p>
+<blockquote>
+  <p><code>BFC</code>就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</p>
+</blockquote>
+
+<p>因为<code>BFC</code>内部的元素和外部的元素绝对不会互相影响，因此， 当<code>BFC</code>外部存在浮动时，它不应该影响<code>BFC</code>内部Box的布局，<code>BFC</code>会通过变窄，而不与浮动有重叠。同样的，当<code>BFC</code>内部有浮动时，为了不影响外部元素的布局，<code>BFC</code>计算高度时会包括浮动的高度。避免margin重叠也是这样的一个道理。</p>
+
+<hr />
+<blockquote>
+  <p><a href="https://github.com/melonHuang/blog/blob/master/docs/css/1formattingContext.md">转自 奇舞团</a></p>
+</blockquote>
+
+					</div>
+				</article>
+			</div>
+			<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread">
+
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_hi"></a>
+<span class="bds_more">更多</span>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6840238" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+	</div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"susiyang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+		</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+<script src="/assets/index.min.js?body=4.0.0"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffbcbbadeaf00526725e0f222ba832804' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	</body>
+</html>

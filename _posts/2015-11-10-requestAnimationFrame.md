@@ -42,11 +42,11 @@ requestAnimationFrame 就是浏览器什么要开始绘制了浏览器自己知�
 唯一比较遗憾的是目前安卓上的原生浏览器并不支持requestAnimationFrame，不过对requestAnimationFrame的支持应该是大势所趋了，安卓版本的chrome 16+也是支持requestAnimationFrame的。
 
 
-###那么如何给动画设置帧数呢？
+### 那么如何给动画设置帧数呢？
 
  
 
-####最简单：
+#### 最简单：
 
 ```js
 
@@ -60,7 +60,7 @@ setInterval(draw, 1000/FPS);
 
  
 
-####成熟做法：
+#### 成熟做法：
 
 引入requestAnimationFrame，这个方法是用来在页面重绘之前，通知浏览器调用一个指定的函数，以满足开发者操作动画的需求。
 
@@ -81,7 +81,7 @@ function draw() {
 
 接下来需要考虑如何控制帧频。
 
-####简单做法：
+#### 简单做法：
 
 ```js
 var fps = 30;
@@ -99,7 +99,7 @@ tick();
 
  
 
-####自行控制时间跨度：
+#### 自行控制时间跨度：
 
 ```js
 var fps = 30;
@@ -126,7 +126,7 @@ tick();
 
  
 
-####针对低版本浏览器再优化：
+#### 针对低版本浏览器再优化：
 
 如果浏览器没有requestAnimationFrame函数，实际底层还只能用setTimeout模拟，上边做的都是无用功。那么可以再改进一下。
 

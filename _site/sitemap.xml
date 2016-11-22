@@ -3,62 +3,188 @@
 	
 		<url>
 				<loc>http://ssy.me/atom.xml</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/feed.xml</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
-				<loc>http://ssy.me/index.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<loc>http://ssy.me/</loc>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
-				<loc>http://ssy.me/other.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<loc>http://ssy.me/other</loc>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
-				<loc>http://ssy.me/qianduan.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<loc>http://ssy.me/qianduan</loc>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
 				<loc>http://ssy.me/sitemap.xml</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
-				<loc>http://ssy.me/tec_css.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<loc>http://ssy.me/tec_css</loc>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 		<url>
-				<loc>http://ssy.me/view_des.html</loc>
-				<lastmod>Wed, 22 Jan 2014 09:38:44 +0800</lastmod>
+				<loc>http://ssy.me/view_des</loc>
+				<lastmod>Tue, 22 Nov 2016 10:18:33 +0800</lastmod>
 				<changefreq>always</changefreq>
 				<priority>1.0</priority>
 		</url>
 	
 
 	
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/12/01/web_build</loc>
+				<lastmod>Tue, 01 Dec 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/30/es6_Design-pattern</loc>
+				<lastmod>Mon, 30 Nov 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/23/es7_decorator</loc>
+				<lastmod>Mon, 23 Nov 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/10/requestAnimationFrame</loc>
+				<lastmod>Tue, 10 Nov 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/14/css_BFC</loc>
+				<lastmod>Thu, 14 May 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/12/js-opt</loc>
+				<lastmod>Tue, 12 May 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/29/learn-web</loc>
+				<lastmod>Wed, 29 Apr 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/10/HTTP_API</loc>
+				<lastmod>Fri, 10 Apr 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/09/html_guid</loc>
+				<lastmod>Thu, 09 Apr 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/less_guide</loc>
+				<lastmod>Tue, 31 Mar 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/javascript_guide</loc>
+				<lastmod>Tue, 31 Mar 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/css_guide</loc>
+				<lastmod>Tue, 31 Mar 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/16/javascript_tip</loc>
+				<lastmod>Mon, 16 Mar 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2</loc>
+				<lastmod>Fri, 13 Mar 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2-web</loc>
+				<lastmod>Fri, 13 Mar 2015 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/08/13/nodejs_update</loc>
+				<lastmod>Wed, 13 Aug 2014 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E6%9D%82%E8%B0%88/2014/08/13/books</loc>
+				<lastmod>Wed, 13 Aug 2014 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
+			<url>
+				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/04/11/Canvas_API</loc>
+				<lastmod>Fri, 11 Apr 2014 00:00:00 +0800</lastmod>
+				<changefreq>always</changefreq>
+				<priority>0.8</priority>
+			</url>
+
 			<url>
 				<loc>http://ssy.me/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/21/html-zhuanyi</loc>
 				<lastmod>Tue, 21 Jan 2014 00:00:00 +0800</lastmod>

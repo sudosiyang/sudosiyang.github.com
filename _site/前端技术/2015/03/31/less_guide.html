@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>
+			Less规范 -
+
+			苏思洋的博客 </title>
+
+		<meta name="author" content="susu">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link href="/assets/style.min.css?body=3.3.1" rel="stylesheet" type="text/css" media="all">
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0 - 所有文章" href="feed.xml" />
+		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+		<!-- fav and touch icons -->
+		<!-- Update these with your own images
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+		-->
+	</head>
+
+	<body>
+		<div class="navbar">
+			<img id="profile" src="/blog-assets/susu.jpg" alt="susu" class="rollIn animated">
+			<ul class="nav">
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label1" class="labels"><a href="/">
+
+				最新文章
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label2" class="labels"><a href="/other">
+
+				杂谈
+
+		</a></li>
+
+
+
+
+
+
+
+
+
+				<li id="label3" class="active labels"><a href="/qianduan" class="active">前端技术</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<li id="label4" class="labels"><a href="/tec_css">
+
+				交互设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+		<li id="label5" class="labels"><a href="/view_des">
+
+				视觉设计
+
+		</a></li>
+
+
+
+
+
+
+
+
+			</ul>
+			<div class="f_like">
+			<div>友链</div>
+			<ul class="links">
+
+                 <li class="link"><a href="http://hyq.me" title="hyq">hyq</a></li>
+
+                 <li class="link"><a href="http://catalystdp.github.io/" title="catalystdp">catalystdp</a></li>
+
+			</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="title_wrap" class=" title3">
+				<h2 class="title">
+
+
+
+
+
+
+
+
+
+
+							前端技术
+
+
+
+
+
+
+
+
+				</h2>
+			</div>
+
+
+					<ul class="posts">
+
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/12/01/web_build"><span class="circle_icon"></span>前端工程化技能树整理<span class='date'>01 Dec 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/30/es6_Design-pattern"><span class="circle_icon"></span>ES6 实现几种 设计模式<span class='date'>30 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/23/es7_decorator"><span class="circle_icon"></span>ES7 Decorator 装饰者模式 浅出<span class='date'>23 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/11/10/requestAnimationFrame"><span class="circle_icon"></span>requestAnimationFrame 详解<span class='date'>10 Nov 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/14/css_BFC"><span class="circle_icon"></span>BFC 神奇背后的原理<span class='date'>14 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/05/12/js-opt"><span class="circle_icon"></span>前端性能优化实践<span class='date'>12 May 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/29/learn-web"><span class="circle_icon"></span>2015年值得关注的几个WEB技术<span class='date'>29 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/10/HTTP_API"><span class="circle_icon"></span>HTTP API 设计指南<span class='date'>10 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/04/09/html_guid"><span class="circle_icon"></span>HTML编码规范<span class='date'>09 Apr 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li class="active"><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/less_guide" class="active"><span class="circle_icon"></span>Less规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/javascript_guide"><span class="circle_icon"></span>JavaScript规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/31/css_guide"><span class="circle_icon"></span>CSS规范<span class='date'>31 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/16/javascript_tip"><span class="circle_icon"></span>前端小技巧总结<span class='date'>16 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2"><span class="circle_icon"></span>用pm2管理node进程<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2015/03/13/pm2-web"><span class="circle_icon"></span>pm2-web监控node.js应用服务状态<span class='date'>13 Mar 2015</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/08/13/nodejs_update"><span class="circle_icon"></span>node.js升级<span class='date'>13 Aug 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/04/11/Canvas_API"><span class="circle_icon"></span>Canvas API<span class='date'>11 Apr 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/21/html-zhuanyi"><span class="circle_icon"></span>JavaScript 的HTML转义方法<span class='date'>21 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2014/01/09/IE-iframe-P3P"><span class="circle_icon"></span>IE下iframe跨域session丢失问题和解决<span class='date'>09 Jan 2014</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/26/cross-domian"><span class="circle_icon"></span>JavaScript 跨域访问的问题和解决过程<span class='date'>26 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/11/07/javascript-tip"><span class="circle_icon"></span>javascript 小技巧<span class='date'>07 Nov 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/25/31CSS"><span class="circle_icon"></span>31 种 CSS 选择器用法<span class='date'>25 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design_step"><span class="circle_icon"></span>复杂产品的响应式设计【流程篇】<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/05/Responsive_Web_Design"><span class="circle_icon"></span>响应式网页设计<span class='date'>05 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/qianduan"><span class="circle_icon"></span>前端的困局与突围(from 玉伯)<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+      	<li><a class="cate title3" href="/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/2013/10/03/markdown"><span class="circle_icon"></span>如何使用markdown<span class='date'>03 Oct 2013</span></a></li>
+
+
+
+
+
+
+
+					</ul>
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		<div id="container">
+			<button class="navbar-toggle" type="button">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+      		</button>
+			<div id="pjax">
+				<article id="post" class="title3">
+					<header id="header">
+						<h1 id="identifier">
+								Less规范
+						</h1>
+					</header>
+					<div id="content">
+						<h2 id="简介">简介</h2>
+
+<p>该文档主要的设计目标是提高 Less 文档的团队一致性与可维护性。</p>
+
+<p>Less 代码的基本规范和原则与 <a href="../css_guide">CSS 编码规范</a> 保持一致。</p>
+
+<h3 id="要求">要求</h3>
+
+<p>在本文档中，使用的关键字会以中文+括号包含的关键字英文表示：必须（MUST）。关键字”MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”</p>
+
+<hr />
+
+<h2 id="编码">编码</h2>
+
+<p>使用UTF-8编码。<em>不得</em>（MUST NOT）包含BOM信息。</p>
+
+<hr />
+
+<h2 id="代码组织">代码组织</h2>
+
+<p>代码<em>必须</em>（MUST）按如下形式按顺序组织：</p>
+
+<ol>
+  <li><code>@import</code></li>
+  <li>变量声明</li>
+  <li>样式声明</li>
+</ol>
+
+<pre><code class="language-css">// good
+@import "est/all.less";
+
+@default-text-color: #333;
+
+.page {
+    width: 960px;
+    margin: 0 auto;
+}
+</code></pre>
+
+<hr />
+
+<h2 id="-语句"><code>@import</code> 语句</h2>
+
+<p><code>@import</code> 语句引用的文件<em>必须</em>（MUST）写在一对引号内，<code>.less</code> 后缀<em>不得</em>（MUST NOT）省略（与引入 CSS 文件时的路径格式一致）。引号使用 <code>'</code> 和 <code>"</code> 均可，但在同一项目内<em>必须</em>（MUST）统一。</p>
+
+<pre><code class="language-css">// bad
+@import 'est/all';
+@import "my/mixins.less";
+
+// good
+@import "est/all.less";
+@import "my/mixins.less";
+</code></pre>
+
+<hr />
+
+<h2 id="空格">空格</h2>
+
+<h3 id="属性变量">属性、变量</h3>
+
+<p>选择器和 <code>{</code> 之间<em>必须</em>（MUST）保留一个空格。</p>
+
+<p>属性名后的冒号（<code>:</code>）与属性值之间<em>必须</em>（MUST）保留一个空格，冒号前<em>不得</em>（MUST NOT）保留空格。</p>
+
+<p>定义变量时冒号（<code>:</code>）与变量值之间<em>必须</em>（MUST）保留一个空格，冒号前<em>不得</em>（MUST NOT）保留空格。</p>
+
+<p>在用逗号（<code>,</code>）分隔的列表（Less 函数参数列表、以 <code>,</code> 分隔的属性值等）中，逗号后<em>必须</em>（MUST）保留一个空格，逗号前<em>不得</em>（MUST NOT）保留空格。</p>
+
+<pre><code class="language-css">// bad
+.box{
+    @w:50px;
+    @h :30px;
+    width:@w;
+    height :@h;
+    color: rgba(255,255,255,.3);
+    transition: width 1s,height 3s;
+}
+
+// good
+.box {
+    @w: 50px;
+    @h: 30px;
+    width: @w;
+    height: @h;
+    transition: width 1s, height 3s;
+}
+</code></pre>
+
+<h3 id="运算">运算</h3>
+
+<p><code>+</code> / <code>-</code> / <code>*</code> / <code>/</code> 四个运算符两侧<em>必须</em>（MUST）保留一个空格。<code>+</code> / <code>-</code> 两侧的操作数<em>必须</em>（MUST）有相同的单位，如果其中一个是变量，另一个数值<em>必须</em>（MUST）书写单位。</p>
+
+<pre><code class="language-css">// bad
+@a: 200px;
+@b: (@a+100)*2;
+
+// good
+@a: 200px;
+@b: (@a + 100px) * 2;
+</code></pre>
+
+<h3 id="混入mixin">混入（Mixin）</h3>
+
+<p>Mixin 和后面的空格之间<em>不得</em>（MUST NOT）包含空格。在给 mixin 传递参数时，在参数分隔符（<code>,</code> / <code>;</code>）后<em>必须</em>（MUST）保留一个空格：</p>
+
+<pre><code class="language-css">// bad
+.box {
+    .size(30px,20px);
+    .clearfix ();
+}
+
+// good
+.box {
+    .size(30px, 20px);
+    .clearfix();
+}
+</code></pre>
+
+<hr />
+
+<h2 id="选择器">选择器</h2>
+
+<p>当多个选择器共享一个声明块时，每个选择器声明<em>必须</em>（MUST）独占一行。</p>
+
+<pre><code class="language-css">// bad
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+// good
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+</code></pre>
+
+<p>Class 命名不得以样式信息进行描述，如 <code>.float-right</code>、<code>text-red</code> 等。</p>
+
+<hr />
+
+<h2 id="省略与缩写">省略与缩写</h2>
+
+<h3 id="缩写">缩写</h3>
+
+<p>多个属性定义可以使用缩写时， <em>尽量</em>（SHOULD）使用缩写。缩写更清晰字节数更少。常见缩写有 <code>margin</code>、<code>border</code>、<code>padding</code>、<code>font</code>、<code>list-style</code> 等。在书写时<em>必须</em>（MUST）考量缩写展开后是否有不需要覆盖的属性内容被修改，从而带来副作用。</p>
+
+<h3 id="数值">数值</h3>
+
+<p>对于处于 <code>(0, 1)</code> 范围内的数值，小数点前的 <code>0</code> <em>可以</em>（MAY）省略，同一项目中<em>必须</em>（MUST）保持一致。</p>
+
+<pre><code class="language-css">// bad
+transition-duration: 0.5s, .7s;
+
+// good
+transition-duration: .5s, .7s;
+</code></pre>
+
+<h3 id="0-值">0 值</h3>
+
+<p>当属性值为 0 时，<em>必须</em>（MUST）省略可省的单位（长度单位如 <code>px</code>、<code>em</code>，不包括时间、角度等如 <code>s</code>、<code>deg</code>）。</p>
+
+<pre><code class="language-css">// bad
+margin-top: 0px;
+
+// good
+margin-top: 0;
+</code></pre>
+
+<h3 id="颜色">颜色</h3>
+
+<p>颜色定义<em>必须</em>（MUST）使用 <code>#rrggbb</code> 格式定义，并在可能时<em>尽量</em>（SHOULD）缩写为 <code>#rgb</code> 形式，且避免直接使用颜色名称与 <code>rgb()</code> 表达式。</p>
+
+<pre><code class="language-css">// bad
+border-color: red;
+color: rgb(254, 254, 254);
+
+// good
+border-color: #f00;
+color: #fefefe;
+</code></pre>
+
+<h3 id="私有属性前缀">私有属性前缀</h3>
+
+<p>同一属性有不同私有前缀的，<em>尽量</em>（SHOULD）按前缀长度降序书写，标准形式<em>必须</em>（MUST）写在最后。且这一组属性以第一条的位置为准，<em>尽量</em>（SHOULD）按冒号的位置对齐。</p>
+
+<pre><code class="language-css">// good
+.box {
+    -webkit-transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+}
+</code></pre>
+
+<h3 id="其他">其他</h3>
+
+<p><em>可以</em>（MAY）在无其他更好解决办法时使用 CSS hack，并且<em>尽量</em>（SHOULD）使用简单的属性名 hack 如 <code>_zoom</code>、<code>*margin</code>。</p>
+
+<p><em>可以</em>（MAY）但谨慎使用 IE 滤镜。需要注意的是，IE 滤镜中图片的 URL 是以页面路径作为相对目录，而不是 CSS 文件路径。</p>
+
+<hr />
+
+<h2 id="嵌套和缩进">嵌套和缩进</h2>
+
+<p><em>必须</em>（MUST）采用 4 个空格为一次缩进， <em>不得</em>（MUST NOT）采用 TAB 作为缩进。</p>
+
+<p>嵌套的声明块前<em>必须</em>（MUST）增加一次缩进，有多个声明块共享命名空间时<em>尽量</em>（SHOULD）嵌套书写，避免选择器的重复。</p>
+
+<p>但是需注意的是，<em>尽量</em>（SHOULD）仅在必须区分上下文时才引入嵌套关系（在嵌套书写前先考虑如果不能嵌套，会如何书写选择器）。</p>
+
+<pre><code class="language-css">// bad
+.main .title {
+  font-weight: 700;
+}
+
+.main .content {
+  line-height: 1.5;
+}
+
+.main {
+.warning {
+  font-weight: 700;
+}
+
+  .comment-form {
+    #comment:invalid {
+      color: red;
+    }
+  }
+}
+
+// good
+.main {
+    .title {
+        font-weight: 700;
+    }
+
+    .content {
+        line-height: 1.5;
+    }
+
+    .warning {
+        font-weight: 700;
+    }
+}
+
+#comment:invalid {
+    color: red;
+}
+</code></pre>
+
+<hr />
+
+<h2 id="变量">变量</h2>
+
+<p>Less 的变量值总是以同一作用域下最后一个同名变量为准，务必注意后面的设定会覆盖所有之前的设定。</p>
+
+<p>变量命名<em>必须</em>（MUST）采用 <code>@foo-bar</code> 形式，<em>不得</em>（MUST NOT）使用 <code>@fooBar</code> 形式。</p>
+
+<pre><code class="language-css">// bad
+@sidebarWidth: 200px;
+@width:800px;
+
+// good
+@sidebar-width: 200px;
+@width: 800px;
+</code></pre>
+
+<hr />
+
+<h2 id="继承">继承</h2>
+
+<p>使用继承时，如果在声明块内书写 <code>:extend</code> 语句，<em>必须</em>（MUST）写在开头：</p>
+
+<pre><code class="language-css">// bad
+.sub {
+    color: red;
+    &amp;:extend(.mod all);
+}
+
+// good
+.sub {
+    &amp;:extend(.mod all);
+    color: red;
+}
+</code></pre>
+
+<hr />
+
+<h2 id="混入mixin-1">混入（Mixin）</h2>
+
+<p>在定义 mixin 时，如果 mixin 名称不是一个需要使用的 className，<em>必须</em>（MUST）加上括号，否则即使不被调用也会输出到 CSS 中。</p>
+
+<pre><code class="language-css">// bad
+.big-text {
+    font-size: 2em;
+}
+
+h3 {
+    .big-text;
+}
+
+// good
+.big-text() {
+    font-size: 2em;
+}
+
+h3 {
+    .big-text();
+}
+</code></pre>
+
+<p>如果混入的是本身不输出内容的 mixin，<em>必须</em>（MUST）在 mixin 后添加括号（即使不传参数），以区分这是否是一个 className（修改以后是否会影响 HTML）。</p>
+
+<pre><code class="language-css">// bad
+.box {
+    .clearfix;
+    .size (20px);
+}
+
+// good
+.box {
+    .clearfix();
+    .size(20px);
+}
+</code></pre>
+
+<p>Mixin 的参数分隔符使用 <code>,</code> 和 <code>;</code> 均可，但在同一项目中<em>必须</em>（MUST）保持统一。</p>
+
+<hr />
+
+<h2 id="命名空间">命名空间</h2>
+
+<p>变量和 mixin 在命名时<em>必须</em>（MUST）遵循如下原则：</p>
+
+<ul>
+  <li>一个项目只能引入一个无命名前缀的基础样式库（如 est）</li>
+  <li>业务代码和其他被引入的样式代码中，变量和 mixin 必须有项目或库的前缀</li>
+</ul>
+
+<hr />
+
+<h2 id="字符串">字符串</h2>
+
+<p>在进行字符串转义时，使用 <code>~""</code> 表达式与 <code>e()</code> 函数均可，但在同一项目中<em>必须</em>（MUST）保持一致。</p>
+
+<p>字符串两侧的引号<em>必须</em>（MUST）使用 <code>"</code>。</p>
+
+<h2 id="js-表达式">JS 表达式</h2>
+
+<p><em>可以</em>（MAY）使用 JS 表达式（<code>~\`\`</code>）生成属性值或变量，其中包含的字符串两侧的引号<em>尽量</em>（SHOULD）使用单引号（<code>'</code>）。</p>
+
+<hr />
+
+<h2 id="注释">注释</h2>
+
+<p>单行注释<em>尽量</em>（SHOULD）使用 <code>//</code> 方式。</p>
+
+<pre><code class="language-css">// Hide everything
+* {
+    display: none;
+}
+</code></pre>
+
+					</div>
+				</article>
+			</div>
+			<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread">
+
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_hi"></a>
+<span class="bds_more">更多</span>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=6840238" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+	</div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"susiyang"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+		</div>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+<script src="/assets/index.min.js?body=4.0.0"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffbcbbadeaf00526725e0f222ba832804' type='text/javascript'%3E%3C/script%3E"));
+</script>
+	</body>
+</html>
