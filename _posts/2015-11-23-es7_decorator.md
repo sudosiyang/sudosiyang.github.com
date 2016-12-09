@@ -122,7 +122,7 @@ console.log(`当前状态 ===> ${_德玛西亚}`);
 
 **这里给出的解答作为参考：**
 
-> Decorators 的本质是利用了ES5的 Object.defineProperty 属性，这三个参数其实是和 Object.defineProperty参数一致的，因此不能更改。可以看看 bable转换后 的代码，其中有一句是descriptor = decorator(target, key, descriptor) || descriptor;点到为止，这里不详细展开了，可自行看看这行代码的上下文
+> Decorators 的本质是利用了ES5的 Object.defineProperty 属性，这三个参数其实是和 Object.defineProperty参数一致的，因此不能更改。可以看看 bable转换后 的代码，其中有一句是`descriptor = decorator(target, key, descriptor) || descriptor;`点到为止，这里不详细展开了，可自行看看这行代码的上下文
 
 * 初始化德玛西亚的被动技能
 
