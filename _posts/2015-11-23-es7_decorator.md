@@ -115,12 +115,12 @@ console.log(`当前状态 ===> ${_德玛西亚}`);
 
 血量变多了。还好吧，那下一步给他个被动技能吧！
 
-####这里可能会有两个疑问：
+**这里可能会有两个疑问：**
 
 1. `德玛西亚初始`方法的参数为啥是这三个？可以更换么？
 2. `德玛西亚初始`方法为什么返回的是descriptor
 
-####这里给出的解答作为参考：
+**这里给出的解答作为参考：**
 
 > Decorators 的本质是利用了ES5的 Object.defineProperty 属性，这三个参数其实是和 Object.defineProperty参数一致的，因此不能更改。可以看看 bable转换后 的代码，其中有一句是descriptor = decorator(target, key, descriptor) || descriptor;点到为止，这里不详细展开了，可自行看看这行代码的上下文
 
