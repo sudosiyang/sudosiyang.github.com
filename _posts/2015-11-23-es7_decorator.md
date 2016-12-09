@@ -47,7 +47,7 @@ ES7 中的 decorator 同样借鉴了这个语法糖，不过依赖于 ES5 的 Ob
 
 想必大家都该玩过LOL吧。那么我就以英雄联盟英雄为例子。
 
-##第一步：
+## 第一步：
 
 * 英雄
 
@@ -81,7 +81,7 @@ console.log(`当前状态 ===> ${_德玛西亚}`);
 // 当前状态 ===> 防御力:30,攻击力:70,血量:630
 ```
 
-##第二步
+## 第二步
 
 * 初始化德玛属性
 
@@ -112,6 +112,7 @@ var _德玛西亚 = new 德玛西亚();
 console.log(`当前状态 ===> ${_德玛西亚}`);
 // 当前状态 ===> 防御力:30,攻击力:70,血量:780
 ```
+
 血量变多了。还好吧，那下一步给他个被动技能吧！
 
 ####这里可能会有两个疑问：
@@ -121,7 +122,7 @@ console.log(`当前状态 ===> ${_德玛西亚}`);
 
 ####这里给出的解答作为参考：
 
->Decorators 的本质是利用了ES5的 Object.defineProperty 属性，这三个参数其实是和 Object.defineProperty参数一致的，因此不能更改。可以看看 bable转换后 的代码，其中有一句是descriptor = decorator(target, key, descriptor) || descriptor;，点到为止，这里不详细展开了，可自行看看这行代码的上下文
+> Decorators 的本质是利用了ES5的 Object.defineProperty 属性，这三个参数其实是和 Object.defineProperty参数一致的，因此不能更改。可以看看 bable转换后 的代码，其中有一句是descriptor = decorator(target, key, descriptor) || descriptor;点到为止，这里不详细展开了，可自行看看这行代码的上下文
 
 * 初始化德玛西亚的被动技能
 
@@ -159,5 +160,5 @@ console.log(`当前状态 ===> ${_德玛西亚}`);
 好啦完整的德玛西亚出来了。
 
 
->代码直接放在 [http://babeljs.io/repl/]() 中运行查看结果，记得勾选Experimental选项和Evaluate选项
+> 代码直接放在 [http://babeljs.io/repl/]() 中运行查看结果，记得勾选Experimental选项和Evaluate选项
 
