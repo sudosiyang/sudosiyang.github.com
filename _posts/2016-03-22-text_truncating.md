@@ -79,4 +79,4 @@ selection.modify('extend', 'forward', 'character');
 
 可以看到，基于 CSS 的方案非常精确，而且在页面布局变化、浏览器视口大小变化时更容易响应，但只能满特定的场景。用 JS 的方案在灵活性上有时更胜一筹，但要做的工作就多了很多。而且如果需要处理的内容很多，用 JS 的方法可能会带来性能瓶颈，毕竟一般读取 UI 实际显示样式的接口调用代价都比较大。
 
-
+> [EFE-前端文本截断](http://efe.baidu.com/blog/text-truncating/)
