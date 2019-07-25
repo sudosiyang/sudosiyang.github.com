@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Nodejs-多进程、多线程和分布式
+title: Nodejs-性能实践
 category : 前端技术
 tags : 前端 JavaScript nodejs
----
-
-# 性能实践
+--- 
 
 ## 避免使用 Lodash
 
